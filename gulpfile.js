@@ -42,6 +42,7 @@ gulp.task('js', function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/mmenu/js/jquery.mmenu.all.min.js',
 		'app/libs/fancybox-master/dist/jquery.fancybox.min.js',
+		'app/libs/owlcarousel/owl.carousel.min.js',
 
 		'app/js/common.js' // Always at the end
 		])
