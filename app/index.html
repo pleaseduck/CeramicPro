@@ -4,23 +4,25 @@
 <head>
 
 	<meta charset="utf-8">
-	<base href="/">
 
-	<title>OptimizedHTML 4</title>
+	<title>Title</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- Template Basic Images Start -->
 	<meta property="og:image" content="path/to/image.jpg">
-	<link rel="icon" href="img/favicon/favicon.ico">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
-	<!-- Template Basic Images End -->
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
 
-	<!-- Custom Browsers Color Start -->
-	<meta name="theme-color" content="#000">
-	<!-- Custom Browsers Color End -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#1A1A1A">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#1A1A1A">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.min.css">
@@ -28,47 +30,53 @@
 </head>
 
 <body>
-
+	<div class="overlay"></div>
 	<div class="main-header">
+		<div class="main-menu" id="main-menu">
+			<div class="main-header__logo">
+				<a href="#"><img src="img/logo1.svg" alt="Ceramic Pro Авторизованный центр">
+					<span>Авторизованный центр</span></a>
+			</div>
+			<nav class="main-nav">
+				<ul>
+					<li class="active"><a href="#">Главная</a></li>
+					<li><a href="#">Выполненные работы</a></li>
+					<li><a href="#">Цены</a></li>
+					<li><a href="#">Дополнительные услуги</a></li>
+					<li><a href="#">Акции</a></li>
+					<li><a href="#">Вопрос-ответ</a></li>
+					<li><a href="#">Отзывы</a></li>
+					<li><a href="#">Сертификаты</a></li>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Соц. сети</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</nav>
+			<div class="main-menu__contacts">
+				<a href="#" class="address"><i class="fas fa-map-marker-alt"></i>г. Иркутск, Ул.Ленина,1</a>
+				<a href="#" class="phone"><i class="fas fa-phone"></i> +7 (900) 123-45-67</a>
+				<a href="#" class="make-a-call"><i class="fas fa-phone"></i> Заказать звонок</a>
+			</div>
+		</div>
 		<div class="container">
 			<div class="row">
-
-				<div class="col-3 main-menu">
-					<div class="main-header__logo">
-						<img src="img/logo1.svg" alt="Ceramic Pro Авторизованный центр">
-						<span>Авторизованный центр</span>
-					</div>
-					<nav class="main-nav">
-						<ul>
-							<li class="active"><a href="#">Главная</a></li>
-							<li><a href="#">Выполненные работы</a></li>
-							<li><a href="#">Цены</a></li>
-							<li><a href="#">Дополнительные услуги</a></li>
-							<li><a href="#">Акции</a></li>
-							<li><a href="#">Вопрос-ответ</a></li>
-							<li><a href="#">Отзывы</a></li>
-							<li><a href="#">Сертификаты</a></li>
-							<li><a href="#">О компании</a></li>
-							<li><a href="#">Соц. сети</a></li>
-							<li><a href="#">Контакты</a></li>
-						</ul>
-					</nav>
-					<div class="main-menu__contacts">
-						<a href="#" class="address"><i class="fas fa-map-marker-alt"></i>г. Иркутск, Ул.Ленина,1</a>
-						<a href="#" class="phone"><i class="fas fa-phone"></i> +7 (900) 123-45-67</a>
-						<a href="#" class="make-a-call"><i class="fas fa-phone"></i> Заказать звонок</a>
+				<div class="col-12">
+					<div class="main-menu--mobile">
+						<a href="#main-menu" class="hamburger  hamburger--emphatic">
+							<span class="hamburger-box">
+								<span class="hamburger-inner"></span>
+							</span>
+						</a>
+						<div class="main-menu__contacts">
+							<a href="#" class="make-a-call"><i class="fas fa-phone"></i> Заказать звонок</a>
+						</div>
 					</div>
 				</div>
-
-				<div class="col-9  main-header__content  row">
-					<div class="col-12 text-wrapper  row">
-						<div class="col-8">
+				<div class="col-md-9 offset-md-3  col-12  main-header__content row">
+						<div class="col-md-8  col-12  heading-wrapper">
 							<h2 class="h2">Нанесение <span>защитно-керамических составов</span> на кузов автомобиля</h2>
-							<div class="bottom-line">
-								<span class="next-page">Выполненные работы<i class="fas fa-angle-down"></i></span>
-							</div>
 						</div>
-						<div class="col-4  legend">
+						<div class="col-md-4 col-12 legend">
 							<div class="top-line">
 								<span>Главная</span>
 								<span class="page-counter"><span class="current-page">1</span>/11</span>
@@ -80,14 +88,16 @@
 							</p>
 							<div class="chat"></div>
 						</div>
-					</div>
 				</div>
-
 			</div>
 		</div>
+		<a href="#" class="bottom-line">
+			<span class="next-page">Выполненные работы<i class="fas fa-angle-down"></i></span>
+		</a>
+		<a href="#" class="bottom-line--mobile">
+			<span class="next-page">Узнать больше<i class="fas fa-angle-down"></i></span>
+		</a>
 	</div>
-
-
 	<script src="js/scripts.min.js"></script>
 </body>
 </html>

@@ -4,7 +4,8 @@
   "description": "OptimizedHTML 4 - Start HTML Template",
   "main": "index.js",
   "scripts": {
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "build": "gulp build"
   },
   "author": "WebDesign Master",
   "license": "ISC",

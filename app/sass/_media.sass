@@ -9,19 +9,91 @@
 
 //Large: ≥992px
 +media-breakpoint-down(lg)
-
+  .main-header__content
+  	.text-wrapper
+      background-size: contain
 //Medium: ≥768px
 +media-breakpoint-down(md)
-
+  .main-header
+    padding-top: 35px
+    background-size: auto
+    background-position: 70% 95%
 //Small: ≥576px
 +media-breakpoint-down(sm)
 
+  .main-header
+    padding-top: 35px
+    height: auto
+    background-size: 700px
+    background-position: 0px 90%
+    .bottom-line
+      display: none
+    .heading-wrapper
+      margin-top: 100px
+  .main-header__content
+    height: auto
+    justify-content: flex-start
+    .top-line
+      display: none
+    .chat
+      display: none
+    .legend
+      margin-top: 20px
+      margin-bottom: 450px
+
+  .main-menu
+    left: -3500px
+    padding-left: 5%
+    padding-right: 5%
+    top: 0
+    padding-top: 30px
+    height: 100vh
+    width: 50%
+    background-color: #000
+    z-index: 20
+    transition: left .5s ease
+    .address
+      display: none
+    .make-a-call
+      display: none
+    &--mobile
+      display: flex
+    &.menu-opened
+      left: 0
+
+  .bottom-line--mobile
+    display: block
+    width: 100%
+    position: absolute
+    bottom: 40px
+    text-align: center
+    .next-page
+      display: block
+      text-align: center
+      position: relative
+      .fas
+        position: absolute
+        font-size: 20px
+        left: 50%
+        bottom: -16px
+        font-weight: 200
 //Extra small: >0
 +media-breakpoint-down(xs)
+  .main-header
+    padding-top: 35px
+    height: auto
+    background-size: 600px
+    background-position: -200px 90%
 
+  .main-menu
+    width: 75%
 
+  .hamburger
+  	&.is-active
+  		left: 75%
+    	margin-left: -51px
+  		margin-top: -15px
 /*==========  Mobile First  ==========*/
-
 //Extra small: <576px
 +media-breakpoint-up(xs)
 

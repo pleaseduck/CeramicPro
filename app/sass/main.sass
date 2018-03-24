@@ -50,16 +50,38 @@ body
 	background-color: #000
 	height: 100vh
 	padding-top: 40px
+	background-image: url(../img/car-bg1.png)
+	background-repeat: no-repeat
+	background-position: center
+	background-position: 50% 90%
+	position: relative
 .main-header__logo
 	font-size: 14px
 	line-height: 22px
-	margin-bottom: 100px
+	a
+		color: #e1e1ee
+		&:hover
+			text-decoration: none
 	span
 		display: block
 		margin-top: 5px
+.main-menu
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	position: fixed
+	height: 90vh
+	left: 5%
+	&--mobile
+		display: none
+		justify-content: space-between
+		align-items: center
+		position: relative
+		.main-menu__contacts
+			width: 56%
+			max-width: 320px
+			min-width: 190px
 .main-nav
-	margin-bottom: 80px
-	overflow: hidden
 	ul
 		padding: 0
 		margin: 0
@@ -72,7 +94,6 @@ body
 			a
 				text-decoration: none
 				color: #e1e1ee
-
 			&::before
 				content: ""
 				width: 6px
@@ -130,6 +151,11 @@ body
 		text-align: center
 		padding-top: 3px
 		padding-bottom: 3px
+		max-width: 320px
+		z-index: 15
+		transition: background-color .25s ease
+		&:hover
+			background-color: $accent
 		.fas
 			color: #fff
 			margin-left: 4.5px
@@ -153,7 +179,6 @@ body
 	font-size: 12px
 	max-height: 35px
 	margin-bottom: 25px
-	margin-top: -55px
 	span
 		color: #5d5d5d
 	.page-counter
@@ -165,11 +190,9 @@ body
 
 .main-header__content
 	position: relative
-	.text-wrapper
-		background-image: url(../img/car-bg1.png)
-		background-repeat: no-repeat
-		background-position: -15% 75%
-		padding-top: 50px
+	height: 100vh
+	.heading-wrapper
+		margin-top: 55px
 	.legend
 		p
 			padding-top: 20px
@@ -183,29 +206,41 @@ body
 				position: absolute
 				top: 0
 				left: 0
-	.bottom-line
-		position: absolute
-		bottom: 0px
-		left: 50%
-		.next-page
-			display: block
-			text-align: center
-			position: relative
-			.fas
-				position: absolute
-				font-size: 20px
-				left: 50%
-				bottom: -16px
-				font-weight: 200
+.bottom-line
+	display: block
+	width: 100%
+	position: absolute
+	bottom: 40px
+	color: #e1e1ee
+	&:hover
+		color: #e1e1ee
+		text-decoration: none
+	&--mobile
+		color: #e1e1ee
+		display: none
+		&:hover
+			color: #e1e1ee
+			text-decoration: none
+	.next-page
+		display: block
+		text-align: center
+		position: relative
+		.fas
+			position: absolute
+			font-size: 20px
+			left: 50%
+			bottom: -16px
+			font-weight: 200
 .chat
 	display: inline-block
+	z-index: 10
 	background-color: $accent
 	width: 40px
 	height: 40px
 	border-radius: 10em
 	position: absolute
 	right: 0
-	bottom: 0
+	bottom: 70px
 	background-image: url(../img/icons/chat-icon.svg)
 	background-position: center
 	background-repeat: no-repeat
@@ -213,5 +248,26 @@ body
 	transition: all 1s ease
 	transform-style: preserve-3d
 	&:hover
-		transform: rotateY(180deg)
+		transform: rotateY(360deg)
+.hamburger
+	border: 2px solid #fff
+	height: 51px
+	width: 51px
+	border-radius: 10em
+	text-align: center
+	padding: 12px
+	//transition: margin .25s ease
+	&.is-active
+		z-index: 30
+		position: absolute
+		left: 50%
+		margin-left: -51px
+		margin-top: -15px
+
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+	background-color: #fff
+	height: 2px
+	width: 24px
+
+
 @import "media" // Always at the end
