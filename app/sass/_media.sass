@@ -20,17 +20,17 @@
     background-position: 70% 95%
 
 
-
-  .price-list__carousel__item--transformed
-    margin-left: -35px
-  .price-list__carousel
-    .owl-nav
-      .fas
-        color: #000
-      .owl-next
-        right: 3%
-      .owl-prev
-        left: 2%
+  .price-list
+    .carousel__item--transformed
+      margin-left: -35px
+    .price-list__carousel
+      .owl-nav
+        .fas
+          color: #000
+        .owl-next
+          right: 3%
+        .owl-prev
+          left: 2%
 
 //Small: ≥576px
 +media-breakpoint-down(sm)
@@ -93,6 +93,8 @@
     position: absolute
     bottom: 40px
     text-align: center
+    .chat
+      display: none
     .bottom-line__link
       display: block
       text-align: center
@@ -103,6 +105,11 @@
         left: 50%
         bottom: -16px
         font-weight: 200
+    .link--mobile-hidden
+      display: none !important
+    .link--desktop-hidden
+      display: block !important
+
   .performed-work__overlay
     display: none
   .performed-work
@@ -119,7 +126,7 @@
     .top-line
       text-align: left
       padding-left: 15px
-      span
+      .top-line__heading
         font-family: GothamProBold
         font-size: 38px
         line-height: 28px
@@ -160,11 +167,13 @@
     display: inline-block
 
   .price-list
+    .carousel__item--transformed
+      margin-left: -10px
     .link--to-prev-block, .top-line__page-counter
       display: none
     .top-line
       text-align: left
-      span
+      .top-line__heading
         font-family: GothamProBold
         font-size: 38px
         line-height: 28px
@@ -175,11 +184,8 @@
   .price-list__carousel
     width: 101%
     //max-width: 775px
-  .price-list__carousel__wrapper
+  .carousel__wrapper
     padding: 0
-
-  .price-list__carousel__item--transformed
-    margin-left: -10px
 
   .price-list
   	position: relative
@@ -206,8 +212,9 @@
       .owl-prev
         left: 3%
 
-  .additional-services__gallery__overlay
-    display: none
+  .additional-services
+    .gallery__overlay
+      display: none
   .additional-services
     height: auto
     &__content
@@ -222,7 +229,7 @@
     .top-line
       text-align: left
       padding-left: 15px
-      span
+      .top-line__heading
         font-family: GothamProBold
         font-size: 32px
         line-height: 28px
@@ -230,24 +237,50 @@
     .chat
       display: none
 
-  .additional-services__gallery__group
-    flex-wrap: wrap
-    justify-content: center
-  .additional-services__gallery__item
-    width: 100%
-    margin-right: 0
-    flex-basis: auto
-    .additional-services__gallery__item__description
-      //margin-top: 10px
-      padding-bottom: 10px
-    &--mobile-hidden
-      display: none
+  .additional-services
+    .gallery__group
+      flex-wrap: wrap
+      justify-content: center
+    .gallery__item
+      width: 100%
+      margin-right: 0
+      flex-basis: auto
+      &--mobile-hidden
+        display: none
+      .gallery__description
+        //margin-top: 10px
+        padding-bottom: 10px
   .button-wrapper
     order: 3
     justify-content: flex-start !important
   .button--watch-more
     display: inline-block
-//Extra small: >0
+
+
+  .promotions
+    height: auto
+    .link--to-prev-block, .top-line__page-counter
+      display: none
+    .top-line
+      text-align: left
+      padding-left: 15px
+      .top-line__heading
+        font-family: GothamProBold
+        font-size: 38px
+        line-height: 28px
+        color: #fff
+    .carousel__wrapper--second
+      height: auto
+      margin-top: 30px
+      margin-bottom: 90px
+
+  .promotions__carousel
+    width: 100%
+    .owl-nav
+      .owl-prev
+        left: -5%
+      .owl-next
+        right: -5%
 +media-breakpoint-down(xs)
   .main-header
     padding-top: 35px
@@ -267,26 +300,27 @@
   .main-menu--mobile
     padding-top: 10px
 
-  .gallery__item
-    .gallery__description
-      width: auto
-      max-width: 100%
-      font-size: 18px
-      .title
-        font-size: 24px
-        line-height: 26px
-      .see-more
-        width: 60px
-        height: 60px
-        margin-top: -30px
-        .fas
-          font-size: 30px
-          line-height: 60px
 
   .price-list__carousel
     width: 100%
-  .price-list__carousel__wrapper--second
-    padding-right: 0
+  .price-list
+    .carousel__wrapper--second
+      padding-right: 0
+    .gallery__item
+      .gallery__description
+        width: auto
+        max-width: 100%
+        font-size: 18px
+        .title
+          font-size: 24px
+          line-height: 26px
+        .see-more
+          width: 60px
+          height: 60px
+          margin-top: -30px
+          .fas
+            font-size: 30px
+            line-height: 60px
 
   .price-list .container
     padding: 0 !important
@@ -312,22 +346,39 @@
     .top-line
       text-align: left
       padding-left: 40px
+    .carousel__item--transformed
+  	  margin-left: -70px
 
-  .price-list__carousel__item--transformed
-  	margin-left: -70px
-@media screen and (max-width: 370px)
-  .price-list__carousel__item--transformed
-  	margin-left: -80px
-  .owl-carousel
+
+  .promotions
+    .carousel__heading
+      font-size: 26px
+      line-height: 28px
+    .carousel__content
+      font-size: 13px
+
+  .promotions__carousel
+    width: 100%
     .owl-nav
-      .owl-next
-        right: 0.5%
       .owl-prev
-        left: 4%
+        left: -9%
+      .owl-next
+        right: -9%
+@media screen and (max-width: 370px)
+  .price-list
+    .carousel__item--transformed
+    	margin-left: -80px
+    .owl-carousel
+      .owl-nav
+        .owl-next
+          right: 0.5%
+        .owl-prev
+          left: 4%
 
 @media screen and (min-width: 578px) and (max-width: 878px)
-  .price-list__carousel__item--transformed
-    margin-left: -20px
+  .price-list
+    .carousel__item--transformed
+      margin-left: -20px
 /*==========  Mobile First  ==========*/
 //Extra small: <576px
 +media-breakpoint-up(xs)

@@ -8,10 +8,19 @@ $(function() {
     items: 3,
     nav: true,
     loop: true,
-    margin: 12,
     navText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
     center: true
  });
+
+ $(".promotions__carousel").owlCarousel({
+   items: 1,
+   nav: true,
+   navText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
+   center: true,
+   margin: 200,
+   dots: true,
+   dotsEach: true
+});
 // Трансформация активного элемента в карусели тарифов
  function resetTransformation() {
    const allActiveELements = document.querySelectorAll(".owl-item");
@@ -19,14 +28,14 @@ $(function() {
    for (var i = 0; i < allActiveELements.length; i++) {
       allActiveELements[i].style.zIndex = "1"
     let currentDiv = allActiveELements[i].childNodes;
-    currentDiv[0].classList.remove("price-list__carousel__item--transformed");
+    currentDiv[0].classList.remove("carousel__item--transformed");
    }
  };
  function transformElement() {
    let secondActiveElement = document.querySelectorAll(".owl-item.active")[1]
    secondActiveElement.style.zIndex = "5";
-   let divToScale = secondActiveElement.querySelector(".price-list__carousel__item")
-   divToScale.classList.toggle("price-list__carousel__item--transformed")
+   let divToScale = secondActiveElement.querySelector(".price-list .carousel__item")
+   divToScale.classList.toggle("carousel__item--transformed")
  };
  function transformActive() {
    resetTransformation();
@@ -79,13 +88,13 @@ $(function() {
     }
   });
 
-  const viewMoreAS = document.querySelector(".button--watch-more--additional-services");
-  const ASItems = document.querySelectorAll(".additional-services__gallery__item");
+  const viewMoreAS = document.querySelector(".button--additional-services");
+  const ASItems = document.querySelectorAll(".additional-services .gallery__item");
 
   viewMoreAS.addEventListener("click",function(evt) {
     evt.preventDefault();
     for (var i = 2; i <= PWItems.length; i++) {
-      ASItems[i].classList.toggle("additional-services__gallery__item--mobile-hidden");
+      ASItems[i].classList.toggle("gallery__item--mobile-hidden");
     }
   });
 
