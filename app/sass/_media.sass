@@ -19,32 +19,18 @@
     background-size: auto
     background-position: 70% 95%
 
-  .performed-work__gallery__overlay
-    display: none
-  .performed-work
-    height: auto
-    &__content
-      height: auto !important
-    &__gallery
-      position: relative
-      max-height: 100%
-      height: auto !important
-      overflow: visible
-    .prev-block, .page-counter
-      display: none
-    .top-line
-      text-align: left
-      span
-        font-family: GothamProBold
-        font-size: 38px
-        line-height: 28px
-        color: #fff
-    .chat
-      display: none
 
-  .performed-work__gallery__group
-    flex-wrap: wrap
-    justify-content: center
+
+  .price-list__carousel__item--transformed
+    margin-left: -35px
+  .price-list__carousel
+    .owl-nav
+      .fas
+        color: #000
+      .owl-next
+        right: 3%
+      .owl-prev
+        left: 2%
 
 //Small: ≥576px
 +media-breakpoint-down(sm)
@@ -117,6 +103,33 @@
         left: 50%
         bottom: -16px
         font-weight: 200
+  .performed-work__gallery__overlay
+    display: none
+  .performed-work
+    height: auto
+    &__content
+      height: auto !important
+    &__gallery
+      position: relative
+      max-height: 100%
+      height: auto !important
+      overflow: visible
+    .prev-block, .page-counter
+      display: none
+    .top-line
+      text-align: left
+      padding-left: 40px
+      span
+        font-family: GothamProBold
+        font-size: 38px
+        line-height: 28px
+        color: #fff
+    .chat
+      display: none
+
+  .performed-work__gallery__group
+    flex-wrap: wrap
+    justify-content: center
   .performed-work__gallery__item
     max-width: 570px
     width: 100%
@@ -141,6 +154,53 @@
       display: none
   .watch-more
     display: inline-block
+
+  .price-list
+    .prev-block, .page-counter
+      display: none
+    .top-line
+      text-align: left
+      span
+        font-family: GothamProBold
+        font-size: 38px
+        line-height: 28px
+        color: #fff
+    .chat
+      display: none
+
+  .price-list__carousel
+    width: 101%
+    //max-width: 775px
+  .price-list__carousel__wrapper
+    padding: 0
+
+  .price-list__carousel__item--transformed
+    margin-left: -10px
+
+  .price-list
+  	position: relative
+  	height: 100vh
+  	background-color: #000
+  	background-image: url(../img/redcar-bg.jpg)
+  	background-size: contain
+  	padding-top: 40px
+  	.container, .row
+  		position: relative
+  	&__carousel
+  		margin-top: 80px
+  		.owl-item
+  			position: relative
+  		.owl-item.active
+  			text-align: center !important
+  		&__item
+        width: 280px
+
+  .owl-carousel
+    .owl-nav
+      .owl-next
+        right: 0.5%
+      .owl-prev
+        left: 3%
 //Extra small: >0
 +media-breakpoint-down(xs)
   .main-header
@@ -176,6 +236,52 @@
         .fas
           font-size: 30px
           line-height: 60px
+
+  .price-list__carousel
+    width: 100%
+  .price-list__carousel__wrapper--second
+    padding-right: 0
+
+  .price-list .container
+    padding: 0 !important
+
+  .price-list
+  	position: relative
+  	height: 100vh
+  	background-color: #000
+  	background-image: url(../img/redcar-bg.jpg)
+  	background-size: contain
+  	padding-top: 40px
+  	.container, .row
+  		position: relative
+  	&__carousel
+  		margin-top: 15px
+  		.owl-item
+  			position: relative
+  		.owl-item.active
+  			text-align: center !important
+
+  .price-list
+    height: auto
+    .top-line
+      text-align: left
+      padding-left: 55px
+
+  .price-list__carousel__item--transformed
+  	margin-left: -70px
+@media screen and (max-width: 370px)
+  .price-list__carousel__item--transformed
+  	margin-left: -80px
+  .owl-carousel
+    .owl-nav
+      .owl-next
+        right: 0.5%
+      .owl-prev
+        left: 4%
+
+@media screen and (min-width: 578px) and (max-width: 878px)
+  .price-list__carousel__item--transformed
+    margin-left: -20px
 /*==========  Mobile First  ==========*/
 //Extra small: <576px
 +media-breakpoint-up(xs)

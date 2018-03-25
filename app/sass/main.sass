@@ -320,8 +320,8 @@ body
 	height: 40px
 	border-radius: 10em
 	position: absolute
-	right: 0
-	bottom: 70px
+	right: 70px
+	bottom: 0px
 	background-image: url(../img/icons/chat-icon.svg)
 	background-position: center
 	background-repeat: no-repeat
@@ -482,7 +482,7 @@ body
 	&__carousel
 		//max-height: 532px
 		margin-top: 80px
-		width: 80%
+		width: 83%
 		.owl-item
 			position: relative
 		.owl-item.active
@@ -536,8 +536,14 @@ body
 					flex-basis: 55%
 					flex-shrink: 2
 				.button
+					position: relative
+					z-index: 15
 					flex-basis: 45%
+
 .owl-carousel .owl-stage-outer
+	.owl-item
+		position: relative
+		z-index: 0
 	.owl-item.active
 		position: relative
 		z-index: 1
@@ -548,4 +554,22 @@ body
 	position: relative
 	opacity: 1
 	z-index: 5 !important
+	margin-left: 0px
+
+.owl-carousel
+	.owl-nav
+		position: absolute
+		width: 100%
+		top: 50%
+		margin-top: -15px
+		right: 0
+		.fas
+			font-size: 30px
+			color: #fff
+		.owl-next
+			position: absolute
+			right: -75px
+		.owl-prev
+			position: absolute
+			left: -75px
 @import "media" // Always at the end
