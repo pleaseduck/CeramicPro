@@ -49,7 +49,7 @@
       display: none
     .chat
       display: none
-    .main-header__content__legend
+    .main-header__legend
       margin-top: 20px
       margin-bottom: 450px
 
@@ -66,7 +66,7 @@
     transition: left .5s ease
     .address
       display: none
-    .main-menu__contacts__item--request-a-call
+    .contacts__button
       display: none
     &--mobile
       position: fixed
@@ -80,10 +80,6 @@
       padding-right: 10%
       padding-top: 30px
       padding-bottom: 10px
-      .main-menu__contacts__item--request-a-call
-        &::before
-          width: 30px
-          height: 30px
     &.menu-opened
       left: 0
       height: 100%
@@ -107,7 +103,7 @@
         left: 50%
         bottom: -16px
         font-weight: 200
-  .performed-work__gallery__overlay
+  .performed-work__overlay
     display: none
   .performed-work
     height: auto
@@ -122,7 +118,7 @@
       display: none
     .top-line
       text-align: left
-      padding-left: 40px
+      padding-left: 15px
       span
         font-family: GothamProBold
         font-size: 38px
@@ -131,31 +127,35 @@
     .chat
       display: none
 
-  .performed-work__gallery__group
-    flex-wrap: wrap
-    justify-content: center
-  .performed-work__gallery__item
-    max-width: 570px
-    width: 100%
-    margin-right: 0
-    img
+  .performed-work
+    .gallery__group
+      flex-wrap: wrap
+      justify-content: center
+    .gallery__item
+      max-width: 570px
       width: 100%
-      height: auto
-    .performed-work__gallery__item__description
-      width: auto
-      max-width: 100%
-      font-size: 24px
-      .title
-        font-size: 32px
-      .see-more
-        width: 80px
-        height: 80px
-        margin-top: -40px
-        .fas
-          font-size: 50px
-          line-height: 80px
-    &--mobile-hidden
-      display: none
+      margin-right: 0
+      .gallery__image
+        width: 100%
+        height: auto
+      .gallery__description
+        width: auto
+        max-width: 100%
+        font-size: 21px
+        margin-top: 10px
+        line-height: 22px
+        .title
+          font-size: 28px
+          margin-bottom: 10px
+        .see-more
+          width: 80px
+          height: 80px
+          margin-top: -40px
+          .fas
+            font-size: 50px
+            line-height: 80px
+      &--mobile-hidden
+        display: none
   .button--watch-more
     display: inline-block
 
@@ -205,6 +205,48 @@
         right: 0.5%
       .owl-prev
         left: 3%
+
+  .additional-services__gallery__overlay
+    display: none
+  .additional-services
+    height: auto
+    &__content
+      height: auto !important
+    &__gallery
+      position: relative
+      max-height: 100%
+      height: auto !important
+      overflow: visible
+    .link--to-prev-block, .top-line__page-counter
+      display: none
+    .top-line
+      text-align: left
+      padding-left: 15px
+      span
+        font-family: GothamProBold
+        font-size: 32px
+        line-height: 28px
+        color: #fff
+    .chat
+      display: none
+
+  .additional-services__gallery__group
+    flex-wrap: wrap
+    justify-content: center
+  .additional-services__gallery__item
+    width: 100%
+    margin-right: 0
+    flex-basis: auto
+    .additional-services__gallery__item__description
+      //margin-top: 10px
+      padding-bottom: 10px
+    &--mobile-hidden
+      display: none
+  .button-wrapper
+    order: 3
+    justify-content: flex-start !important
+  .button--watch-more
+    display: inline-block
 //Extra small: >0
 +media-breakpoint-down(xs)
   .main-header
@@ -225,8 +267,8 @@
   .main-menu--mobile
     padding-top: 10px
 
-  .performed-work__gallery__item
-    .performed-work__gallery__item__description
+  .gallery__item
+    .gallery__description
       width: auto
       max-width: 100%
       font-size: 18px
@@ -269,7 +311,7 @@
     height: auto
     .top-line
       text-align: left
-      padding-left: 55px
+      padding-left: 40px
 
   .price-list__carousel__item--transformed
   	margin-left: -70px

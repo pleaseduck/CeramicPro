@@ -34,28 +34,26 @@
 	<div class="main-header">
 		<div class="main-menu" id="main-menu">
 			<div class="main-header__logo">
-				<a href="#"><img src="img/logo1.svg" alt="Ceramic Pro Авторизованный центр">
-					<span>Авторизованный центр</span></a>
+				<a href="#" class="logo-wrapper"><img src="img/logo1.svg" alt="Ceramic Pro Авторизованный центр">
+					<span class="logo-signature">Авторизованный центр</span></a>
 			</div>
-			<nav class="main-nav">
-				<ul>
-					<li class="active  main-nav__item"><a href="#">Главная</a></li>
-					<li class="main-nav__item"><a href="#">Выполненные работы</a></li>
-					<li class="main-nav__item"><a href="#">Цены</a></li>
-					<li class="main-nav__item"><a href="#">Дополнительные услуги</a></li>
-					<li class="main-nav__item"><a href="#">Акции</a></li>
-					<li class="main-nav__item"><a href="#">Вопрос-ответ</a></li>
-					<li class="main-nav__item"><a href="#">Отзывы</a></li>
-					<li class="main-nav__item"><a href="#">Сертификаты</a></li>
-					<li class="main-nav__item"><a href="#">О компании</a></li>
-					<li class="main-nav__item"><a href="#">Соц. сети</a></li>
-					<li class="main-nav__item"><a href="#">Контакты</a></li>
-				</ul>
-			</nav>
-			<div class="main-menu__contacts">
-				<a href="#" class="main-menu__contacts__item  main-menu__contacts__item--address"><i class="fas fa-map-marker-alt"></i>г. Иркутск, Ул.Ленина,1</a>
-				<a href="#" class="main-menu__contacts__item  main-menu__contacts__item--phone"><i class="fas fa-phone"></i> +7 (900) 123-45-67</a>
-				<a href="#" class="main-menu__contacts__item  main-menu__contacts__item--request-a-call"><i class="fas fa-phone"></i> Заказать звонок</a>
+			<ul class="main-nav">
+					<li class="main-nav__item--active  main-nav__item"><a href="#"  class="main-nav__link">Главная</a></li>
+					<li class="main-nav__item"><a href="#"  class="main-nav__link">Выполненные работы</a></li>
+					<li class="main-nav__item"><a href="#"  class="main-nav__link">Цены</a></li>
+					<li class="main-nav__item"><a href="#"  class="main-nav__link">Дополнительные услуги</a></li>
+					<li class="main-nav__item"><a href="#"  class="main-nav__link">Акции</a></li>
+					<li class="main-nav__item"><a href="#"  class="main-nav__link">Вопрос-ответ</a></li>
+					<li class="main-nav__item"><a href="#"  class="main-nav__link">Отзывы</a></li>
+					<li class="main-nav__item"><a href="#"  class="main-nav__link">Сертификаты</a></li>
+					<li class="main-nav__item"><a href="#"  class="main-nav__link">О компании</a></li>
+					<li class="main-nav__item"><a href="#"  class="main-nav__link">Соц. сети</a></li>
+					<li class="main-nav__item"><a href="#"  class="main-nav__link">Контакты</a></li>
+			</ul>
+			<div class="contacts">
+				<a href="#" class="contacts__item  contacts__address"><i class="fas fa-map-marker-alt"></i>г. Иркутск, Ул.Ленина,1</a>
+				<a href="#" class="contacts__item  contacts__phone"><i class="fas fa-phone"></i> +7 (900) 123-45-67</a>
+				<a href="#" class="contacts__item  contacts__button button button--transparent"><i class="fas fa-phone"></i> Заказать звонок</a>
 			</div>
 		</div>
 		<div class="container">
@@ -67,16 +65,16 @@
 								<span class="hamburger-inner"></span>
 							</span>
 						</a>
-						<div class="main-menu__contacts">
-							<a href="#" class="main-menu__contacts__item  main-menu__contacts__item--request-a-call"><i class="fas fa-phone"></i> Заказать звонок</a>
+						<div class="contacts">
+							<a href="#" class="contacts__item  contacts__button button button--transparent"><i class="fas fa-phone"></i> Заказать звонок</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-10 offset-md-2  col-12  main-header__content row">
 						<div class="col-md-8  col-12  heading-wrapper">
-							<h2 class="h2  main-header__content__heading">Нанесение <span>защитно-керамических составов</span> на кузов автомобиля</h2>
+							<h2 class="h2  main-header__content__heading">Нанесение <span class="labeled_text">защитно-керамических составов</span> на кузов автомобиля</h2>
 						</div>
-						<div class="col-md-4 col-12  main-header__content__legend">
+						<div class="col-md-4 col-12  main-header__legend">
 							<div class="top-line">
 								<span class="top-line__heading">Главная</span>
 								<span class="top-line__page-counter"><span class="current-page">1</span>/11</span>
@@ -114,114 +112,114 @@
 								</div>
 							</div>
 							<div class="col-12  performed-work__gallery">
-										<div class="performed-work__gallery__overlay"></div>
-										<div class="performed-work__gallery__group">
-											<div class="performed-work__gallery__item">
-												<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-														<img src="img/mustang.jpg" alt="">
+										<div class="performed-work__overlay"></div>
+										<div class="gallery__group">
+											<div class="gallery__item">
+												<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+														<img src="img/mustang.jpg" alt=""  class="gallery__image">
 												</a>
-												<p class="performed-work__gallery__item__description">
+												<p class="gallery__description">
 													<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 													<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 												</p>
 											</div>
-											<div class="performed-work__gallery__item">
-												<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-																																		<img src="img/mustang.jpg" alt="">
+											<div class="gallery__item">
+												<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+																																		<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																	</a>
-												<p class="performed-work__gallery__item__description">
+												<p class="gallery__description">
 													<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 													<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 												</p>
 											</div>
-											<div class="performed-work__gallery__item  performed-work__gallery__item--mobile-hidden">
-												<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-																																			<img src="img/mustang.jpg" alt="">
+											<div class="gallery__item gallery__item--mobile-hidden">
+												<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+																																			<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																		</a>
-												<p class="performed-work__gallery__item__description">
+												<p class="gallery__description">
 													<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 													<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 												</p>
 											</div>
-											<div class="performed-work__gallery__item  performed-work__gallery__item--mobile-hidden">
-												<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-																																				<img src="img/mustang.jpg" alt="">
+											<div class="gallery__item gallery__item--mobile-hidden">
+												<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+																																				<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																			</a>
-												<p class="performed-work__gallery__item__description">
+												<p class="gallery__description">
 													<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 													<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 												</p>
 											</div>
-											<div class="performed-work__gallery__item  performed-work__gallery__item--mobile-hidden">
-												<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-														<img src="img/mustang.jpg" alt="">
+											<div class="gallery__item gallery__item--mobile-hidden">
+												<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+														<img src="img/mustang.jpg" alt="" class="gallery__image">
 												</a>
-												<p class="performed-work__gallery__item__description">
+												<p class="gallery__description">
 													<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 													<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 												</p>
 											</div>
-											<div class="performed-work__gallery__item  performed-work__gallery__item--mobile-hidden">
-												<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-														<img src="img/mustang.jpg" alt="">
+											<div class="gallery__item gallery__item--mobile-hidden">
+												<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+														<img src="img/mustang.jpg" alt="" class="gallery__image">
 												</a>
-												<p class="performed-work__gallery__item__description">
+												<p class="gallery__description">
 													<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 													<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 												</p>
 											</div>
 										</div>
-									<div class=" performed-work__gallery__group">
-										<div class="performed-work__gallery__item  performed-work__gallery__item--mobile-hidden">
-											<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-													<img src="img/mustang.jpg" alt="">
+									<div class="gallery__group">
+										<div class="gallery__item gallery__item--mobile-hidden">
+											<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+													<img src="img/mustang.jpg" alt="" class="gallery__image">
 											</a>
-											<p class="performed-work__gallery__item__description">
+											<p class="gallery__description">
 												<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 												<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 											</p>
 										</div>
-										<div class="performed-work__gallery__item  performed-work__gallery__item--mobile-hidden">
-											<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-																																	<img src="img/mustang.jpg" alt="">
+										<div class="gallery__item gallery__item--mobile-hidden">
+											<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+																																	<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																</a>
-											<p class="performed-work__gallery__item__description">
+											<p class="gallery__description">
 												<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 												<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 											</p>
 										</div>
-										<div class="performed-work__gallery__item  performed-work__gallery__item--mobile-hidden">
-											<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-																																		<img src="img/mustang.jpg" alt="">
+										<div class="gallery__item gallery__item--mobile-hidden">
+											<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+																																		<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																	</a>
-											<p class="performed-work__gallery__item__description">
+											<p class="gallery__description">
 												<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 												<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 											</p>
 										</div>
-										<div class="performed-work__gallery__item  performed-work__gallery__item--mobile-hidden">
-											<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-																																			<img src="img/mustang.jpg" alt="">
+										<div class="gallery__item gallery__item--mobile-hidden">
+											<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+																																			<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																		</a>
-											<p class="performed-work__gallery__item__description">
+											<p class="gallery__description">
 												<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 												<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 											</p>
 										</div>
-										<div class="performed-work__gallery__item  performed-work__gallery__item--mobile-hidden">
-											<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-													<img src="img/mustang.jpg" alt="">
+										<div class="gallery__item gallery__item--mobile-hidden">
+											<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+													<img src="img/mustang.jpg" alt="" class="gallery__image">
 											</a>
-											<p class="performed-work__gallery__item__description">
+											<p class="gallery__description">
 												<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 												<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 											</p>
 										</div>
-										<div class="performed-work__gallery__item  performed-work__gallery__item--mobile-hidden">
-											<a class="fancy-image  performed-work__gallery__item__image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
-													<img src="img/mustang.jpg" alt="">
+										<div class="gallery__item gallery__item--mobile-hidden">
+											<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
+													<img src="img/mustang.jpg" alt="" class="gallery__image">
 											</a>
-											<p class="performed-work__gallery__item__description">
+											<p class="gallery__description">
 												<a href="#" class="title">Название кейса</a> Флобер,описывая нервный припадок Эммы Бовари.
 												<a href="#" class="see-more"><i class="fas fa-angle-right"></i></a>
 											</p>
@@ -230,7 +228,7 @@
 									</div>
 							</div>
 
-							<a href="#" class="button--watch-more  button--watch-more--performed-work"> Ещё работы</a>
+							<a href="#" class="button--watch-more  button--performed-work"> Ещё работы</a>
 				</div>
 			</div>
 			<a href="#" class="bottom-line">
@@ -326,6 +324,174 @@
 					<div class="chat"></div>
 				</a>
 			</div>
+
+			<div class="additional-services">
+				<a href="#" class="link  link--to-prev-block">
+					<span class="prev-page">Цены<i class="fas fa-angle-down"></i></span>
+				</a>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 offset-md-2 additional-services__content  row">
+									<div class="col-12  top-line-wrapper">
+										<div class="top-line">
+											<span class="top-line__heading">Дополнительные услуги</span>
+											<span class="top-line__page-counter"><span class="current-page">4</span>/11</span>
+										</div>
+									</div>
+									<div class="col-12  additional-services__gallery">
+												<div class="additional-services__gallery__overlay"></div>
+												<div class="additional-services__gallery__group">
+													<div class="additional-services__gallery__item">
+															<div class="row">
+																<div class="col-6">
+																	<img src="img/icons/service1.svg" alt="Наименование услуги">
+																</div>
+																<div class="col-md-6 col-12 d-flex  justify-content-end button-wrapper">
+																	<a href="#" class="button">Оставить заявку</a>
+																</div>
+																<div class="col-12">
+																	<p class="additional-services__gallery__item__description">
+																	 <a href="#" class="title">Наименование услуги</a> Описание предоставляемой дополнительной услуги, где можно описать суть процедуры в 2-3 предложениях.
+																	</p>
+																</div>
+															</div>
+													</div>
+													<div class="additional-services__gallery__item">
+															<div class="row">
+																<div class="col-6">
+																	<img src="img/icons/service1.svg" alt="Наименование услуги">
+																</div>
+																<div class="col-md-6  col-12  d-flex  justify-content-end button-wrapper">
+																	<a href="#" class="button">Оставить заявку</a>
+																</div>
+																<div class="col-12">
+																	<p class="additional-services__gallery__item__description">
+																	 <a href="#" class="title">Наименование услуги</a> Описание предоставляемой дополнительной услуги, где можно описать суть процедуры в 2-3 предложениях.
+																	</p>
+																</div>
+															</div>
+													</div>
+													<div class="additional-services__gallery__item  additional-services__gallery__item--mobile-hidden">
+															<div class="row">
+																<div class="col-6">
+																	<img src="img/icons/service1.svg" alt="Наименование услуги">
+																</div>
+																<div class="col-md-6  col-12  d-flex  justify-content-end button-wrapper">
+																	<a href="#" class="button">Оставить заявку</a>
+																</div>
+																<div class="col-12">
+																	<p class="additional-services__gallery__item__description">
+																	 <a href="#" class="title">Наименование услуги</a> Описание предоставляемой дополнительной услуги, где можно описать суть процедуры в 2-3 предложениях.
+																	</p>
+																</div>
+															</div>
+													</div>
+												</div>
+												<div class="additional-services__gallery__group">
+													<div class="additional-services__gallery__item  additional-services__gallery__item--mobile-hidden">
+															<div class="row">
+																<div class="col-6">
+																	<img src="img/icons/service1.svg" alt="Наименование услуги">
+																</div>
+																<div class="col-md-6  col-12  d-flex  justify-content-end button-wrapper">
+																	<a href="#" class="button">Оставить заявку</a>
+																</div>
+																<div class="col-12">
+																	<p class="additional-services__gallery__item__description">
+																	 <a href="#" class="title">Наименование услуги</a> Описание предоставляемой дополнительной услуги, где можно описать суть процедуры в 2-3 предложениях.
+																	</p>
+																</div>
+															</div>
+													</div>
+													<div class="additional-services__gallery__item  additional-services__gallery__item--mobile-hidden">
+															<div class="row">
+																<div class="col-6">
+																	<img src="img/icons/service1.svg" alt="Наименование услуги">
+																</div>
+																<div class="col-md-6  col-12  d-flex  justify-content-end button-wrapper">
+																	<a href="#" class="button">Оставить заявку</a>
+																</div>
+																<div class="col-12">
+																	<p class="additional-services__gallery__item__description">
+																	 <a href="#" class="title">Наименование услуги</a> Описание предоставляемой дополнительной услуги, где можно описать суть процедуры в 2-3 предложениях.
+																	</p>
+																</div>
+															</div>
+													</div>
+													<div class="additional-services__gallery__item  additional-services__gallery__item--mobile-hidden">
+															<div class="row">
+																<div class="col-6">
+																	<img src="img/icons/service1.svg" alt="Наименование услуги">
+																</div>
+																<div class="col-md-6  col-12  d-flex  justify-content-end button-wrapper">
+																	<a href="#" class="button">Оставить заявку</a>
+																</div>
+																<div class="col-12">
+																	<p class="additional-services__gallery__item__description">
+																	 <a href="#" class="title">Наименование услуги</a> Описание предоставляемой дополнительной услуги, где можно описать суть процедуры в 2-3 предложениях.
+																	</p>
+																</div>
+															</div>
+													</div>
+												</div>
+												<div class="additional-services__gallery__group">
+													<div class="additional-services__gallery__item  additional-services__gallery__item--mobile-hidden">
+															<div class="row">
+																<div class="col-6">
+																	<img src="img/icons/service1.svg" alt="Наименование услуги">
+																</div>
+																<div class="col-md-6  col-12  d-flex  justify-content-end button-wrapper">
+																	<a href="#" class="button">Оставить заявку</a>
+																</div>
+																<div class="col-12">
+																	<p class="additional-services__gallery__item__description">
+																	 <a href="#" class="title">Наименование услуги</a> Описание предоставляемой дополнительной услуги, где можно описать суть процедуры в 2-3 предложениях.
+																	</p>
+																</div>
+															</div>
+													</div>
+													<div class="additional-services__gallery__item  additional-services__gallery__item--mobile-hidden">
+															<div class="row">
+																<div class="col-6">
+																	<img src="img/icons/service1.svg" alt="Наименование услуги">
+																</div>
+																<div class="col-md-6  col-12  d-flex  justify-content-end button-wrapper">
+																	<a href="#" class="button">Оставить заявку</a>
+																</div>
+																<div class="col-12">
+																	<p class="additional-services__gallery__item__description">
+																	 <a href="#" class="title">Наименование услуги</a> Описание предоставляемой дополнительной услуги, где можно описать суть процедуры в 2-3 предложениях.
+																	</p>
+																</div>
+															</div>
+													</div>
+													<div class="additional-services__gallery__item  additional-services__gallery__item--mobile-hidden">
+															<div class="row">
+																<div class="col-6">
+																	<img src="img/icons/service1.svg" alt="Наименование услуги">
+																</div>
+																<div class="col-md-6  col-12  d-flex  justify-content-end button-wrapper">
+																	<a href="#" class="button">Оставить заявку</a>
+																</div>
+																<div class="col-12">
+																	<p class="additional-services__gallery__item__description">
+																	 <a href="#" class="title">Наименование услуги</a> Описание предоставляемой дополнительной услуги, где можно описать суть процедуры в 2-3 предложениях.
+																	</p>
+																</div>
+															</div>
+													</div>
+												</div>
+
+									</div>
+
+									<a href="#" class="button--watch-more  button--watch-more--additional-services"> Ещё доп.услуги</a>
+						</div>
+					</div>
+					<a href="#" class="bottom-line">
+						<span class="bottom-line__link  bottom-line__link--to-next-block  link  link--to-next-block">Акции<i class="fas fa-angle-down"></i></span>
+						<div class="chat"></div>
+					</a>
+				</div>
 
 	</div>
 	<script src="js/scripts.min.js"></script>

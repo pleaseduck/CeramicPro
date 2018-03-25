@@ -1,8 +1,9 @@
 $(function() {
-
+//Инициализация плагина галереи
  $(document).ready(function() {
-	$("fancy-image").fancybox();
+	$(".fancy-image").fancybox();
 
+// Инициализация плагина карусели
   $(".price-list__carousel").owlCarousel({
     items: 3,
     nav: true,
@@ -11,51 +12,47 @@ $(function() {
     navText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
     center: true
  });
- (function() {
-
-   const allActiveELements = document.querySelectorAll(".owl-item.active");
+// Трансформация активного элемента в карусели тарифов
+ function resetTransformation() {
+   const allActiveELements = document.querySelectorAll(".owl-item");
 
    for (var i = 0; i < allActiveELements.length; i++) {
+      allActiveELements[i].style.zIndex = "1"
     let currentDiv = allActiveELements[i].childNodes;
     currentDiv[0].classList.remove("price-list__carousel__item--transformed");
    }
-
+ };
+ function transformElement() {
    let secondActiveElement = document.querySelectorAll(".owl-item.active")[1]
    secondActiveElement.style.zIndex = "5";
    let divToScale = secondActiveElement.querySelector(".price-list__carousel__item")
    divToScale.classList.toggle("price-list__carousel__item--transformed")
+ };
+ function transformActive() {
+   resetTransformation();
+    transformElement();
+ };
+
+
+
+(function() {
+  transformActive();
  })();
 
+
+
  document.querySelector(".price-list__carousel .owl-nav").addEventListener("click",function() {
-
-   const allActiveELements = document.querySelectorAll(".owl-item.active");
-
-   for (var i = 0; i < allActiveELements.length; i++) {
-     allActiveELements[i].style.zIndex = "1"
-    let currentDiv = allActiveELements[i].childNodes;
-    currentDiv[0].classList.remove("price-list__carousel__item--transformed");
-   }
-
-   let secondActiveElement = document.querySelectorAll(".owl-item.active")[1]
-   secondActiveElement.style.zIndex = "5";
-   let divToScale = secondActiveElement.querySelector(".price-list__carousel__item")
-   divToScale.classList.toggle("price-list__carousel__item--transformed")
+  transformActive();
  });
 
-  document.querySelector(".price-list__carousel").addEventListener("mousemove",function() {
-    const allActiveELements = document.querySelectorAll(".owl-item.active");
-    for (var i = 0; i < allActiveELements.length; i++) {
-    allActiveELements[i].style.zIndex = "2"
-     let currentDiv = allActiveELements[i].childNodes;
-     currentDiv[0].classList.remove("price-list__carousel__item--transformed");
-    }
 
-    let secondActiveElement = document.querySelectorAll(".owl-item.active")[1]
-    secondActiveElement.style.zIndex = "5";
-    let divToScale = secondActiveElement.querySelector(".price-list__carousel__item")
-    divToScale.classList.toggle("price-list__carousel__item--transformed")
+
+  document.querySelector(".price-list__carousel").addEventListener("mousemove",function() {
+   transformActive();
   })
 });
+
+// Реализация мобильного меню
   const hamburger = document.querySelector(".hamburger");
   const mainNav = document.querySelector(".main-menu");
   const overlay = document.querySelector(".overlay");
@@ -71,13 +68,24 @@ $(function() {
     hamburger.classList.toggle("is-active");
   });
 
-  const viewMorePW = document.querySelector(".button--watch-more--performed-work");
-  const PWItems = document.querySelectorAll(".performed-work__gallery__item");
+// Реализация подгрузки информации для различных блоков
+  const viewMorePW = document.querySelector(".button--performed-work");
+  const PWItems = document.querySelectorAll(".performed-work .gallery__item");
 
   viewMorePW.addEventListener("click",function(evt) {
     evt.preventDefault();
     for (var i = 2; i <= PWItems.length; i++) {
-      PWItems[i].classList.toggle("performed-work__gallery__item--mobile-hidden");
+      PWItems[i].classList.toggle("gallery__item--mobile-hidden");
+    }
+  });
+
+  const viewMoreAS = document.querySelector(".button--watch-more--additional-services");
+  const ASItems = document.querySelectorAll(".additional-services__gallery__item");
+
+  viewMoreAS.addEventListener("click",function(evt) {
+    evt.preventDefault();
+    for (var i = 2; i <= PWItems.length; i++) {
+      ASItems[i].classList.toggle("additional-services__gallery__item--mobile-hidden");
     }
   });
 
