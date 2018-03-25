@@ -49,7 +49,7 @@
       display: none
     .chat
       display: none
-    .legend
+    .main-header__content__legend
       margin-top: 20px
       margin-bottom: 450px
 
@@ -66,7 +66,7 @@
     transition: left .5s ease
     .address
       display: none
-    .make-a-call
+    .main-menu__contacts__item--request-a-call
       display: none
     &--mobile
       position: fixed
@@ -80,6 +80,10 @@
       padding-right: 10%
       padding-top: 30px
       padding-bottom: 10px
+      .main-menu__contacts__item--request-a-call
+        &::before
+          width: 30px
+          height: 30px
     &.menu-opened
       left: 0
       height: 100%
@@ -93,7 +97,7 @@
     position: absolute
     bottom: 40px
     text-align: center
-    .next-page
+    .bottom-line__link
       display: block
       text-align: center
       position: relative
@@ -114,7 +118,7 @@
       max-height: 100%
       height: auto !important
       overflow: visible
-    .prev-block, .page-counter
+    .link--to-prev-block, .top-line__page-counter
       display: none
     .top-line
       text-align: left
@@ -137,7 +141,7 @@
     img
       width: 100%
       height: auto
-    .description
+    .performed-work__gallery__item__description
       width: auto
       max-width: 100%
       font-size: 24px
@@ -152,11 +156,11 @@
           line-height: 80px
     &--mobile-hidden
       display: none
-  .watch-more
+  .button--watch-more
     display: inline-block
 
   .price-list
-    .prev-block, .page-counter
+    .link--to-prev-block, .top-line__page-counter
       display: none
     .top-line
       text-align: left
@@ -222,7 +226,7 @@
     padding-top: 10px
 
   .performed-work__gallery__item
-    .description
+    .performed-work__gallery__item__description
       width: auto
       max-width: 100%
       font-size: 18px
