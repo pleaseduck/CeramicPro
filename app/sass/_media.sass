@@ -13,7 +13,7 @@
       background-size: contain
 
   .about-company
-    .about-company__photos-wrapper
+    .photos-wrapper
       justify-content: space-around
       .photos-wrapper__column
         margin-right: 10px
@@ -40,7 +40,6 @@
           right: 3%
         .owl-prev
           left: 2%
-
 //Small: ≥576px
 +media-breakpoint-down(sm)
 
@@ -58,11 +57,11 @@
       display: none
     .chat
       display: none
-    .main-header__legend
+    .legend
       margin-top: 20px
       margin-bottom: 450px
 
-  .main-menu
+  .menu-bar
     left: -3500px
     padding-left: 5%
     padding-right: 5%
@@ -147,10 +146,12 @@
     .gallery__group
       flex-wrap: wrap
       justify-content: center
+      margin-bottom: 0
     .gallery__item
       max-width: 570px
       width: 100%
       margin-right: 0
+      margin-bottom: 30px
       .gallery__image
         width: 100%
         height: auto
@@ -250,10 +251,12 @@
     .gallery__group
       flex-wrap: wrap
       justify-content: center
+      margin-bottom: 0
     .gallery__item
       width: 100%
       margin-right: 0
       flex-basis: auto
+      margin-bottom: 30px
       &--mobile-hidden
         display: none
       .gallery__description
@@ -322,10 +325,12 @@
     .gallery__group
       flex-wrap: wrap
       justify-content: center
+      margin-bottom: 0
     .gallery__item
       width: 100%
       margin-right: 0
       flex-basis: auto
+      margin-bottom: 30px
       &--mobile-hidden
         display: none
       .gallery__description
@@ -338,13 +343,12 @@
     height: auto
     .about-company__content-wrapper
       height: auto
-    .about-company__photos-wrapper
+    .photos-wrapper
       position: relative
       z-index: 10
       display: flex
       margin-bottom: 30px
       margin-top: 30px
-      //height: 200px
     .about-company__content
       margin-top: 0
       margin-bottom: 50px
@@ -369,7 +373,7 @@
     background-size: 600px
     background-position: -200px 90%
 
-  .main-menu
+  .menu-bar
     width: 75%
 
   .hamburger
@@ -378,7 +382,7 @@
     	margin-left: -51px
   		margin-top: -15px
 
-  .main-menu--mobile
+  .menu-bar--mobile
     padding-top: 10px
 
 
@@ -448,9 +452,9 @@
 
   .about-company
     .about-company__content
-      .content__heading
+      .content-slogan
         font-size: 18px
-      .content__text
+      .content-text
         font-size: 13px
 @media screen and (max-width: 370px)
   .price-list
