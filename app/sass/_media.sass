@@ -31,9 +31,11 @@
 
 
   .price-list
-    .carousel__item--transformed
-      margin-left: -35px
+    .owl-item.center
+      .carousel__item
+    	  margin-left: -25%
     .price-list__carousel
+      width: 100%
       .owl-nav
         .fas
           color: #000
@@ -55,10 +57,17 @@
     height: auto
     background-size: 700px
     background-position: 0px 90%
+    .heading-wrapper
+      margin-top: 100px
+      .heading
+        font-size: 26px
+        line-height: 28px
+    .legend__content
+      font-size: 12px
+    .legend, .heading-wrapper
+      margin-left: 20px
     .top-line
       display: none
-  .heading-wrapper
-    margin-top: 100px
   .main-header__content
     height: auto
     justify-content: flex-start
@@ -176,13 +185,13 @@
         .title
           font-size: 28px
           margin-bottom: 10px
-        .see-more
-          width: 80px
-          height: 80px
-          margin-top: -40px
+        .button--see-more
+          width: 60px
+          height: 60px
+          margin-top: -30px
           .fas
             font-size: 50px
-            line-height: 80px
+            line-height: 60px
       &--mobile-hidden
         display: none
   .button--watch-more
@@ -218,7 +227,6 @@
   	padding-top: 40px
   	.container, .row
   		position: relative
-
   .price-list__carousel
     margin-top: 80px
     .owl-item
@@ -483,21 +491,6 @@
   .price-list
     .carousel__wrapper--second
       padding-right: 0
-    .gallery__item
-      .gallery__description
-        width: auto
-        max-width: 100%
-        font-size: 18px
-        .title
-          font-size: 24px
-          line-height: 26px
-        .see-more
-          width: 60px
-          height: 60px
-          margin-top: -30px
-          .fas
-            font-size: 30px
-            line-height: 60px
 
   .price-list .container
     padding: 0 !important
@@ -513,10 +506,12 @@
   		position: relative
   	&__carousel
   		margin-top: 15px
-  		.owl-item
-  			position: relative
-  		.owl-item.active
-  			text-align: center !important
+    .owl-item
+      //width: 308px !important
+      position: relative
+    .owl-item.center
+      .carousel__item
+      	 margin-left: -51%
 
   .price-list
     height: auto
@@ -555,8 +550,10 @@
   		margin-left: 30%
 @media screen and (max-width: 370px)
   .price-list
-    .carousel__item--transformed
-    	margin-left: -80px
+    .owl-item.center
+      .carousel__item
+    	  margin-left: -80.5%
+
     .owl-carousel
       .owl-nav
         .owl-next
@@ -569,8 +566,8 @@
       bottom: 12%
 @media screen and (min-width: 578px) and (max-width: 878px)
   .price-list
-    .carousel__item--transformed
-      margin-left: -20px
+    .owl-item.center
+      //margin-left: -60px
 /*==========  Mobile First  ==========*/
 //Extra small: <576px
 +media-breakpoint-up(xs)
