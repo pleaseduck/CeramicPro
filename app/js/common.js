@@ -63,17 +63,17 @@ $(function() {
 
 // Реализация мобильного меню
   const hamburger = document.querySelector(".hamburger");
-  const mainNav = document.querySelector(".menu-bar");
+  const mainNav = document.querySelector(".sidebar");
   const overlay = document.querySelector(".overlay");
 
   hamburger.addEventListener("click", function() {
     if (hamburger.classList.contains("is-active")) {
-      document.querySelector(".menu-bar--mobile").style.justifyContent = "space-between";
+      document.querySelector(".sidebar--mobile").style.justifyContent = "space-between";
     } else {
-      document.querySelector(".menu-bar--mobile").style.justifyContent = "flex-end";
+      document.querySelector(".sidebar--mobile").style.justifyContent = "flex-end";
     };
     mainNav.classList.toggle("menu-opened");
-    document.querySelector(".menu-bar--mobile").classList.toggle("menu-bar__mobile--static");
+    document.querySelector(".sidebar--mobile").classList.toggle("sidebar__mobile--static");
     hamburger.classList.toggle("is-active");
   });
 
