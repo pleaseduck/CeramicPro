@@ -63,6 +63,20 @@ body
 		background-color: transparent
 		border: 1px solid $accent
 		color: $accent
+	&.button--see-more
+		padding: 0
+		display: inline-block
+		width: 45px
+		height: 45px
+		background-color: $accent
+		border-radius: 10em
+		text-align: center
+		&:hover
+			background-color: darken($accent, 10%)
+		.fas
+			color: #fff
+			font-size: 30px
+			line-height: 45px
 
 .img-responsive
 	display: block
@@ -370,14 +384,9 @@ body
 	padding-top: 40px
 	.container, .row
 		position: relative
-	.performed-work__content
-		height: 100vh
-		position: relative
-	.bottom-line
-		text-align: center
-	.top-line-wrapper
-		margin-bottom: 0
-		max-height: 30px
+.performed-work__content
+	height: 100vh
+	position: relative
 
 .performed-work__gallery
 	overflow-x: scroll
@@ -386,20 +395,12 @@ body
 	max-height: 570px
 	margin-top: 55px
 	position: absolute
-	.performed-work__overlay
-		position: fixed
-		right: 0
-		top: 0
-		height: 100vh
-		margin-right: -100px
-		width: 400px
-		background-image: linear-gradient(to right, transparent 0%, #000 80%)
 	.gallery__group
 		display: flex
 		flex-direction: row
 		margin-bottom: 30px
-	.gallery__group--marginless
-		margin-bottom: 0
+		&--marginless
+			margin-bottom: 0
 	.gallery__item
 		display: flex
 		flex-direction: column
@@ -429,24 +430,21 @@ body
 				cursor: pointer
 				&:hover
 					text-decoration: none
-			.see-more
-				display: inline-block
-				width: 45px
-				height: 45px
-				background-color: $accent
-				border-radius: 10em
+			.button--see-more
 				position: absolute
 				right: 0
 				top: 50%
 				margin-top: -22.5px
-				text-align: center
-				&:hover
-					background-color: darken($accent, 10%)
-				.fas
-					color: #fff
-					font-size: 30px
-					line-height: 45px
 
+.performed-work__overlay
+	position: fixed
+	right: 0
+	top: 0
+	height: 100vh
+	margin-right: -100px
+	width: 400px
+	background-image: linear-gradient(to right, transparent 0%, #000 80%)
+	
 .performed-work__gallery::-webkit-scrollbar-button
 	background-image: url('')
 	background-repeat: no-repeat
