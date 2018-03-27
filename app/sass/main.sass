@@ -746,13 +746,9 @@ body
 	padding-top: 40px
 	.container, .row
 		position: relative
-	.questions__content
-		height: 100vh
-		position: relative
-		//z-index: 15
-	.top-line-wrapper
-		margin-bottom: 0
-		max-height: 30px
+.questions__content
+	height: 100vh
+	position: relative
 
 .questions__gallery
 	overflow-x: scroll
@@ -794,26 +790,27 @@ body
 		margin-right: 30px
 		border-image: linear-gradient(to top, #040505 25%, #fff 100%)
 		border-image-slice: 1
-		.gallery__description
-			font-family: GothamProLight
-			font-size: 12px
-			color: #a6a6a6
-			position: relative
-			text-align: left
-			width: 100%
-			margin: 0
-			.title
-				font-size: 16px
-				line-height: 16px
-				display: block
-				color: #fff
-				&:hover
-					text-decoration: none
-			.link--more-information
-				display: block
-				font-size: 12px
-				color: $accent
-				text-decoration: underline
+
+.question__item
+	font-family: GothamProLight
+	font-size: 12px
+	color: #a6a6a6
+	position: relative
+	text-align: left
+	width: 100%
+	margin: 0
+	.link--more-information
+		display: block
+		font-size: 12px
+		color: $accent
+		text-decoration: underline
+.question__title
+	font-size: 16px
+	line-height: 16px
+	display: block
+	color: #fff
+	&:hover
+		text-decoration: none
 
 .questions__gallery::-webkit-scrollbar-button
 	background-image: url('')
