@@ -410,21 +410,14 @@
     overflow: visible
   .review__author
     font-size: 14px
-    
+
   .social-networks
     display: none
 
   .certificates
     height: auto
-    .certificates__content
-      width: 100% !important
-      padding-right: 0 !important
-    .certificates__gallery
-      padding-right: 0 !important
       .gallery__overlay
         display: none
-    &__content
-      height: auto !important
     &__gallery
       position: relative
       max-height: 100%
@@ -433,15 +426,6 @@
       margin-top: 35px
     .link--to-prev-block, .top-line__page-counter
       display: none
-    .top-line
-      text-align: left
-      padding-left: 15px
-      margin-bottom: 0
-      .top-line__heading
-        font-family: GothamProBold
-        font-size: 32px
-        line-height: 28px
-        color: #fff
     .chat
       display: none
     .gallery__group
@@ -458,6 +442,11 @@
       .gallery__item--marginless
         margin-right: 0
 
+.certificates__content
+  width: 100% !important
+  padding-right: 0 !important
+.certificates__gallery
+  padding-right: 0 !important
 
 +media-breakpoint-down(xs)
   .main-header
