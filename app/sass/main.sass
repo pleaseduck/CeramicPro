@@ -1060,14 +1060,16 @@ body
 	.container, .row
 		position: relative
 .certificates__content
-	height: 100vh
+	height: 76vh
 	position: relative
+	display: flex
+	flex-direction: column
+	justify-content: center
 
 .certificates__gallery
 	overflow-x: scroll
 	overflow-y: hidden
-	height: 100vh
-	margin-top: 55px
+	//margin-top: 55px
 	max-height: 550px
 	position: absolute
 	display: -webkit-flex
@@ -1144,11 +1146,16 @@ body
 			margin-bottom: 30px
 			max-height: 50%
 .about-company__content-wrapper
-	height: 100vh
+	height: 76vh
+	.row
+		height: 100%
+		//flex-direction: column
+		//justify-content: space-between
 
 .photos-set
 	z-index: 2
 	display: flex
+	position: relative
 
 .photos-set__column
 	display: flex
@@ -1177,7 +1184,6 @@ body
 	color: #fff
 	max-height: 150px
 	padding-bottom: 0
-	margin-top: -120px
 .about-company__slogan
 	font-family: GothamProBold
 	font-size: 24px
@@ -1196,21 +1202,21 @@ body
 	background-size: cover
 	padding-top: 40px
 	.container, .row
-		height: 100vh
 		position: relative
 
 .social-networks__content-wrapper
 	position: static !important
-	max-height: 640px !important
+	height: 75vh
 	justify-content: flex-start !important
 .social-networks__content
 	position: relative
 	z-index: 2
-	height: 70vh
-	margin-top: 35px
+	height: 100%
+	//margin-top: 35px
 	display: flex
 	flex-direction: column
 	justify-content: space-between
+	align-items: center
 
 .widget
 	width: 100%
