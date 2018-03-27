@@ -590,12 +590,10 @@ body
 	padding-top: 40px
 	.container, .row
 		position: relative
-	.additional-services__content
-		height: 100vh
-		position: relative
-	.top-line-wrapper
-		margin-bottom: 0
-		max-height: 30px
+.additional-services__content
+	height: 100vh
+	position: relative
+
 
 .additional-services__gallery
 	overflow-x: scroll
@@ -604,8 +602,6 @@ body
 	margin-top: 55px
 	max-height: 580px
 	position: absolute
-	display: -webkit-flex
-	display: -ms-flex
 	display: flex
 	flex-direction: column
 	.gallery__overlay
@@ -637,27 +633,27 @@ body
 		margin-right: 30px
 		border-image: linear-gradient(to top, #040505 25%, #fff 100%)
 		border-image-slice: 1
-		.gallery-image
-			width: 50px
-			height: auto
-		a.button
-			width: 145px
-		.gallery__description
-			font-family: GothamProLight
-			font-size: 12px
-			color: #a6a6a6
-			position: relative
-			text-align: left
-			width: 100%
-			margin: 0
-			.title
-				font-size: 16px
-				left: 38px
-				display: block
-				color: #fff
-				cursor: pointer
-				&:hover
-					text-decoration: none
+.additional-service__image
+	width: 50px
+	height: auto
+.additional-service__button
+	width: 145px
+.additional-service__description
+	font-family: GothamProLight
+	font-size: 12px
+	color: #a6a6a6
+	position: relative
+	text-align: left
+	width: 100%
+	margin: 0
+	.title
+		font-size: 16px
+		left: 38px
+		display: block
+		color: #fff
+		cursor: pointer
+		&:hover
+			text-decoration: none
 
 .additional-services__gallery::-webkit-scrollbar-button
 	background-image: url('')
