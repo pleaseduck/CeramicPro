@@ -40,6 +40,12 @@
           right: 3%
         .owl-prev
           left: 2%
+
+  .promotions__carousel
+    .owl-dots
+      position: absolute
+      margin-top: 0
+      bottom: 0
 //Small: ≥576px
 +media-breakpoint-down(sm)
 
@@ -58,6 +64,7 @@
     .legend
       margin-top: 20px
       margin-bottom: 450px
+
   .top-line
     text-align: left
     padding-left: 15px
@@ -241,14 +248,6 @@
       overflow: visible
     .link--to-prev-block, .top-line__page-counter
       display: none
-    .top-line
-      text-align: left
-      padding-left: 15px
-      .top-line__heading
-        font-family: GothamProBold
-        font-size: 32px
-        line-height: 28px
-        color: #fff
     .chat
       display: none
 
@@ -266,7 +265,7 @@
         display: none
   .additional-service__description
     padding-bottom: 10px
-    
+
   .button-wrapper
     order: 3
     justify-content: flex-start !important
@@ -278,18 +277,10 @@
     height: auto
     .link--to-prev-block, .top-line__page-counter
       display: none
-    .top-line
-      text-align: left
-      padding-left: 15px
-      .top-line__heading
-        font-family: GothamProBold
-        font-size: 38px
-        line-height: 28px
-        color: #fff
     .carousel__wrapper--second
       height: auto
       margin-top: 30px
-      margin-bottom: 90px
+      margin-bottom: 0
 
   .promotions__carousel
     width: 100%
@@ -298,6 +289,8 @@
         left: -5%
       .owl-next
         right: -5%
+    .owl-dots
+      position: static
 
   .questions
     .gallery__overlay
@@ -554,27 +547,18 @@
 
   .price-list
     height: auto
-    .top-line
-      text-align: left
-      padding-left: 40px
-    .carousel__item--transformed
-  	  margin-left: -70px
 
 
-  .promotions
-    .carousel__heading
-      font-size: 26px
-      line-height: 28px
-    .carousel__content
-      font-size: 13px
 
+  .promotion__heading
+    font-size: 26px
+    line-height: 28px
+  .promotion__content
+    font-size: 13px
   .promotions__carousel
-    width: 100%
-    .owl-nav
-      .owl-prev
-        left: -9%
-      .owl-next
-        right: -9%
+    .owl-dots
+      position: absolute
+      bottom: 15%
 
   .about-company
     .about-company__content
@@ -605,6 +589,10 @@
           right: 0.5%
         .owl-prev
           left: 4%
+  .promotions__carousel
+    .owl-dots
+      position: absolute
+      bottom: 12%
 @media screen and (min-width: 578px) and (max-width: 878px)
   .price-list
     .carousel__item--transformed
