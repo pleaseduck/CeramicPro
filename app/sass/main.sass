@@ -444,7 +444,7 @@ body
 	margin-right: -100px
 	width: 400px
 	background-image: linear-gradient(to right, transparent 0%, #000 80%)
-	
+
 .performed-work__gallery::-webkit-scrollbar-button
 	background-image: url('')
 	background-repeat: no-repeat
@@ -489,74 +489,73 @@ body
 	padding-top: 40px
 	.container, .row
 		position: relative
-	&__carousel
-		//max-height: 532px
-		margin-top: 80px
-		width: 83%
-		.owl-item
-			position: relative
-		.owl-item.active
-			text-align: center !important
-		.carousel__item
-			margin-top: 30px
-			margin-bottom: 30px
-			background-color: #f2f2f2
-			display: inline-block
-			width: 280px
-			padding-top: 45px
-			padding-bottom: 20px
-			padding-left: 20px
-			padding-right: 20px
-			text-align: center
-			opacity: .99
-			.carousel__image
-				width: auto !important
-				display: inline-block !important
-			.carousel_heading
-				font-family: GothamProBold
-				font-size: 18px
-				line-height: 38px
-				color: #000
-				display: block
-				border-bottom: 1px solid #e9e9e9
-		.carousel__service
-			text-align: left
-			font-family: GothamProLight
-			color: #0a0a0a
-			font-size: 14px
-			line-height: 38px
-			display: block
-			padding-left: 10px
-			padding-right: 10px
-			&:nth-child(2n)
-				background-color: #f4f4f4
-			&:last-of-type
-				margin-bottom: 20px
-		.carousel__price
-			padding-left: 10px
-			display: flex
-			flex-wrap: nowrap
-			align-items: center
-			font-family: GothamProBold
-			font-size: 20px
-			line-height: 38px
-			color: $accent
-			flex-basis: 55%
-			flex-shrink: 2
-			.button
-				position: relative
-				z-index: 15
-				flex-basis: 45%
-				margin-left: 23px
-		.carousel__item--transformed
-			transform: scale(1.1)
-			box-shadow: 0 1px 3px 0 #000
-			background-color: #fff
-			position: relative
-			opacity: 1
-			z-index: 5 !important
-			margin-left: 0px
+.price-list__carousel
+	margin-top: 80px
+	width: 83%
+	.owl-item
+		position: relative
+	.owl-item.active
+		text-align: center !important
+	.carousel__item
+		margin-top: 30px
+		margin-bottom: 30px
+		background-color: #f2f2f2
+		display: inline-block
+		width: 280px
+		padding-top: 45px
+		padding-bottom: 20px
+		padding-left: 20px
+		padding-right: 20px
+		text-align: center
+		opacity: .99
+	.carousel__item--transformed
+		transform: scale(1.1)
+		box-shadow: 0 1px 3px 0 #000
+		background-color: #fff
+		position: relative
+		opacity: 1
+		z-index: 5 !important
+		margin-left: 0px
 
+.tariff__image
+	width: auto !important
+	display: inline-block !important
+.tariff__heading
+	font-family: GothamProBold
+	font-size: 18px
+	line-height: 38px
+	color: #000
+	display: block
+	border-bottom: 1px solid #e9e9e9
+.tariff__service
+	text-align: left
+	font-family: GothamProLight
+	color: #0a0a0a
+	font-size: 14px
+	line-height: 38px
+	display: block
+	padding-left: 10px
+	padding-right: 10px
+	&:nth-child(2n)
+		background-color: #f4f4f4
+	&:last-of-type
+		margin-bottom: 20px
+.tariff__price
+	padding-left: 10px
+	display: flex
+	flex-wrap: nowrap
+	align-items: center
+	font-family: GothamProBold
+	font-size: 20px
+	line-height: 38px
+	color: $accent
+	flex-basis: 55%
+	flex-shrink: 2
+	.button
+		position: relative
+		z-index: 15
+		flex-basis: 45%
+		margin-left: 23px
 .owl-carousel .owl-stage-outer
 	.owl-item
 		position: relative
