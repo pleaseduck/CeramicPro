@@ -1089,46 +1089,43 @@ body
 	background-image: url(../img/bubble-bg2.jpg)
 	background-size: cover
 	padding-top: 40px
-	.link--to-prev-block
-		.prev-page
-			margin-left: 29px
-	.about-company__content-wrapper
-		height: 100vh
 	.container, .row
 		position: relative
 	.bottom-line
 		text-align: center
 		bottom: 40px
-	.top-line-wrapper
-		margin-bottom: 0
-		max-height: 30px
+		.photos-set
+			position: relative
+			margin-bottom: 30px
+			max-height: 50%
+.about-company__content-wrapper
+	height: 100vh
 
-.photos-wrapper
-	position: relative
+.photos-set
 	z-index: 2
 	display: flex
-	margin-bottom: 30px
-	max-height: 50%
-	.photos-wrapper__column
-		display: flex
-		flex-direction: column
-		justify-content: space-between
-		margin-right: 30px
-		max-height: 350px
-		&:last-of-type
-			margin-right: 0
-		&--first
-			flex-basis: 362px
-			flex-shrink: 1
-			img
-				width: 100%
-				height: 100%
-		&--second, &--third
-			flex-basis: 263px
-			flex-shrink: 1
-			img
-				width: 100%
-				height: 46%
+
+.photos-set__column
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	margin-right: 30px
+	max-height: 350px
+	&:last-of-type
+		margin-right: 0
+	&--first
+		flex-basis: 362px
+		flex-shrink: 1
+		img
+			width: 100%
+			height: 100%
+	&--second, &--third
+		flex-basis: 263px
+		flex-shrink: 1
+		img
+			width: 100%
+			height: 46%
+
 .about-company__content
 	position: relative
 	z-index: 2
@@ -1136,14 +1133,15 @@ body
 	max-height: 150px
 	padding-bottom: 0
 	margin-top: -120px
-	.content-slogan
-		font-family: GothamProBold
-		font-size: 24px
-		line-height: 38px
-	.content-text
-		font-family: GothamProLight
-		font-size: 17px
-		line-height: 26px
+.about-company__slogan
+	font-family: GothamProBold
+	font-size: 24px
+	line-height: 38px
+
+.about-company__text
+	font-family: GothamProLight
+	font-size: 17px
+	line-height: 26px
 
 // Социальные сети
 .social-networks
