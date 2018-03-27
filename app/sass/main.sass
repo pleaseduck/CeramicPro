@@ -854,13 +854,10 @@ body
 	padding-top: 40px
 	.container, .row
 		position: relative
-	.reviews__content
-		height: 100vh
-		position: relative
-		//z-index: 15
-	.top-line-wrapper
-		margin-bottom: 0
-		max-height: 30px
+.reviews__content
+	height: 100vh
+	position: relative
+
 
 .reviews__gallery
 	overflow-x: scroll
@@ -905,41 +902,41 @@ body
 	overflow-y: hidden
 	max-width: 653px
 	position: relative
-	.review__avatar
-		display: inline-block
-		position: absolute
-		left: 0
-		top: 0
-		width: 60%
-		height: auto
-		min-height: 100%
-	.review__content
-		width: 70%
-		height: 100%
-		position: relative
-		top: 0
-		right: 0
-		margin-left: 30%
-		background-color: #fff
-		font-family: GothamProLight
+	.link
+		display: block
+		display: block
 		font-size: 12px
-		line-height: 18px
-		color: #1f1e1e
-		margin-bottom: 0
-		padding: 15px
-		padding-top: 0
-		.review__author
-			display: block
-			font-size: 16px
-			line-height: 38px
-			color: #000
-		.link
-			display: block
-			display: block
-			font-size: 12px
-			color: #ff1792
-			text-decoration: underline
-			margin-top: 5px
+		color: #ff1792
+		text-decoration: underline
+		margin-top: 5px
+.review__avatar
+	display: inline-block
+	position: absolute
+	left: 0
+	top: 0
+	width: 60%
+	height: auto
+	min-height: 100%
+.review__content
+	width: 70%
+	height: 100%
+	position: relative
+	top: 0
+	right: 0
+	margin-left: 30%
+	background-color: #fff
+	font-family: GothamProLight
+	font-size: 12px
+	line-height: 18px
+	color: #1f1e1e
+	margin-bottom: 0
+	padding: 15px
+	padding-top: 0
+	.review__author
+		display: block
+		font-size: 16px
+		line-height: 38px
+		color: #000
 
 .video-review
 	display: inline-block
@@ -966,10 +963,10 @@ body
 			background-color: rgba(#efefef, 0.06)
 			top: 0
 			left: 0
-	.video-review__preview
-		width: auto
-		max-width: 602px
-		height: 148px
+.video-review__preview
+	width: auto
+	max-width: 602px
+	height: 148px
 
 .screenshot-review
 	display: inline-block
