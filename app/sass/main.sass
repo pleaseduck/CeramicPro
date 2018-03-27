@@ -735,6 +735,8 @@ body
 	background-image: url(../img/whitecar-bg.jpg)
 	background-size: cover
 	background-repeat: no-repeat
+	.container, .row
+	 height: 85vh
 	.link--to-prev-block
 		.prev-page
 			margin-right: -28px
@@ -750,14 +752,17 @@ body
 		&.active
 			background-color: $accent
 			box-shadow: 0 0 20px 2px $accent
-	.carousel__wrapper--second
-		height: 75vh
-		align-items: center
 	.promotions__carousel
 		width: 80%
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		justify-content: center
+		flex-direction: column
 
-.promotion__heading
-	margin-bottom: 10px
+.promotion
+	.heading
+		margin-bottom: 10px
 
 .promotion__content
 	padding-top: 10px
@@ -890,17 +895,20 @@ body
 	background-size: cover
 	padding-top: 40px
 	.container, .row
+		height: 100vh
 		position: relative
+	.top-line
+		margin-bottom: 0
 .reviews__content
-	height: 100vh
-	position: relative
+	height: 76vh
+	display: flex
+	justify-content: center
+	flex-direction: column
 
 
 .reviews__gallery
 	overflow-x: scroll
 	overflow-y: hidden
-	height: 100vh
-	margin-top: 55px
 	max-height: 580px
 	position: absolute
 	display: -webkit-flex
