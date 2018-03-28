@@ -1,7 +1,38 @@
 $(function() {
-//Инициализация плагина галереи
+
  $(document).ready(function() {
-	
+   //Инициализация плагина галереи
+   $("a[data-fancybox]").fancybox({
+	    loop: true,
+      keyboard : true,
+      arrows : false,
+      infobar: false,
+      captionbar: false,
+      buttons : [
+        'close'
+    ]
+});
+$('[data-fancybox="group-performed-work"])'.fancybox({
+   loop: true,
+   keyboard : true,
+   arrows : false,
+   infobar: false,
+   captionbar: false,
+   buttons : [
+     'close'
+ ]
+});
+  console.log(document.querySelectorAll("a[data-fancybox]"));
+  const galleryItem = document.querySelectorAll("a[data-fancybox]");
+  for (var i = 0; i < galleryItem.length; i++) {
+    galleryItem[i].addEventListener("click",function() {
+      document.querySelector(".fancybox-button--close").innerHTML = '<i class="fas fa-times"></i>'
+    })
+  }
+  //setTimeout(function() {
+    //document.querySelector(".fancybox-button--close").innerHTML = '<i class="fas fa-times"></i>'
+    //console.log(document.querySelector(".fancybox-button--close"));
+  //},1000)
 
 // Инициализация плагина карусели
   $(".price-list__carousel").owlCarousel({
@@ -62,44 +93,39 @@ DG.then(function() {
   });
 
 // Реализация подгрузки информации для различных блоков
+  function loadMoreInformation(evt, elementsList) {
+    evt.preventDefault();
+    for (var i = 2; i <= elementsList.length; i++) {
+      elementsList[i].classList.toggle("gallery__item--mobile-hidden");
+    }
+  }
   const viewMorePW = document.querySelector(".button--performed-work");
-  const PWItems = document.querySelectorAll(".performed-work .gallery__item");
+  const PWItems = document.querySelectorAll(".gallery__item--performed-work");
+
 
   viewMorePW.addEventListener("click",function(evt) {
-    evt.preventDefault();
-    for (var i = 2; i <= PWItems.length; i++) {
-      PWItems[i].classList.toggle("gallery__item--mobile-hidden");
-    }
+    loadMoreInformation(evt, PWItems);
   });
 
   const viewMoreAS = document.querySelector(".button--additional-services");
   const ASItems = document.querySelectorAll(".additional-services .gallery__item");
 
   viewMoreAS.addEventListener("click",function(evt) {
-    evt.preventDefault();
-    for (var i = 2; i <= ASItems.length; i++) {
-      ASItems[i].classList.toggle("gallery__item--mobile-hidden");
-    }
+    loadMoreInformation(evt, ASItems);
   });
 
   const viewMoreQA = document.querySelector(".button--questions");
   const QAItems = document.querySelectorAll(".questions .gallery__item");
 
   viewMoreQA.addEventListener("click",function(evt) {
-    evt.preventDefault();
-    for (var i = 3; i <= QAItems.length; i++) {
-      QAItems[i].classList.toggle("gallery__item--mobile-hidden");
-    }
+    loadMoreInformation(evt, QAItems);
   });
 
   const viewMoreReview = document.querySelector(".button--reviews");
   const reviewItems = document.querySelectorAll(".reviews .gallery__item");
 
   viewMoreReview.addEventListener("click",function(evt) {
-    evt.preventDefault();
-    for (var i = 3; i <= reviewItems.length; i++) {
-      reviewItems[i].classList.toggle("gallery__item--mobile-hidden");
-    }
+    loadMoreInformation(evt, reviewItems);
   });
 
   $(document).ready(function(){

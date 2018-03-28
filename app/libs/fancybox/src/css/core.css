@@ -96,8 +96,8 @@ body.fancybox-iosfix {
 }
 
 .fancybox-toolbar {
-	top: 0;
-	right: 0;
+	top: 5%;
+	right: 5%;
 	margin: 0;
 	padding: 0;
 }

@@ -32,6 +32,8 @@ body
 		padding: 0
 		margin: 0
 		list-style-type: none
+p
+	margin: 0
 .button
 	display: inline-block
 	border: none
@@ -40,9 +42,9 @@ body
 	background-color: $accent
 	padding: 0 20px
 	font-family: GothamProLight
-	height: 25px
-	font-size: 12px
-	line-height: 25px
+	height: 2em
+	font-size: 12.5px
+	line-height: 2em
 	border-radius: 35px
 	text-align: center
 	position: relative
@@ -77,19 +79,40 @@ body
 			color: #fff
 			font-size: 30px
 			line-height: 45px
+	&--modal
+		height: auto
+		border-radius: 10px
+		position: relative
+		line-height: 2em
+		.fas
+			position: absolute
+			font-size: 15px
+			line-height: 1.8em
+			color: #000
+	&--modal-prev
+		padding-left: 55px
+		.fas
+			left: 22px
+	&--modal-next
+		padding-right: 55px
+		.fas
+			right: 22px
+
+
 
 .img-responsive
 	display: block
 	max-width: 100%
 	height: auto
-
+.fas.fa-times
+	font-size: 20px
 .text-center
 	text-align: center
 
 .heading
 	font-family: GothamProLight
 	font-size: 32px
-	line-height: 40px
+	line-height: 1.25em
 	color: #fff
 	.heading__accent-text
 		font-family: GothamProBold
@@ -100,7 +123,7 @@ body
 	background-color: $accent
 	font-family: GothamProLight
 	font-size: 16px
-	line-height: 40px
+	line-height: 2.5em
 	text-align: center
 	color: #d8d8d8
 	border-radius: 50px
@@ -113,6 +136,53 @@ body
 		text-decoration: none
 // Шапка
 
+.top-line
+	text-align: right
+	display: block
+	font-size: 12px
+	max-height: 35px
+	top: -23px
+	position: relative
+	z-index: 5
+.top-line__heading, .top-line__page-counter
+	position: relative
+	right: 70px
+.top-line__heading
+	color: #5d5d5d
+.top-line__page-counter
+	display: block
+	color: #c1c1c1
+.top-line__current-page
+	font-family: GothamProBold
+	color: #fff
+
+
+.link
+	&--desktop-hidden
+		display: none !important
+	&--to-prev-block
+		display: block
+		width: 100%
+		position: absolute
+		top: 20px
+		color: #e1e1ee
+		text-align: center
+		&:hover
+			color: #e1e1ee
+			text-decoration: none
+		.prev-page
+			display: block
+			text-align: center
+			position: relative
+			.fas
+				position: absolute
+				font-size: 20px
+				left: 50%
+				margin-left: -5px
+				top: -16px
+				font-weight: 200
+				transform: rotate(180deg)
+
 .main-header
 	background-color: #000
 	height: 100vh
@@ -122,9 +192,13 @@ body
 	background-position: center
 	background-position: 50% 90%
 	position: relative
+.main-header__content
+	position: relative
+	height: 100vh
+
 .logo
 	font-size: 14px
-	line-height: 22px
+	line-height: 1.5em
 .logo__wrapper
 	color: #e1e1ee
 	&:hover
@@ -133,6 +207,7 @@ body
 .logo__signature
 	display: block
 	margin-top: 5px
+
 .sidebar
 	display: flex
 	flex-direction: column
@@ -160,8 +235,17 @@ body
 	padding-left: 30px
 	position: relative
 	font-size: 12px
-	line-height: 30px
+	line-height: 2.5em
 
+.main-nav__item--active
+	.main-nav__link
+		color: #e1e1ee !important
+		font-family: GothamProBold !important
+		&::before
+			transform: scale(1.3)
+			box-shadow: 0 0 15px 3px $accent
+		&:hover
+			text-decoration: none
 
 .main-nav__link
 	text-decoration: none
@@ -181,14 +265,6 @@ body
 		color: #e1e1ee
 		text-decoration: underline
 
-.main-nav
-	.main-nav__item--active
-		.main-nav__link
-			color: #e1e1ee !important
-			font-family: GothamProBold !important
-			&::before
-				transform: scale(1.3)
-				box-shadow: 0 0 15px 3px $accent
 
 .main-nav__item:nth-child(2) .main-nav__link
 	color: #b3b3b3
@@ -209,17 +285,17 @@ body
 .main-nav__item:nth-child(10) .main-nav__link
 	color: #232323
 .main-nav__item:nth-child(11) .main-nav__link
-			color: #2b2b2b
+	color: #2b2b2b
 
-.contacts
-	.contacts__item
-		margin-bottom: 20px
-		&:last-of-type
-			margin-bottom: 0
-	.contacts__button
-		position: relative
-		padding-top: 3px
-		padding-bottom: 3px
+.contacts__item
+	margin-bottom: 20px
+	display: block
+	color: #fff
+	&:last-of-type
+		margin-bottom: 0
+	&:hover
+		color: #fff
+		text-decoration: none
 	.fas
 		color: $accent
 		margin-right: 9px
@@ -227,12 +303,7 @@ body
 		&.fa-map-marker-alt
 			transform: none
 
-.contacts__item
-	display: block
-	color: #fff
-	&:hover
-		color: #fff
-		text-decoration: none
+
 .contacts__button
 	border: 1px solid $accent
 	border-radius: 20px
@@ -241,6 +312,9 @@ body
 	max-width: 320px
 	z-index: 9
 	transition: background-color .25s ease
+	position: relative
+	padding-top: 3px
+	padding-bottom: 3px
 	&:hover
 		background-color: $accent
 	.fas
@@ -260,31 +334,6 @@ body
 		left: 0px
 		top: 0px
 
-.top-line
-	text-align: right
-	display: block
-	font-size: 12px
-	max-height: 35px
-	top: -23px
-	position: relative
-	z-index: 5
-	.top-line__heading, .top-line__page-counter
-		position: relative
-		right: 70px
-	.top-line__heading
-		color: #5d5d5d
-	.top-line__page-counter
-		display: block
-		color: #c1c1c1
-	.top-line__current-page
-		font-family: GothamProBold
-		color: #fff
-
-.main-header__content
-	position: relative
-	height: 100vh
-
-
 .legend__content
 	padding-top: 20px
 	position: relative
@@ -298,32 +347,6 @@ body
 		position: absolute
 		top: 0
 		left: 0
-.link
-	&--desktop-hidden
-		display: none !important
-	&--to-prev-block
-		display: block
-		width: 100%
-		position: absolute
-		top: 20px
-		color: #e1e1ee
-		text-align: center
-		&:hover
-			color: #e1e1ee
-			text-decoration: none
-		.prev-page
-			display: block
-			text-align: center
-			position: relative
-			.fas
-				position: absolute
-				font-size: 20px
-				left: 50%
-				margin-left: -5px
-				top: -16px
-				font-weight: 200
-				transform: rotate(180deg)
-
 
 .bottom-line
 	display: block
@@ -346,29 +369,13 @@ body
 		margin-left: -5px
 		bottom: -16px
 		font-weight: 200
+
 .bottom-line__link
 	display: block
 	text-align: center
 	position: relative
 
-.chat
-	display: inline-block
-	z-index: 10
-	background-color: $accent
-	width: 40px
-	height: 40px
-	border-radius: 10em
-	position: absolute
-	right: 70px
-	bottom: 0px
-	background-image: url(../img/icons/chat-icon.svg)
-	background-position: center
-	background-repeat: no-repeat
-	cursor: pointer
-	transition: all 1s ease
-	transform-style: preserve-3d
-	&:hover
-		transform: rotateY(360deg)
+
 .hamburger
 	border: 2px solid #fff
 	height: 51px
@@ -388,7 +395,157 @@ body
 	height: 2px
 	width: 24px
 
+//Общие стилли для галереи
+.gallery
+	overflow-x: scroll
+	overflow-y: hidden
+	position: absolute
+	&__group
+		display: flex
+		flex-direction: row
+		padding-bottom: 15px
+		padding-top: 15px
+	&__item
+		display: flex
+		flex-direction: column
+		border: 1px solid #fff
+		margin-right: 15px
+		margin-left: 15px
+		padding: 10px
+	&__description
+		font-family: GothamProLight
+		font-size: 12px
+		color: #a6a6a6
+		position: relative
+		text-align: left
+		margin: 0
+		.title
+			font-size: 16px
+			left: 38px
+			display: block
+			color: #fff
+			cursor: pointer
+			&:hover
+				text-decoration: none
+	&--performed-work
+		max-height: 570px
+	.gallery__item--performed-work
+		max-width: 265px
+		border-image: linear-gradient(to top, #040505 25%, #fff 100%)
+		border-image-slice: 1
+	.gallery__image--performed-work
+		width: 240px
+		height: auto
+	.gallery__description--performed-work
+		padding-right: 50px
+		max-width: 241px
+		.button--see-more
+			position: absolute
+			right: 0
+			top: 50%
+			margin-top: -22.5px
+	&--additional-services
+		height: 100vh
+		max-height: 580px
+		display: flex
+		flex-direction: column
+		.gallery__overlay
+			position: fixed
+			z-index: 1
+			right: 0
+			top: 0
+			height: 100vh
+			margin-right: -100px
+			width: 400px
+			background-image: linear-gradient(to right, transparent 0%, #000 70%)
+		.gallery__group--additional-services
+			width: auto
+		.gallery__item--additional-services
+			width: 465px
+			flex-basis: 465px
+			flex-shrink: 0
+			padding-top: 15px
+			padding-bottom: 15px
+			border-image: linear-gradient(to top, #040505 25%, #fff 100%)
+			border-image-slice: 1
+		.gallery__description--additional-services
+			width: 100%
+	&--questions
+		max-height: 545px
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		flex-direction: column
+		.gallery__overlay
+			position: fixed
+			z-index: 1
+			right: 0
+			top: 0
+			height: 100vh
+			margin-right: -100px
+			width: 400px
+			background-image: linear-gradient(to right, transparent 0%, #000 70%)
+		.gallery__group--questions
+			width: auto
+		.gallery__item--questions
+			width: 465px
+			flex-basis: 465px
+			flex-shrink: 0
+			padding: 10px
+			padding-top: 15px
+			padding-bottom: 15px
+			border-image: linear-gradient(to top, #040505 25%, #fff 100%)
+			border-image-slice: 1
+	&--reviews
+		max-height: 580px
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		flex-direction: column
+		.gallery__overlay
+			position: fixed
+			z-index: 1
+			right: 0
+			top: 0
+			height: 100vh
+			margin-right: -100px
+			width: 400px
+			background-image: linear-gradient(to right, transparent 0%, #000 70%)
+		.gallery__group--reviews
+			width: auto
+			padding-bottom: 7.5px
+			padding-top: 7.5px
+			align-items: center
+		.gallery__item--reviews
+			border: none
+			justify-content: space-between
+			flex-shrink: 0
+			margin-right: 10px
+			margin-left: 10px
+			height: 100%
+			.review + .review
+				margin-top: 30px
+	&--certificates
+		max-height: 550px
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		flex-direction: column
+		.gallery__overlay
+			position: fixed
+			z-index: 1
+			right: 0
+			top: 0
+			height: 100vh
+			margin-right: -100px
+			width: 300px
+			background-image: linear-gradient(to right, transparent 40%, #000 70%)
+		.gallery__group--certificates
+			width: auto
+		.gallery__item--certificates
+			border: none
 // Выполненные работы
+
 .performed-work
 	position: relative
 	height: 100vh
@@ -397,6 +554,7 @@ body
 	padding-top: 40px
 	.container, .row
 		position: relative
+
 .performed-work__content
 	height: 76vh
 	position: relative
@@ -405,53 +563,6 @@ body
 	display: flex
 	flex-direction: column
 	justify-content: center
-
-.performed-work__gallery
-	overflow-x: scroll
-	overflow-y: hidden
-	max-height: 570px
-	//margin-top: 55px
-	position: absolute
-	.gallery__group
-		display: flex
-		flex-direction: row
-		padding-bottom: 15px
-		padding-top: 15px
-	.gallery__item
-		display: flex
-		flex-direction: column
-		max-width: 265px
-		border: 1px solid #fff
-		padding: 10px
-		margin-right: 15px
-		margin-left: 15px
-		border-image: linear-gradient(to top, #040505 25%, #fff 100%)
-		border-image-slice: 1
-		.gallery__image
-			width: 240px
-			height: auto
-		.gallery__description
-			font-family: GothamProLight
-			font-size: 12px
-			color: #a6a6a6
-			position: relative
-			padding-right: 50px
-			text-align: left
-			max-width: 241px
-			margin: 0
-			.title
-				font-size: 16px
-				left: 38px
-				display: block
-				color: #fff
-				cursor: pointer
-				&:hover
-					text-decoration: none
-			.button--see-more
-				position: absolute
-				right: 0
-				top: 50%
-				margin-top: -22.5px
 
 .performed-work__overlay
 	position: fixed
@@ -462,38 +573,6 @@ body
 	width: 400px
 	background-image: linear-gradient(to right, transparent 0%, #000 80%)
 
-.performed-work__gallery::-webkit-scrollbar-button
-	background-image: url('')
-	background-repeat: no-repeat
-	width: 6px
-	height: 0px
-
-
-.performed-work__gallery::-webkit-scrollbar-track
-	background-color: transparent
-	border: 1px solid #212121
-
-
-.performed-work__gallery::-webkit-scrollbar-thumb
-	-webkit-border-radius: 0px
-	border-radius: 0px
-	background: linear-gradient(to right, transparent 0%, rgba(#9e9e9e, 0.8) 50%, transparent 100%)
-	max-width: 90px !important
-
-
-.performed-work__gallery::-webkit-scrollbar-thumb:hover
-	//background-color: #56999f
-
-
-.performed-work__gallery::-webkit-resizer
-	background-image: url('')
-	background-repeat: no-repeat
-	width: 4px
-	height: 0px
-
-
-.performed-work__gallery::-webkit-scrollbar
-	width: 10px
 // Прайс-лист
 
 .price-list
@@ -507,31 +586,31 @@ body
 	.container, .row
 		position: relative
 		height: 76vh
-	.price-list__carousel
-		//margin-top: 80px
-		width: 70%
-	.carousel__item
-		margin-top: 30px
-		margin-bottom: 30px
-		background-color: #f2f2f2
-		display: inline-block
-		width: 280px
-		padding-top: 45px
-		padding-bottom: 20px
-		padding-left: 20px
-		padding-right: 20px
-		text-align: center
+.price-list__carousel
+	width: 70%
 	.owl-item.active
 		text-align: center !important
 		z-index: 2 !important
 	.owl-item.center
 		z-index: 5 !important
-		.carousel__item
+		.carousel__item--price-list
 			transform: scale(1.1)
 			box-shadow: 0 1px 3px 0 #000
 			background-color: #fff
 			position: relative
 			margin-left: 0px
+
+.carousel__item--price-list
+	margin-top: 30px
+	margin-bottom: 30px
+	background-color: #f2f2f2
+	display: inline-block
+	width: 280px
+	padding-top: 45px
+	padding-bottom: 20px
+	padding-left: 20px
+	padding-right: 20px
+	text-align: center
 
 .tariff__image
 	width: auto !important
@@ -539,7 +618,7 @@ body
 .tariff__heading
 	font-family: GothamProBold
 	font-size: 18px
-	line-height: 38px
+	line-height: 2em
 	color: #000
 	display: block
 	border-bottom: 1px solid #e9e9e9
@@ -548,7 +627,7 @@ body
 	font-family: GothamProLight
 	color: #0a0a0a
 	font-size: 14px
-	line-height: 38px
+	line-height: 2.5em
 	display: block
 	padding-left: 10px
 	padding-right: 10px
@@ -563,7 +642,7 @@ body
 	align-items: center
 	font-family: GothamProBold
 	font-size: 20px
-	line-height: 38px
+	line-height: 2em
 	color: $accent
 	flex-basis: 55%
 	flex-shrink: 2
@@ -572,6 +651,7 @@ body
 		z-index: 15
 		flex-basis: 45%
 		margin-left: 23px
+
 .owl-carousel
 	.owl-item
 		position: relative
@@ -603,6 +683,7 @@ body
 	background-image: url(../img/bmw-bg.jpg)
 	background-size: cover
 	padding-top: 40px
+	height: 100vh
 	.container, .row
 		position: relative
 .additional-services__content
@@ -625,98 +706,11 @@ body
 				font-weight: 200
 				transform: rotate(180deg)
 
-
-.additional-services__gallery
-	overflow-x: scroll
-	overflow-y: hidden
-	height: 100vh
-	max-height: 580px
-	position: absolute
-	display: flex
-	flex-direction: column
-	.gallery__overlay
-		position: fixed
-		z-index: 1
-		right: 0
-		top: 0
-		height: 100vh
-		margin-right: -100px
-		width: 400px
-		background-image: linear-gradient(to right, transparent 0%, #000 70%)
-	.gallery__group
-		display: flex
-		width: auto
-		flex-direction: row
-		padding-bottom: 15px
-		padding-top: 15px
-	.gallery__item
-		display: flex
-		flex-direction: column
-		width: 465px
-		flex-basis: 465px
-		flex-shrink: 0
-		border: 1px solid #fff
-		padding: 10px
-		padding-top: 15px
-		padding-bottom: 15px
-		margin-right: 15px
-		margin-left: 15px
-		border-image: linear-gradient(to top, #040505 25%, #fff 100%)
-		border-image-slice: 1
 .additional-service__image
 	width: 50px
 	height: auto
 .additional-service__button
 	width: 145px
-.additional-service__description
-	font-family: GothamProLight
-	font-size: 12px
-	color: #a6a6a6
-	position: relative
-	text-align: left
-	width: 100%
-	margin: 0
-	.title
-		font-size: 16px
-		left: 38px
-		display: block
-		color: #fff
-		cursor: pointer
-		&:hover
-			text-decoration: none
-
-.additional-services__gallery::-webkit-scrollbar-button
-	background-image: url('')
-	background-repeat: no-repeat
-	width: 6px
-	height: 0px
-
-
-.additional-services__gallery::-webkit-scrollbar-track
-	background-color: transparent
-	border: 1px solid #212121
-
-
-.additional-services__gallery::-webkit-scrollbar-thumb
-	-webkit-border-radius: 0px
-	border-radius: 0px
-	background: linear-gradient(to right, transparent 0%, rgba(#9e9e9e, 0.8) 50%, transparent 100%)
-	max-width: 90px !important
-
-
-.additional-services__gallery::-webkit-scrollbar-thumb:hover
-	//background-color: #56999f
-
-
-.additional-services__gallery::-webkit-resizer
-	background-image: url('')
-	background-repeat: no-repeat
-	width: 4px
-	height: 0px
-
-
-.additional-services__gallery::-webkit-scrollbar
-	width: 10px
 
 //Акции
 .promotions
@@ -746,8 +740,6 @@ body
 			box-shadow: 0 0 20px 2px $accent
 	.promotions__carousel
 		width: 80%
-		display: -webkit-flex
-		display: -ms-flex
 		display: flex
 		justify-content: center
 		flex-direction: column
@@ -789,46 +781,6 @@ body
 	flex-direction: column
 	justify-content: center
 
-.questions__gallery
-	overflow-x: scroll
-	overflow-y: hidden
-	//margin-top: 55px
-	max-height: 545px
-	position: absolute
-	display: -webkit-flex
-	display: -ms-flex
-	display: flex
-	flex-direction: column
-	.gallery__overlay
-		position: fixed
-		z-index: 1
-		right: 0
-		top: 0
-		height: 100vh
-		margin-right: -100px
-		width: 400px
-		background-image: linear-gradient(to right, transparent 0%, #000 70%)
-	.gallery__group
-		display: flex
-		width: auto
-		flex-direction: row
-		padding-bottom: 15px
-		padding-top: 15px
-	.gallery__item
-		display: flex
-		flex-direction: column
-		width: 465px
-		flex-basis: 465px
-		flex-shrink: 0
-		border: 1px solid #fff
-		padding: 10px
-		padding-top: 15px
-		padding-bottom: 15px
-		margin-right: 15px
-		margin-left: 15px
-		border-image: linear-gradient(to top, #040505 25%, #fff 100%)
-		border-image-slice: 1
-
 .question__item
 	font-family: GothamProLight
 	font-size: 12px
@@ -844,44 +796,11 @@ body
 		text-decoration: underline
 .question__title
 	font-size: 16px
-	line-height: 16px
+	line-height: 1em
 	display: block
 	color: #fff
 	&:hover
 		text-decoration: none
-
-.questions__gallery::-webkit-scrollbar-button
-	background-image: url('')
-	background-repeat: no-repeat
-	width: 6px
-	height: 0px
-
-
-.questions__gallery::-webkit-scrollbar-track
-	background-color: transparent
-	border: 1px solid #212121
-
-
-.questions__gallery::-webkit-scrollbar-thumb
-	-webkit-border-radius: 0px
-	border-radius: 0px
-	background: linear-gradient(to right, transparent 0%, rgba(#9e9e9e, 0.8) 50%, transparent 100%)
-	max-width: 90px !important
-
-
-.questions__gallery::-webkit-scrollbar-thumb:hover
-	//background-color: #56999f
-
-
-.questions__gallery::-webkit-resizer
-	background-image: url('')
-	background-repeat: no-repeat
-	width: 4px
-	height: 0px
-
-
-.questions__gallery::-webkit-scrollbar
-	width: 10px
 
 //Отзывы
 .reviews
@@ -899,43 +818,6 @@ body
 	justify-content: center
 	flex-direction: column
 
-
-.reviews__gallery
-	overflow-x: scroll
-	overflow-y: hidden
-	max-height: 580px
-	position: absolute
-	display: -webkit-flex
-	display: -ms-flex
-	display: flex
-	flex-direction: column
-	.gallery__overlay
-		position: fixed
-		z-index: 1
-		right: 0
-		top: 0
-		height: 100vh
-		margin-right: -100px
-		width: 400px
-		background-image: linear-gradient(to right, transparent 0%, #000 70%)
-	.gallery__group
-		display: flex
-		width: auto
-		flex-direction: row
-		padding-bottom: 7.5px
-		padding-top: 7.5px
-		align-items: center
-	.gallery__item
-		display: flex
-		flex-direction: column
-		justify-content: space-between
-		flex-shrink: 0
-		padding: 10px
-		margin-right: 10px
-		margin-left: 10px
-		height: 100%
-		.review + .review
-			margin-top: 30px
 
 .review
 	overflow-y: hidden
@@ -966,7 +848,7 @@ body
 	background-color: #fff
 	font-family: GothamProLight
 	font-size: 12px
-	line-height: 18px
+	line-height: 1.5em
 	color: #1f1e1e
 	margin-bottom: 0
 	padding: 15px
@@ -974,7 +856,7 @@ body
 	.review__author
 		display: block
 		font-size: 16px
-		line-height: 38px
+		line-height: 2.5em
 		color: #000
 
 .video-review
@@ -1011,39 +893,6 @@ body
 	display: inline-block
 	margin: auto
 
-
-.reviews__gallery::-webkit-scrollbar-button
-	background-image: url('')
-	background-repeat: no-repeat
-	width: 6px
-	height: 0px
-
-
-.reviews__gallery::-webkit-scrollbar-track
-	background-color: transparent
-	border: 1px solid #212121
-
-
-.reviews__gallery::-webkit-scrollbar-thumb
-	-webkit-border-radius: 0px
-	border-radius: 0px
-	background: linear-gradient(to right, transparent 0%, rgba(#9e9e9e, 0.8) 50%, transparent 100%)
-	max-width: 90px !important
-
-
-.reviews__gallery::-webkit-scrollbar-thumb:hover
-	//background-color: #56999f
-
-
-.reviews__gallery::-webkit-resizer
-	background-image: url('')
-	background-repeat: no-repeat
-	width: 4px
-	height: 0px
-
-
-.reviews__gallery::-webkit-scrollbar
-	width: 10px
 //Сертификаты
 .certificates
 	position: relative
@@ -1060,70 +909,11 @@ body
 	flex-direction: column
 	justify-content: center
 
-.certificates__gallery
-	overflow-x: scroll
-	overflow-y: hidden
-	//margin-top: 55px
-	max-height: 550px
-	position: absolute
+.gallery__items-wrapper
 	display: -webkit-flex
 	display: -ms-flex
 	display: flex
-	flex-direction: column
-	.gallery__overlay
-		position: fixed
-		z-index: 1
-		right: 0
-		top: 0
-		height: 100vh
-		margin-right: -100px
-		width: 300px
-		background-image: linear-gradient(to right, transparent 40%, #000 70%)
-	.gallery__group
-		display: flex
-		width: auto
-		flex-direction: row
-	.gallery__item
-		margin-right: 15px
-		margin-left: 15px
-	.gallery__items-wrapper
-		display: -webkit-flex
-		display: -ms-flex
-		display: flex
-
-.certificates__gallery::-webkit-scrollbar-button
-	background-image: url('')
-	background-repeat: no-repeat
-	width: 6px
-	height: 0px
-
-
-.certificates__gallery::-webkit-scrollbar-track
-	background-color: transparent
-	border: 1px solid #212121
-
-
-.certificates__gallery::-webkit-scrollbar-thumb
-	-webkit-border-radius: 0px
-	border-radius: 0px
-	background: linear-gradient(to right, transparent 0%, rgba(#9e9e9e, 0.8) 50%, transparent 100%)
-	max-width: 90px !important
-
-
-.certificates__gallery::-webkit-scrollbar-thumb:hover
-	//background-color: #56999f
-
-
-.certificates__gallery::-webkit-resizer
-	background-image: url('')
-	background-repeat: no-repeat
-	width: 4px
-	height: 0px
-
-
-.certificates__gallery::-webkit-scrollbar
-	width: 10px
-
+	justify-content: space-between
 // О компании
 .about-company
 	position: relative
@@ -1136,13 +926,10 @@ body
 		height: 83vh
 	.container
 		height: 83vh
-	.bottom-line
-		text-align: center
-		bottom: 40px
-		.photos-set
-			position: relative
-			margin-bottom: 30px
-			max-height: 50%
+	.photos-set
+		position: relative
+		margin-bottom: 30px
+		max-height: 50%
 .about-company__content-wrapper
 	height: 100%
 	display: -webkit-flex
@@ -1152,14 +939,12 @@ body
 	justify-content: center
 	.row
 		height: 100%
-		//flex-direction: column
-		//justify-content: space-between
+
 
 .photos-set
 	z-index: 2
 	display: flex
 	position: relative
-	//justify-content: center
 
 .photos-set__column
 	display: flex
@@ -1172,13 +957,13 @@ body
 	&--first
 		flex-basis: 362px
 		flex-shrink: 1
-		img
+		a
 			width: 100%
 			height: 100%
 	&--second, &--third
 		flex-basis: 263px
 		flex-shrink: 1
-		img
+		a
 			width: 100%
 			height: 46%
 
@@ -1191,12 +976,12 @@ body
 .about-company__slogan
 	font-family: GothamProBold
 	font-size: 24px
-	line-height: 38px
+	line-height: 1.5em
 
 .about-company__text
 	font-family: GothamProLight
 	font-size: 17px
-	line-height: 26px
+	line-height: 1.5em
 
 // Социальные сети
 .social-networks
@@ -1242,10 +1027,9 @@ body
 	background-image: url(../img/bubble-bg4.jpg)
 	background-size: cover
 	.top-line
+		top: 0
 		.top-line__heading, .top-line__page-counter, .top-line__current-page
 			color: #000
-	.chat
-		z-index: 3
 	.container, .row
 		position: relative
 	.map--main-footer
@@ -1253,7 +1037,7 @@ body
 		z-index: 2
 		top: 0
 		right: 0
-		height: 100%
+		height: 103%
 		width: 362px
 		.dg-widget-link
 			height: 100%
@@ -1277,7 +1061,7 @@ body
 		flex-basis: 40%
 		font-family: GothamProBold
 		font-size: 24px
-		line-height: 38px
+		line-height: 1.5em
 		color: #fff
 		display: block
 	.contacts__address
@@ -1286,14 +1070,18 @@ body
 		flex-basis: 40%
 		.fas
 			transform: none
+
 .contact-form
 	display: block
 	background-color: #fff
 	padding: 20px
 	width: 100%
+	text-align: center
+
 .contact-form__message
 	resize: none
 	min-height: 150px
+
 .contact-form__message, .contact-form__name, .contact-form__phone-number
 	width: 100%
 	padding: 15px 20px
@@ -1305,22 +1093,23 @@ body
 		color:#6c6c6c
 		font-family: MontserratLight
 		font-size: 14px
-		line-height: 26px
+		line-height: 1.8em
 	&::-moz-placeholder
 		color:#6c6c6c
 		font-family: MontserratLight
 		font-size: 14px
-		line-height: 26px
+		line-height: 1.8em
 	&:-moz-placeholder
 		color:#6c6c6c
 		font-family: MontserratLight
 		font-size: 14px
-		line-height: 26px
+		line-height: 1.8em
 	&:-ms-input-placeholder
 		color:#6c6c6c
 		font-family: MontserratLight
 		font-size: 14px
-		line-height: 26px
+		line-height: 1.8em
+
 .button--contact-form
 	display: block
 	width: 100%
@@ -1330,8 +1119,6 @@ body
 
 .contact-form__checkbox
 	position: relative
-	width: 100%
-	text-align: center
 	.checkbox_label
 		display: inline-block
 		cursor: pointer
@@ -1375,4 +1162,111 @@ body
 
 .contact-form__checkbox .checkbox:checked + .checkbox_label::after
 	display: block
+
+.fancybox-button
+	background: transparent
+.fancybox-toolbar
+	top: 5%
+	right: 4%
+.fancybox-caption-wrap
+	display: none
+
+// Модальные окна
+.modal
+	position: absolute
+	width: 65%
+	z-index: 15
+	padding: 28px
+	background: #fff
+	font-family: GothamProLight
+	font-size: 12px
+	line-height: 1.5em
+	color: #000
+.modal__heading
+	font-size: 24px
+	line-height: 1.6em
+.paragraph-separator
+	display: inline-block
+	height: 10px
+	width: 100%
+.modal__navigation
+	margin-top: 15px
+	width: 45%
+	display: flex
+	justify-content: space-between
+
+.modal--performed-work
+	top: 40%
+	padding: 15px
+	.modal__navigation--performed-work
+		width: 70%
+	.modal__content
+		display: flex
+	.modal__content-wrapper
+		flex-basis: 60%
+		height: auto
+		flex-shrink: 1
+		padding-left: 25px
+	.photos-set
+		flex-basis: 40%
+		flex-direction: column
+		justify-content: space-around
+		height: auto
+		flex-shrink: 3
+		.photos-set__column--second, .photos-set__column--first
+			flex-basis: auto
+		.photos-set__column
+			flex-direction: row
+		.photos-set__column--first
+			justify-content: center
+			margin-right: 0
+			margin-bottom: 5px
+			.modal__photo
+				max-width: 376px
+				width: 100%
+				height: auto
+			.modal__photo-wrapper
+				width: auto
+		.photos-set__column--second
+			justify-content: space-between
+			.modal__photo
+				max-width: 120px
+				width: 100%
+				height: auto
+			.modal__photo-wrapper
+				width: auto
+
+.modal--review
+	top: 100%
+	.modal__content
+		overflow-y: hidden
+	.review
+		max-width: 100%
+		overflow-y: visible
+		.review__content
+			z-index: 2
+		.review__avatar
+			z-index: 1
+			width: 45%
+	.photos-set
+		background: #fff
+		z-index: 2
+		flex-basis: 100%
+		margin-left: 30%
+		padding-left: 15px
+		flex-direction: row
+		height: auto
+	.photos-set__column
+		flex-direction: row
+	.photos-set__column--second
+		flex-basis: auto
+		justify-content: space-between
+		width: 100%
+		img
+			max-width: 120px
+			width: 100%
+			height: auto
+		a
+			width: auto
+
 @import "media" // Always at the end
