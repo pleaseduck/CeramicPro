@@ -1,7 +1,7 @@
 $(function() {
 //Инициализация плагина галереи
  $(document).ready(function() {
-	$(".fancy-image").fancybox();
+	
 
 // Инициализация плагина карусели
   $(".price-list__carousel").owlCarousel({
