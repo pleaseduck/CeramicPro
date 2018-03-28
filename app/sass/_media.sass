@@ -45,10 +45,18 @@
           left: 2%
 
   .promotions__carousel
+    margin-top: 25px
     .owl-dots
       position: absolute
       margin-top: 0
       bottom: 0
+
+  .promotions .container, .promotions .row
+    height: auto !important
+
+  .reviews
+    .container, .row
+      height: auto
 //Small: ≥576px
 +media-breakpoint-down(sm)
 
@@ -164,6 +172,8 @@
 
 
   .performed-work
+    &__content
+      margin-top: 25px
     .gallery__group
       flex-wrap: wrap
       justify-content: center
@@ -202,13 +212,6 @@
       margin-left: -10px
     .link--to-prev-block, .top-line__page-counter
       display: none
-    .top-line
-      text-align: left
-      .top-line__heading
-        font-family: GothamProBold
-        font-size: 38px
-        line-height: 28px
-        color: #fff
     .chat
       display: none
 
@@ -250,6 +253,7 @@
       display: none
     &__content
       height: auto !important
+      margin-top: 25px
     &__gallery
       position: relative
       max-height: 100%
@@ -446,6 +450,36 @@
   .certificates__gallery
     //padding-right: 0 !important
 
+  .main-footer
+    padding-bottom: 515px
+    .link--to-prev-block, .top-line__page-counter
+      display: none
+    .chat
+      display: none
+    .top-line
+  		.top-line__heading, .top-line__page-counter, .top-line__current-page
+  			color: #fff !important
+  .main-footer
+    .map--main-footer
+      position: static
+      right: 0
+      height: 515px
+      //bottom: -515px
+      width: 100%
+
+  .contacts--footer
+    flex-direction: column
+    flex-wrap: nowrap
+    .contacts__item
+      margin-bottom: 30px
+      font-size: 22px
+    .contacts__heading
+      font-size: 18px
+
+  .main-footer__content
+    height: auto
+  .contact-form
+    display: none
 +media-breakpoint-down(xs)
   .main-header
     padding-top: 35px
@@ -518,10 +552,6 @@
     line-height: 28px
   .promotion__content
     font-size: 13px
-  .promotions__carousel
-    .owl-dots
-      position: absolute
-      bottom: 15%
 
   .about-company
     .about-company__content
@@ -543,6 +573,10 @@
   		top: 0
   		right: 0
   		margin-left: 30%
+
+  .main-footer
+    .top-line
+      margin-bottom: 35px
 @media screen and (max-width: 370px)
   .price-list
     .owl-item.center
@@ -555,10 +589,6 @@
           right: 0.5%
         .owl-prev
           left: 4%
-  .promotions__carousel
-    .owl-dots
-      position: absolute
-      bottom: 12%
 @media screen and (min-width: 578px) and (max-width: 878px)
   .price-list
     .owl-item.center

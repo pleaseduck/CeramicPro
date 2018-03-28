@@ -22,6 +22,12 @@ $(function() {
    dots: true,
    dotsEach: true
 });
+DG.then(function() {
+  DG.map('map', {
+  center: [52.29,104.28],
+  zoom: 13
+  });
+});
 // Трансформация активного элемента в карусели тарифов
 
 /* const test = document.createElement("iframe");
@@ -49,11 +55,7 @@ $(function() {
   const overlay = document.querySelector(".overlay");
 
   hamburger.addEventListener("click", function() {
-    if (hamburger.classList.contains("is-active")) {
-      document.querySelector(".sidebar--mobile").style.justifyContent = "space-between";
-    } else {
-      document.querySelector(".sidebar--mobile").style.justifyContent = "flex-end";
-    };
+    document.querySelector(".sidebar--mobile").classList.toggle("sidebar--inactive");
     mainNav.classList.toggle("menu-opened");
     document.querySelector(".sidebar--mobile").classList.toggle("sidebar__mobile--static");
     hamburger.classList.toggle("is-active");
@@ -99,4 +101,28 @@ $(function() {
       reviewItems[i].classList.toggle("gallery__item--mobile-hidden");
     }
   });
+
+  $(document).ready(function(){
+	    $(".main-nav").on("click","a", function (event) {
+	        event.preventDefault();
+	        var id  = $(this).attr('href'),
+	            top = $(id).offset().top;
+	        $('body,html').animate({scrollTop: top}, 1500);
+	    });
+	});
+
+  const mainMenu = document.querySelector(".main-nav");
+  const mainMenuItems = document.querySelectorAll(".main-nav__item");
+
+  mainMenu.addEventListener("click", function(event) {
+    var target = event.target;
+    if (target.tagName === "A") {
+      for (var i = 0; i < mainMenuItems.length; i++) {
+        mainMenuItems[i].classList.remove("main-nav__item--active");
+      }
+      target.parentNode.classList.add("main-nav__item--active");
+      console.log(target.parentNode.parentNode);
+    }
+  });
+
 });

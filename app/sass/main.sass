@@ -141,6 +141,8 @@ body
 	height: 90vh
 	left: 5%
 	z-index: 10
+	&--inactive
+		justify-content: flex-end !important
 	&--mobile
 		display: none
 		justify-content: space-between
@@ -159,9 +161,12 @@ body
 	position: relative
 	font-size: 12px
 	line-height: 30px
+
+
 .main-nav__link
 	text-decoration: none
 	color: #e1e1ee
+	font-family: GothamProBold
 	&::before
 		content: ""
 		width: 6px
@@ -172,11 +177,18 @@ body
 		left: 7px
 		top: 50%
 		margin-top: -3px
-		&--active
-			font-family: GothamProBold
-		&--active::before
-			transform: scale(1.3)
-			box-shadow: 0 0 20px 2px $accent
+	&:hover
+		color: #e1e1ee
+		text-decoration: underline
+
+.main-nav
+	.main-nav__item--active
+		.main-nav__link
+			color: #e1e1ee !important
+			font-family: GothamProBold !important
+			&::before
+				transform: scale(1.3)
+				box-shadow: 0 0 15px 3px $accent
 
 .main-nav__item:nth-child(2) .main-nav__link
 	color: #b3b3b3
@@ -219,6 +231,7 @@ body
 	display: block
 	color: #fff
 	&:hover
+		color: #fff
 		text-decoration: none
 .contacts__button
 	border: 1px solid $accent
@@ -326,10 +339,6 @@ body
 		&:hover
 			color: #e1e1ee
 			text-decoration: none
-.bottom-line__link
-	display: block
-	text-align: center
-	position: relative
 	.fas
 		position: absolute
 		font-size: 20px
@@ -337,6 +346,10 @@ body
 		margin-left: -5px
 		bottom: -16px
 		font-weight: 200
+.bottom-line__link
+	display: block
+	text-align: center
+	position: relative
 
 .chat
 	display: inline-block
@@ -385,15 +398,19 @@ body
 	.container, .row
 		position: relative
 .performed-work__content
-	height: 100vh
+	height: 76vh
 	position: relative
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	flex-direction: column
+	justify-content: center
 
 .performed-work__gallery
 	overflow-x: scroll
 	overflow-y: hidden
-	height: 100vh
 	max-height: 570px
-	margin-top: 55px
+	//margin-top: 55px
 	position: absolute
 	.gallery__group
 		display: flex
@@ -479,45 +496,6 @@ body
 	width: 10px
 // Прайс-лист
 
-//.price-list
-	position: relative
-	z-index: 2
-	height: 100vh
-	background-color: #000
-	background-image: url(../img/redcar-bg.jpg)
-	background-size: contain
-	padding-top: 40px
-	.container, .row
-		position: relative
-//.price-list__carousel
-	margin-top: 80px
-	//width: 70%
-	.owl-item
-		position: relative
-		z-index: -1
-		width: auto !important
-	.owl-item.active
-		text-align: center !important
-		z-index: 2 !important
-	.owl-item.center
-		z-index: 5 !important
-		.carousel__item
-			transform: scale(1.1)
-			box-shadow: 0 1px 3px 0 #000
-			background-color: #fff
-			position: relative
-			margin-left: 0px
-	.carousel__item
-		margin-top: 30px
-		margin-bottom: 30px
-		background-color: #f2f2f2
-		display: inline-block
-		width: 280px
-		padding-top: 45px
-		padding-bottom: 20px
-		padding-left: 20px
-		padding-right: 20px
-		text-align: center
 .price-list
 	position: relative
 	z-index: 2
@@ -528,8 +506,9 @@ body
 	padding-top: 40px
 	.container, .row
 		position: relative
+		height: 76vh
 	.price-list__carousel
-		margin-top: 80px
+		//margin-top: 80px
 		width: 70%
 	.carousel__item
 		margin-top: 30px
@@ -621,22 +600,36 @@ body
 // Дополнительные услуги
 .additional-services
 	position: relative
-	height: 100vh
 	background-image: url(../img/bmw-bg.jpg)
 	background-size: cover
 	padding-top: 40px
 	.container, .row
 		position: relative
 .additional-services__content
-	height: 100vh
+	height: 76vh
 	position: relative
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	flex-direction: column
+	justify-content: center
+.link
+	&--to-prev-block
+		&:hover
+			.fas
+				position: absolute
+				font-size: 20px
+				left: 50%
+				margin-left: -5px
+				top: -16px
+				font-weight: 200
+				transform: rotate(180deg)
 
 
 .additional-services__gallery
 	overflow-x: scroll
 	overflow-y: hidden
 	height: 100vh
-	margin-top: 55px
 	max-height: 580px
 	position: absolute
 	display: flex
@@ -737,7 +730,6 @@ body
 	background-repeat: no-repeat
 	.container, .row
 	 height: 85vh
-	.link--to-prev-block
 		.prev-page
 			margin-right: -28px
 	.owl-dots
@@ -789,14 +781,18 @@ body
 	.container, .row
 		position: relative
 .questions__content
-	height: 100vh
+	height: 76vh
 	position: relative
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	flex-direction: column
+	justify-content: center
 
 .questions__gallery
 	overflow-x: scroll
 	overflow-y: hidden
-	height: 100vh
-	margin-top: 55px
+	//margin-top: 55px
 	max-height: 545px
 	position: absolute
 	display: -webkit-flex
@@ -891,7 +887,7 @@ body
 .reviews
 	position: relative
 	height: 100vh
-	background-image: url(../img/bubble-bg2.jpg)
+	background-image: url(../img/bubble-bg3.jpg)
 	background-size: cover
 	padding-top: 40px
 	.container, .row
@@ -1054,7 +1050,7 @@ body
 .certificates
 	position: relative
 	height: 100vh
-	background-image: url(../img/bubble-bg4.jpg)
+	background-image: url(../img/bubble-bg3.jpg)
 	background-size: cover
 	padding-top: 40px
 	.container, .row
@@ -1133,11 +1129,14 @@ body
 .about-company
 	position: relative
 	height: 100vh
-	background-image: url(../img/bubble-bg2.jpg)
+	background-image: url(../img/bubble-bg3.jpg)
 	background-size: cover
 	padding-top: 40px
 	.container, .row
 		position: relative
+		height: 83vh
+	.container
+		height: 83vh
 	.bottom-line
 		text-align: center
 		bottom: 40px
@@ -1146,7 +1145,12 @@ body
 			margin-bottom: 30px
 			max-height: 50%
 .about-company__content-wrapper
-	height: 76vh
+	height: 100%
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	flex-direction: column
+	justify-content: center
 	.row
 		height: 100%
 		//flex-direction: column
@@ -1156,6 +1160,7 @@ body
 	z-index: 2
 	display: flex
 	position: relative
+	//justify-content: center
 
 .photos-set__column
 	display: flex
@@ -1215,8 +1220,7 @@ body
 	//margin-top: 35px
 	display: flex
 	flex-direction: column
-	justify-content: space-between
-	align-items: center
+	justify-content: center
 
 .widget
 	width: 100%
@@ -1231,4 +1235,139 @@ body
 		flex-basis: 350px
 		margin-bottom: 30px
 
+// Подвал
+
+.main-footer
+	position: relative
+	height: 100vh
+	background-image: url(../img/bubble-bg4.jpg)
+	background-size: cover
+	.top-line
+		.top-line__heading, .top-line__page-counter, .top-line__current-page
+			color: #000
+	.chat
+		z-index: 3
+	.container, .row
+		position: relative
+	.map--main-footer
+		position: absolute
+		z-index: 2
+		top: 0
+		right: 0
+		height: 100%
+		width: 362px
+		.dg-widget-link
+			height: 100%
+.main-footer__content
+	height: 87vh
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+.contacts--footer
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin-bottom: 60px
+	.contacts__item
+		margin-bottom: 50px
+	.contacts__heading
+		flex-basis: 40%
+		font-family: GothamProBold
+		font-size: 24px
+		line-height: 38px
+		color: #fff
+		display: block
+	.contacts__address
+		flex-basis: 40%
+	.contacts__email
+		flex-basis: 40%
+		.fas
+			transform: none
+.contact-form
+	display: block
+	background-color: #fff
+	padding: 20px
+	width: 100%
+.contact-form__message
+	resize: none
+	min-height: 150px
+.contact-form__message, .contact-form__name, .contact-form__phone-number
+	width: 100%
+	padding: 15px 20px
+	display: block
+	border: 1px solid #e0dfdf
+	box-shadow: inset 2px 2px 8px -8px rgba(0,0,0,0.75)
+	margin-bottom: 15px
+	&::-webkit-input-placeholder
+		color:#6c6c6c
+		font-family: MontserratLight
+		font-size: 14px
+		line-height: 26px
+	&::-moz-placeholder
+		color:#6c6c6c
+		font-family: MontserratLight
+		font-size: 14px
+		line-height: 26px
+	&:-moz-placeholder
+		color:#6c6c6c
+		font-family: MontserratLight
+		font-size: 14px
+		line-height: 26px
+	&:-ms-input-placeholder
+		color:#6c6c6c
+		font-family: MontserratLight
+		font-size: 14px
+		line-height: 26px
+.button--contact-form
+	display: block
+	width: 100%
+	font-size: 14px
+	line-height: 45px
+	height: 45px
+
+.contact-form__checkbox
+	position: relative
+	width: 100%
+	text-align: center
+	.checkbox_label
+		display: inline-block
+		cursor: pointer
+		position: relative
+		padding-left: 30px
+		&::before
+			content: ""
+			border: 1px solid #e0dfdf
+			color: #ced0da
+			width: 18px
+			height: 18px
+			position: absolute
+			top: 50%
+			left: 0
+			margin-top: -9px
+		&::after
+			content: ""
+			width: 17px
+			height: 17px
+			position: absolute
+			background-color: $accent
+			background-image: url(../img/icons/tick.svg)
+			background-repeat: no-repeat
+			background-position: center
+			text-align: center
+			top: 50%
+			left: 0
+			margin-top: -8.5px
+			display: none
+	.checkbox
+		position: absolute
+		z-index: -1
+		opacity: 0
+		width: 18px
+		height: 19px
+
+.contact-form__checkbox .checkbox:checked + .checkbox_label::after
+	display: block
 @import "media" // Always at the end

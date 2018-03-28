@@ -23,6 +23,7 @@
 	<meta name="msapplication-navbutton-color" content="#1A1A1A">
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A">
+	<script src="https://maps.api.2gis.ru/2.0/loader.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.min.css">
@@ -30,27 +31,27 @@
 </head>
 
 <body>
-	<div class="main-header">
+	<div class="main-header" id="main-header">
 		<div class="sidebar">
 			<div class="logo">
 				<a href="#" class="logo__wrapper"><img src="img/logo1.svg" alt="Ceramic Pro Авторизованный центр">
 					<span class="logo__signature">Авторизованный центр</span></a>
 			</div>
 			<ul class="main-nav">
-					<li class="main-nav__item--active  main-nav__item"><a href="#"  class="main-nav__link">Главная</a></li>
-					<li class="main-nav__item"><a href="#"  class="main-nav__link">Выполненные работы</a></li>
-					<li class="main-nav__item"><a href="#"  class="main-nav__link">Цены</a></li>
-					<li class="main-nav__item"><a href="#"  class="main-nav__link">Дополнительные услуги</a></li>
-					<li class="main-nav__item"><a href="#"  class="main-nav__link">Акции</a></li>
-					<li class="main-nav__item"><a href="#"  class="main-nav__link">Вопрос-ответ</a></li>
-					<li class="main-nav__item"><a href="#"  class="main-nav__link">Отзывы</a></li>
-					<li class="main-nav__item"><a href="#"  class="main-nav__link">Сертификаты</a></li>
-					<li class="main-nav__item"><a href="#"  class="main-nav__link">О компании</a></li>
-					<li class="main-nav__item"><a href="#"  class="main-nav__link">Соц. сети</a></li>
-					<li class="main-nav__item"><a href="#"  class="main-nav__link">Контакты</a></li>
+					<li class="main-nav__item--active  main-nav__item"><a href="#main-header"  class="main-nav__link">Главная</a></li>
+					<li class="main-nav__item"><a href="#performed-work"  class="main-nav__link">Выполненные работы</a></li>
+					<li class="main-nav__item"><a href="#price-list"  class="main-nav__link">Цены</a></li>
+					<li class="main-nav__item"><a href="#additional-services"  class="main-nav__link">Дополнительные услуги</a></li>
+					<li class="main-nav__item"><a href="#promotions"  class="main-nav__link">Акции</a></li>
+					<li class="main-nav__item"><a href="#questions"  class="main-nav__link">Вопрос-ответ</a></li>
+					<li class="main-nav__item"><a href="#reviews"  class="main-nav__link">Отзывы</a></li>
+					<li class="main-nav__item"><a href="#certificates"  class="main-nav__link">Сертификаты</a></li>
+					<li class="main-nav__item"><a href="#about-company"  class="main-nav__link">О компании</a></li>
+					<li class="main-nav__item"><a href="#social-networks"  class="main-nav__link">Соц. сети</a></li>
+					<li class="main-nav__item"><a href="#contacts"  class="main-nav__link">Контакты</a></li>
 			</ul>
 			<div class="contacts">
-				<a href="#" class="contacts__item  contacts__address"><i class="fas fa-map-marker-alt"></i>г. Иркутск, Ул.Ленина,1</a>
+				<a href="#" class="contacts__item  contacts__address"><i class="fas fa-map-marker-alt"></i>г. Иркутск, Ул. Ленина, 1</a>
 				<a href="#" class="contacts__item  contacts__phone"><i class="fas fa-phone"></i> +7 (900) 123-45-67</a>
 				<a href="#" class="contacts__item  contacts__button button button--transparent"><i class="fas fa-phone"></i> Заказать звонок</a>
 			</div>
@@ -98,13 +99,13 @@
 			</div>
 		</div>
 		<a href="#" class="bottom-line  bottom-line--mobile">
-			<span class="bottom-line__link  bottom-line__link--to-next-block  link  link--to-next-block  link--mobile-hidden">Выполненные работы<i class="fas fa-angle-down"></i></span>
-			<span class="bottom-line__link  bottom-line__link--to-next-block  link  link--to-next-block  link--desktop-hidden">Узнать больше<i class="fas fa-angle-down"></i></span>
+			<span class="bottom-line__link  bottom-line__link--to-next-block  link  link--to-next-block  link--mobile-hidden">Выполненные работы</span>
+			<span class="bottom-line__link  bottom-line__link--to-next-block  link  link--to-next-block  link--desktop-hidden">Узнать больше</span><i class="fas fa-angle-down"></i>
 			<div class="chat"></div>
 		</a>
 	</div>
 
-	<div class="performed-work">
+	<div class="performed-work" id="performed-work">
 		<a href="#" class="link  link--to-prev-block">
 			<span class="prev-page">Главная<i class="fas fa-angle-down"></i></span>
 		</a>
@@ -117,11 +118,11 @@
 				<div class="col-md-10 offset-md-2">
 							<div class="row">
 									<div class="col-12">
-											<div class="performed-work__overlay"></div>
-											<div class="performed-work__gallery">
-												<div class="performed-work__content">
+										<div class="performed-work__content">
+												<div class="performed-work__overlay"></div>
+											<div class="performed-work__gallery  revealator-once revealator-zoomin revealator-delay 7">
 													<div class="gallery__group">
-															<div class="gallery__item">
+															<div class="gallery__item  revealator-once revealator-zoomin revealator-delay1">
 																<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																		<img src="img/mustang.jpg" alt=""  class="gallery__image">
 																</a>
@@ -130,7 +131,7 @@
 																	<a href="#" class="button  button--see-more"><i class="fas fa-angle-right"></i></a>
 																</p>
 															</div>
-															<div class="gallery__item">
+															<div class="gallery__item revealator-once revealator-zoomin revealator-delay2">
 																<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																																						<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																					</a>
@@ -139,7 +140,7 @@
 																	<a href="#" class="button  button--see-more"><i class="fas fa-angle-right"></i></a>
 																</p>
 															</div>
-															<div class="gallery__item  gallery__item--mobile-hidden">
+															<div class="gallery__item  gallery__item--mobile-hidden revealator-once  revealator-zoomin revealator-delay3">
 																<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																																							<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																						</a>
@@ -148,7 +149,7 @@
 																	<a href="#" class="button  button--see-more"><i class="fas fa-angle-right"></i></a>
 																</p>
 															</div>
-															<div class="gallery__item gallery__item--mobile-hidden">
+															<div class="gallery__item gallery__item--mobile-hidden revealator-once  revealator-zoomin revealator-delay4">
 																<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																																								<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																							</a>
@@ -157,7 +158,7 @@
 																	<a href="#" class="button  button--see-more"><i class="fas fa-angle-right"></i></a>
 																</p>
 															</div>
-															<div class="gallery__item gallery__item--mobile-hidden">
+															<div class="gallery__item gallery__item--mobile-hidden revealator-once  revealator-zoomin revealator-delay5">
 																<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																		<img src="img/mustang.jpg" alt="" class="gallery__image">
 																</a>
@@ -166,7 +167,7 @@
 																	<a href="#" class="button  button--see-more"><i class="fas fa-angle-right"></i></a>
 																</p>
 															</div>
-															<div class="gallery__item gallery__item--mobile-hidden">
+															<div class="gallery__item gallery__item--mobile-hidden revealator-once  revealator-zoomin revealator-delay6">
 																<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																		<img src="img/mustang.jpg" alt="" class="gallery__image">
 																</a>
@@ -177,7 +178,7 @@
 															</div>
 														</div>
 													<div class="gallery__group  gallery__group--marginless">
-														<div class="gallery__item gallery__item--mobile-hidden">
+														<div class="gallery__item gallery__item--mobile-hidden revealator-once revealator-zoomin revealator-delay1">
 															<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																	<img src="img/mustang.jpg" alt="" class="gallery__image">
 															</a>
@@ -186,7 +187,7 @@
 																<a href="#" class="button  button--see-more"><i class="fas fa-angle-right"></i></a>
 															</p>
 														</div>
-														<div class="gallery__item gallery__item--mobile-hidden">
+														<div class="gallery__item gallery__item--mobile-hidden revealator-once revealator-zoomin revealator-delay2">
 															<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																																					<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																				</a>
@@ -195,7 +196,7 @@
 																<a href="#" class="button  button--see-more"><i class="fas fa-angle-right"></i></a>
 															</p>
 														</div>
-														<div class="gallery__item gallery__item--mobile-hidden">
+														<div class="gallery__item gallery__item--mobile-hidden  revealator-once revealator-zoomin revealator-delay3">
 															<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																																						<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																					</a>
@@ -204,7 +205,7 @@
 																<a href="#" class="button  button--see-more"><i class="fas fa-angle-right"></i></a>
 															</p>
 														</div>
-														<div class="gallery__item gallery__item--mobile-hidden">
+														<div class="gallery__item gallery__item--mobile-hidden  revealator-once revealator-zoomin revealator-delay4">
 															<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																																							<img src="img/mustang.jpg" alt="" class="gallery__image">
 																																						</a>
@@ -213,7 +214,7 @@
 																<a href="#" class="button  button--see-more"><i class="fas fa-angle-right"></i></a>
 															</p>
 														</div>
-														<div class="gallery__item gallery__item--mobile-hidden">
+														<div class="gallery__item gallery__item--mobile-hidden  revealator-once revealator-zoomin revealator-delay5">
 															<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																	<img src="img/mustang.jpg" alt="" class="gallery__image">
 															</a>
@@ -222,7 +223,7 @@
 																<a href="#" class="button  button--see-more"><i class="fas fa-angle-right"></i></a>
 															</p>
 														</div>
-														<div class="gallery__item gallery__item--mobile-hidden">
+														<div class="gallery__item gallery__item--mobile-hidden  revealator-once revealator-zoomin revealator-delay6">
 															<a class="fancy-image" href="img/mustang.jpg" data-fancybox data-caption="Название кейса">
 																	<img src="img/mustang.jpg" alt="" class="gallery__image">
 															</a>
@@ -232,22 +233,22 @@
 															</p>
 														</div>
 													</div>
-												</div>
-											</div>
-									</div>
+																				</div>
+										</div>
 							</div>
 						</div>
-						<a href="#" class="button--watch-more  button--performed-work"> Ещё работы</a>
 				</div>
+				<a href="#" class="button--watch-more  button--performed-work"> Ещё работы</a>
 			</div>
-			<a href="#" class="bottom-line">
-				<span class="bottom-line__link  bottom-line__link--to-next-block  link  link--to-next-block">Цены<i class="fas fa-angle-down"></i></span>
-				<div class="chat"></div>
-			</a>
 		</div>
+		<a href="#" class="bottom-line">
+			<span class="bottom-line__link  bottom-line__link--to-next-block  link  link--to-next-block">Цены<i class="fas fa-angle-down"></i></span>
+			<div class="chat"></div>
+		</a>
+	</div>
 
 
-		<div class="price-list">
+		<div class="price-list" id="price-list">
 			<a href="#" class="link  link--to-prev-block">
 				<span class="prev-page">Выполненные работы<i class="fas fa-angle-down"></i></span>
 			</a>
@@ -259,81 +260,81 @@
 				<div class="row">
 					<div class="col-md-10 offset-md-2">
 											<div class="row">
-													<div class="col-12  d-flex justify-content-center">
-															<div class="price-list__carousel  owl-carousel">
-																<div class="carousel__item">
-																	<div class="tariff">
-																		<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
-																		<span class="tariff__heading">Пакет «Эконом»</span>
-																		<span class="tariff__service">Нанесение покрытия 9Н</span>
-																		<span class="tariff__service">Полировка автомобиля</span>
-																		<span class="tariff__service">Покрытие доп.раствором</span>
-																		<span class="tariff__service">Наименование услуги 2</span>
-																		<span class="tariff__service">Наименование услуги 3</span>
-																		<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
+													<div class="col-12  d-flex justify-content-center  align-items-center  flex-column">
+																<div class="price-list__carousel  owl-carousel">
+																	<div class="carousel__item">
+																		<div class="tariff">
+																			<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
+																			<span class="tariff__heading">Пакет «Эконом»</span>
+																			<span class="tariff__service">Нанесение покрытия 9Н</span>
+																			<span class="tariff__service">Полировка автомобиля</span>
+																			<span class="tariff__service">Покрытие доп.раствором</span>
+																			<span class="tariff__service">Наименование услуги 2</span>
+																			<span class="tariff__service">Наименование услуги 3</span>
+																			<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
+																		</div>
+																	</div>
+																	<div class="carousel__item">
+																		<div class="tariff">
+																			<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
+																			<span class="tariff__heading">Пакет «Эконом»</span>
+																			<span class="tariff__service">Нанесение покрытия 9Н</span>
+																			<span class="tariff__service">Полировка автомобиля</span>
+																			<span class="tariff__service">Покрытие доп.раствором</span>
+																			<span class="tariff__service">Наименование услуги 2</span>
+																			<span class="tariff__service">Наименование услуги 3</span>
+																			<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
+																		</div>
+																	</div>
+																	<div class="carousel__item">
+																		<div class="tariff">
+																			<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
+																			<span class="tariff__heading">Пакет «Эконом»</span>
+																			<span class="tariff__service">Нанесение покрытия 9Н</span>
+																			<span class="tariff__service">Полировка автомобиля</span>
+																			<span class="tariff__service">Покрытие доп.раствором</span>
+																			<span class="tariff__service">Наименование услуги 2</span>
+																			<span class="tariff__service">Наименование услуги 3</span>
+																			<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
+																		</div>
+																	</div>
+																	<div class="carousel__item">
+																		<div class="tariff">
+																			<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
+																			<span class="tariff__heading">Пакет «Эконом»</span>
+																			<span class="tariff__service">Нанесение покрытия 9Н</span>
+																			<span class="tariff__service">Полировка автомобиля</span>
+																			<span class="tariff__service">Покрытие доп.раствором</span>
+																			<span class="tariff__service">Наименование услуги 2</span>
+																			<span class="tariff__service">Наименование услуги 3</span>
+																			<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
+																		</div>
+																	</div>
+																	<div class="carousel__item">
+																		<div class="tariff">
+																			<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
+																			<span class="tariff__heading">Пакет «Эконом»</span>
+																			<span class="tariff__service">Нанесение покрытия 9Н</span>
+																			<span class="tariff__service">Полировка автомобиля</span>
+																			<span class="tariff__service">Покрытие доп.раствором</span>
+																			<span class="tariff__service">Наименование услуги 2</span>
+																			<span class="tariff__service">Наименование услуги 3</span>
+																			<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
+																		</div>
+																	</div>
+																	<div class="carousel__item">
+																		<div class="tariff">
+																			<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
+																			<span class="tariff__heading">Пакет «Эконом»</span>
+																			<span class="tariff__service">Нанесение покрытия 9Н</span>
+																			<span class="tariff__service">Полировка автомобиля</span>
+																			<span class="tariff__service">Покрытие доп.раствором</span>
+																			<span class="tariff__service">Наименование услуги 2</span>
+																			<span class="tariff__service">Наименование услуги 3</span>
+																			<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
+																		</div>
 																	</div>
 																</div>
-																<div class="carousel__item">
-																	<div class="tariff">
-																		<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
-																		<span class="tariff__heading">Пакет «Эконом»</span>
-																		<span class="tariff__service">Нанесение покрытия 9Н</span>
-																		<span class="tariff__service">Полировка автомобиля</span>
-																		<span class="tariff__service">Покрытие доп.раствором</span>
-																		<span class="tariff__service">Наименование услуги 2</span>
-																		<span class="tariff__service">Наименование услуги 3</span>
-																		<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
-																	</div>
-																</div>
-																<div class="carousel__item">
-																	<div class="tariff">
-																		<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
-																		<span class="tariff__heading">Пакет «Эконом»</span>
-																		<span class="tariff__service">Нанесение покрытия 9Н</span>
-																		<span class="tariff__service">Полировка автомобиля</span>
-																		<span class="tariff__service">Покрытие доп.раствором</span>
-																		<span class="tariff__service">Наименование услуги 2</span>
-																		<span class="tariff__service">Наименование услуги 3</span>
-																		<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
-																	</div>
-																</div>
-																<div class="carousel__item">
-																	<div class="tariff">
-																		<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
-																		<span class="tariff__heading">Пакет «Эконом»</span>
-																		<span class="tariff__service">Нанесение покрытия 9Н</span>
-																		<span class="tariff__service">Полировка автомобиля</span>
-																		<span class="tariff__service">Покрытие доп.раствором</span>
-																		<span class="tariff__service">Наименование услуги 2</span>
-																		<span class="tariff__service">Наименование услуги 3</span>
-																		<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
-																	</div>
-																</div>
-																<div class="carousel__item">
-																	<div class="tariff">
-																		<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
-																		<span class="tariff__heading">Пакет «Эконом»</span>
-																		<span class="tariff__service">Нанесение покрытия 9Н</span>
-																		<span class="tariff__service">Полировка автомобиля</span>
-																		<span class="tariff__service">Покрытие доп.раствором</span>
-																		<span class="tariff__service">Наименование услуги 2</span>
-																		<span class="tariff__service">Наименование услуги 3</span>
-																		<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
-																	</div>
-																</div>
-																<div class="carousel__item">
-																	<div class="tariff">
-																		<img src="img/icons/money-box.svg" alt="Пакет эконом"  class="carousel__image  tariff__image">
-																		<span class="tariff__heading">Пакет «Эконом»</span>
-																		<span class="tariff__service">Нанесение покрытия 9Н</span>
-																		<span class="tariff__service">Полировка автомобиля</span>
-																		<span class="tariff__service">Покрытие доп.раствором</span>
-																		<span class="tariff__service">Наименование услуги 2</span>
-																		<span class="tariff__service">Наименование услуги 3</span>
-																		<div class="tariff__price"><span>32 000 р.</span><a href="#" class="button  button--transparent">Заказать</a></div>
-																	</div>
-																</div>
-															</div>
 													</div>
 								</div>
 
@@ -346,7 +347,7 @@
 			</a>
 		</div>
 
-			<div class="additional-services">
+			<div class="additional-services" id="additional-services">
 				<a href="#" class="link  link--to-prev-block">
 					<span class="prev-page">Цены<i class="fas fa-angle-down"></i></span>
 				</a>
@@ -554,7 +555,7 @@
 				</a>
 	</div>
 
-	<div class="promotions">
+	<div class="promotions" id="promotions">
 		<a href="#" class="link  link--to-prev-block">
 			<span class="prev-page">Дополнительные услуги<i class="fas fa-angle-down"></i></span>
 		</a>
@@ -628,7 +629,7 @@
 			</a>
 		</div>
 
-		<div class="questions">
+		<div class="questions" id="questions">
 			<a href="#" class="link  link--to-prev-block">
 				<span class="prev-page">Акции<i class="fas fa-angle-down"></i></span>
 			</a>
@@ -640,171 +641,173 @@
 				<div class="row">
 					<div class="col-md-10 offset-md-2">
 								<div class="row">
-									<div class="col-12  questions__gallery">
+									<div class="col-12">
 												<div class="questions__content">
-													<div class="gallery__overlay"></div>
-													<div class="gallery__group">
-														<div class="gallery__item">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
+													<div class="questions__gallery">
+														<div class="gallery__overlay"></div>
+														<div class="gallery__group">
+															<div class="gallery__item">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
 																		</div>
 																	</div>
-																</div>
+															</div>
+															<div class="gallery__item">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
+																		</div>
+																	</div>
+															</div>
+															<div class="gallery__item">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
+																		</div>
+																	</div>
+															</div>
 														</div>
-														<div class="gallery__item">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
+														<div class="gallery__group">
+															<div class="gallery__item  gallery__item--mobile-hidden">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
 																		</div>
 																	</div>
-																</div>
+															</div>
+															<div class="gallery__item  gallery__item--mobile-hidden">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
+																		</div>
+																	</div>
+															</div>
+															<div class="gallery__item  gallery__item--mobile-hidden">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
+																		</div>
+																	</div>
+															</div>
 														</div>
-														<div class="gallery__item">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
+														<div class="gallery__group">
+															<div class="gallery__item  gallery__item--mobile-hidden">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
 																		</div>
 																	</div>
-																</div>
+															</div>
+															<div class="gallery__item  gallery__item--mobile-hidden">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
+																		</div>
+																	</div>
+															</div>
+															<div class="gallery__item  gallery__item--mobile-hidden">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
+																		</div>
+																	</div>
+															</div>
 														</div>
-													</div>
-													<div class="gallery__group">
-														<div class="gallery__item  gallery__item--mobile-hidden">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
+														<div class="gallery__group  gallery__group--marginless">
+															<div class="gallery__item  gallery__item--mobile-hidden">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
 																		</div>
 																	</div>
-																</div>
-														</div>
-														<div class="gallery__item  gallery__item--mobile-hidden">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
+															</div>
+															<div class="gallery__item  gallery__item--mobile-hidden">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
 																		</div>
 																	</div>
-																</div>
-														</div>
-														<div class="gallery__item  gallery__item--mobile-hidden">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
+															</div>
+															<div class="gallery__item  gallery__item--mobile-hidden">
+																	<div class="question">
+																		<div class="row">
+																			<div class="col-12">
+																				<p class="question__item">
+																				 <span href="#" class="question__title">Наименование услуги</span>
+																				  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
+																					<a href="#" class="link link--more-information">Читать далее</a>
+																				</p>
+																			</div>
 																		</div>
 																	</div>
-																</div>
-														</div>
-													</div>
-													<div class="gallery__group">
-														<div class="gallery__item  gallery__item--mobile-hidden">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
-																		</div>
-																	</div>
-																</div>
-														</div>
-														<div class="gallery__item  gallery__item--mobile-hidden">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
-																		</div>
-																	</div>
-																</div>
-														</div>
-														<div class="gallery__item  gallery__item--mobile-hidden">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
-																		</div>
-																	</div>
-																</div>
-														</div>
-													</div>
-													<div class="gallery__group  gallery__group--marginless">
-														<div class="gallery__item  gallery__item--mobile-hidden">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
-																		</div>
-																	</div>
-																</div>
-														</div>
-														<div class="gallery__item  gallery__item--mobile-hidden">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
-																		</div>
-																	</div>
-																</div>
-														</div>
-														<div class="gallery__item  gallery__item--mobile-hidden">
-																<div class="question">
-																	<div class="row">
-																		<div class="col-12">
-																			<p class="question__item">
-																			 <span href="#" class="question__title">Наименование услуги</span>
-																			  Впервые газовые гидраты были описаны Гемфри Дэви в 1810 году, однако брожение вступает выход целевого продукта.
-																				<a href="#" class="link link--more-information">Читать далее</a>
-																			</p>
-																		</div>
-																	</div>
-																</div>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -821,7 +824,7 @@
 			</a>
 		</div>
 
-		<div class="reviews">
+		<div class="reviews" id="reviews">
 			<a href="#" class="link  link--to-prev-block">
 				<span class="prev-page">Вопрос-ответ<i class="fas fa-angle-down"></i></span>
 			</a>
@@ -936,7 +939,7 @@
 			</a>
 		</div>
 
-		<div class="certificates">
+		<div class="certificates" id="certificates">
 			<a href="#" class="link  link--to-prev-block">
 				<span class="prev-page">Отзывы<i class="fas fa-angle-down"></i></span>
 			</a>
@@ -978,7 +981,7 @@
 			</a>
 		</div>
 
-		<div class="about-company">
+		<div class="about-company" id="about-company">
 			<a href="#" class="link  link--to-prev-block">
 				<span class="prev-page">Сертификаты<i class="fas fa-angle-down"></i></span>
 			</a>
@@ -990,7 +993,7 @@
 				<div class="row">
 					<div class="col-md-10 offset-md-2">
 								<div class="about-company__content-wrapper">
-									<div class="row  d-flex  justify-content-center">
+									<div class="row  d-flex  justify-content-center  align-items-center">
 										<div class="col-12">
 											<div class="photos-set">
 												<div class="photos-set__column  photos-set__column--first">
@@ -1029,7 +1032,7 @@
 			</a>
 		</div>
 
-		<div class="social-networks">
+		<div class="social-networks" id="social-networks">
 			<a href="#" class="link  link--to-prev-block">
 				<span class="prev-page">О компании<i class="fas fa-angle-down"></i></span>
 			</a>
@@ -1061,6 +1064,56 @@
 				<div class="chat"></div>
 			</a>
 		</div>
+
+		<div class="main-footer" id="contacts">
+			<a href="#" class="link  link--to-prev-block">
+				<span class="prev-page">Соц. сети<i class="fas fa-angle-down"></i></span>
+			</a>
+			<div class="top-line">
+				<span class="top-line__heading">Контакты</span>
+				<span class="top-line__page-counter"><span class="top-line__current-page">11</span>/11</span>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7  col-12  offset-md-2">
+							<div class="col-12">
+								<div class="main-footer__content">
+									<div class="contacts contacts--footer">
+										<a href="#" class="contacts__item  contacts__item--footer  contacts__phone">
+											<span class="contacts__heading">Позвоните нам:</span>
+											<i class="fas fa-phone"></i> +7 (900) 123-45-67
+										</a>
+										<a href="#" class="contacts__item  contacts__item--footer  contacts__address">
+											<span class="contacts__heading">Или приезжайте:</span>
+											<i class="fas fa-map-marker-alt"></i>г. Иркутск, Ул.Ленина,1
+										</a>
+										<a href="#" class="contacts__item  contacts__email">
+											<span class="contacts__heading">Или напишите :)</span>
+											<i class="fas fa-envelope"></i> mail@mail.ru
+										</a>
+									</div>
+									<form class="contact-form">
+										<textarea name="message" placeholder="Введите Ваше сообщение" class="contact-form__message"></textarea>
+										<input type="text" class="contact-form__name" placeholder="Как Вас зовут?">
+										<input type="tel" class="contact-form__phone-number" placeholder="Ваш номер телефона">
+										<label class="contact-form__checkbox">
+												<input type="checkbox" class="checkbox">
+												<div class="checkbox_label">
+													Я согласен на обработку <a href="#">персональных данных</a>.
+												</div>
+											</label>
+										<button class="button button--contact-form">Отправить</button>
+									</form>
+								</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<a href="#" class="bottom-line">
+			<div class="chat"></div>
+		</a>
+		<div class="map map--main-footer" id="map"></div>
+	</div>
 
 	<script src="js/scripts.min.js"></script>
 </body>
