@@ -18,16 +18,14 @@ body
 	position: relative
 	line-height: 1.65
 	font-family: $default-font
-	overflow-x: hidden
+	overflow-x: hidden !important
 	color: #e1e1e1
 	background-color: #000
 	input, textarea
 			border: #666 1px solid
 			outline: none
 			&:focus:required:invalid
-				border-color: red
-			&:required:valid
-				border-color: green
+				border-color:  green
 	ul
 		padding: 0
 		margin: 0
@@ -397,7 +395,7 @@ p
 
 //Общие стилли для галереи
 .gallery
-	overflow-x: scroll
+	//overflow-x: scroll
 	overflow-y: hidden
 	position: absolute
 	&__group
@@ -441,12 +439,13 @@ p
 		max-width: 241px
 		.button--see-more
 			position: absolute
+			z-index: 2
 			right: 0
 			top: 50%
 			margin-top: -22.5px
 	&--additional-services
-		height: 100vh
-		max-height: 580px
+		//height: 100vh
+		//max-height: 580px
 		display: flex
 		flex-direction: column
 		.gallery__overlay
@@ -497,7 +496,9 @@ p
 			border-image: linear-gradient(to top, #040505 25%, #fff 100%)
 			border-image-slice: 1
 	&--reviews
-		max-height: 580px
+		//max-height: 580px
+		height: 76vh
+		max-height: 100%
 		display: -webkit-flex
 		display: -ms-flex
 		display: flex
@@ -710,6 +711,7 @@ p
 	width: 50px
 	height: auto
 .additional-service__button
+	z-index: 2
 	width: 145px
 
 //Акции
@@ -813,6 +815,7 @@ p
 		height: 100vh
 		position: relative
 .reviews__content
+	overflow-y: scroll !important
 	height: 76vh
 	display: flex
 	justify-content: center
@@ -1089,6 +1092,8 @@ p
 	border: 1px solid #e0dfdf
 	box-shadow: inset 2px 2px 8px -8px rgba(0,0,0,0.75)
 	margin-bottom: 15px
+	font-size: 14px
+	line-height: 1.8em
 	&::-webkit-input-placeholder
 		color:#6c6c6c
 		font-family: MontserratLight
@@ -1265,5 +1270,34 @@ p
 			height: auto
 		a
 			width: auto
-
+	.modal--contact-form
+		position: absolute
+		width: 60%
+.fancybox-button--close
+	&:hover
+		color: $accent
+		transition: color .25s ease
+.fancybox-close-small
+	top: 5%
+	right: 4%
+	color: #fff
+	padding: 10px
+	width: 24px
+	height: 24px
+	box-sizing: content-box
+	&:hover
+		color: $accent
+		transition: color .25s ease
+	&::after
+		display: none
+.nicescroll-cursors
+	background: rgb(0,0,0); /* Old browsers */
+	background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(168,168,168,1) 50%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%,rgba(168,168,168,1) 50%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(168,168,168,1) 50%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+	//width: 10% !important
+.nicescroll-rails
+	border: 1px solid #212121
+	height: 9px
 @import "media" // Always at the end

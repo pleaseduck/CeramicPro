@@ -2,7 +2,17 @@ $(function() {
 
  $(document).ready(function() {
   repaintMenu();
-
+  $(".scroll-wrapper").niceScroll({
+    cursorborder: "none",
+    cursorwidth: "10px",
+    enablemousewheel: true,
+    smoothscroll: true
+  });
+  $("body").niceScroll({
+    cursorborder: "none",
+    cursorwidth: "10px",
+    horizrailenabled: false
+  });
    //Инициализация плагина галереи
    $("a[data-fancybox]").fancybox({
 	    loop: true,
@@ -14,9 +24,29 @@ $(function() {
         'close'
     ]
 });
+  function replaceCloseButton(evt) {
+    target = evt.target;
+    console.log(evt.target);
+    src = target.getAttribute("data-src")
+    console.log(src);
+    let closeIcon = document.querySelector(".fancybox-close-small").cloneNode(true);
+    document.querySelector(".fancybox-close-small").remove()
+    closeIcon.innerHTML = '<i class="fas fa-times"></i>'
+    document.querySelector(`${src}`).parentElement.appendChild(closeIcon);
+    console.log(document.querySelector(`${src}`));
+  }
 
-  console.log(document.querySelectorAll("a[data-fancybox]"));
-  const galleryItem = document.querySelectorAll("a[data-fancybox]");
+  modalFormOpeners = document.querySelectorAll("[data-src='#modal--form']")
+  for (var i = 0; i < modalFormOpeners.length; i++) {
+    modalFormOpeners[i].addEventListener("click", function(evt) {
+      evt.preventDefault()
+        replaceCloseButton(evt)
+    });
+  }
+
+
+
+  const galleryItem = document.querySelectorAll("[data-fancybox]");
   for (var i = 0; i < galleryItem.length; i++) {
     galleryItem[i].addEventListener("click",function() {
       document.querySelector(".fancybox-button--close").innerHTML = '<i class="fas fa-times"></i>'
@@ -36,6 +66,7 @@ $(function() {
  $(".promotions__carousel").owlCarousel({
    items: 1,
    nav: true,
+   loop: true,
    navText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
    center: true,
    margin: 200,
