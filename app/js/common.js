@@ -12,7 +12,7 @@ $(function() {
         'close'
     ]
 });
-$('[data-fancybox="group-performed-work"])'.fancybox({
+/*$([data-fancybox="group-performed-work"]).fancybox({
    loop: true,
    keyboard : true,
    arrows : false,
@@ -21,7 +21,7 @@ $('[data-fancybox="group-performed-work"])'.fancybox({
    buttons : [
      'close'
  ]
-});
+});*/
   console.log(document.querySelectorAll("a[data-fancybox]"));
   const galleryItem = document.querySelectorAll("a[data-fancybox]");
   for (var i = 0; i < galleryItem.length; i++) {
@@ -33,7 +33,6 @@ $('[data-fancybox="group-performed-work"])'.fancybox({
     //document.querySelector(".fancybox-button--close").innerHTML = '<i class="fas fa-times"></i>'
     //console.log(document.querySelector(".fancybox-button--close"));
   //},1000)
-
 // Инициализация плагина карусели
   $(".price-list__carousel").owlCarousel({
     items: 3,
@@ -78,6 +77,76 @@ DG.then(function() {
 //frame.onresize = function(){
   //alert('Размеры div #Test изменены.');
 //}
+function repaintPrevElements(activeItem,menuItemsList) {
+  var prevElement = activeItem
+  for (var m = 1; m < 10; m++) {
+    prevElement = prevElement.previousElementSibling
+    if (prevElement !== null) {
+      prevElement.classList.add("main-nav__item--sibling" + m);
+    } else {
+      if (menuItemsList[0].classList.contains("main-nav__item--active")) {
+        menuItemsList[10].classList.add("main-nav__item--sibling10")
+      }
+      return
+    }
+  }
+};
+
+function repaintNextElements(activeItem,menuItemsList) {
+  var nextElement = activeItem
+    for (var j = 1; j < 10; j++) {
+      nextElement = nextElement.nextElementSibling
+      if (nextElement !== null) {
+        nextElement.classList.add("main-nav__item--sibling" + j);
+      } else {
+        if (menuItemsList[10].classList.contains("main-nav__item--active")) {
+          menuItemsList[0].classList.add("main-nav__item--sibling10")
+        }
+        return
+      }
+    }
+};
+
+function repaintMenu() {
+  var activeItem = document.querySelector(".main-nav__item--active");
+  var menuItemsList = document.querySelector(".main-nav").querySelectorAll("li");
+  //console.log(menuItemsList);
+  for (var i = 1; i <= 10; i++) {
+   for (var k = 0; k <  menuItemsList.length; k++) {
+     menuItemsList[k].classList.remove("main-nav__item--sibling" + i)
+   }
+  };
+  repaintPrevElements(activeItem,menuItemsList);
+  repaintNextElements(activeItem,menuItemsList);
+};
+var lastId,
+  topMenu = $(".main-nav"),
+  topMenuHeight = topMenu.outerHeight()+15,
+  menuItems = topMenu.find("a"),
+  scrollItems = menuItems.map(function(){
+    var item = $($(this).attr("href"));
+    if (item.length) {
+      return item;
+    }
+  });
+$(window).scroll(function(){
+   var fromTop = $(this).scrollTop()+topMenuHeight;
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+
+   if (lastId !== id) {
+       lastId = id;
+       menuItems
+         .parent().removeClass("main-nav__item--active")
+         .end().filter('[href="#'+id+'"]').parent().addClass("main-nav__item--active");
+      repaintMenu();
+
+   }
+});
 });
 
 // Реализация мобильного меню
@@ -134,19 +203,24 @@ DG.then(function() {
 	        var id  = $(this).attr('href'),
 	            top = $(id).offset().top;
 	        $('body,html').animate({scrollTop: top}, 1500);
-	    });
-	});
 
+	    });
+
+	});
   const mainMenu = document.querySelector(".main-nav");
   const mainMenuItems = document.querySelectorAll(".main-nav__item");
 
   mainMenu.addEventListener("click", function(event) {
     var target = event.target;
+    var id  = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({scrollTop: top}, 1500);
     if (target.tagName === "A") {
       for (var i = 0; i < mainMenuItems.length; i++) {
         mainMenuItems[i].classList.remove("main-nav__item--active");
       }
       target.parentNode.classList.add("main-nav__item--active");
+      repaintMenu();
       console.log(target.parentNode.parentNode);
     }
   });
