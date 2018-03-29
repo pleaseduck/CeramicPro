@@ -45,7 +45,6 @@ gulp.task('js', function() {
 		'app/libs/revealator/fm.revealator.jquery.js',
 		'app/libs/fancybox/dist/jquery.fancybox.min.js',
 		'app/libs/niceroll/jquery.nicescroll.js',
-		'app/libs/fullPage.js/dist/jquery.fullpage.min.js',
 
 		'app/js/common.js' // Always at the end
 		])
