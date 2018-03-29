@@ -1,6 +1,8 @@
 $(function() {
 
  $(document).ready(function() {
+  repaintMenu();
+
    //Инициализация плагина галереи
    $("a[data-fancybox]").fancybox({
 	    loop: true,
@@ -12,16 +14,7 @@ $(function() {
         'close'
     ]
 });
-/*$([data-fancybox="group-performed-work"]).fancybox({
-   loop: true,
-   keyboard : true,
-   arrows : false,
-   infobar: false,
-   captionbar: false,
-   buttons : [
-     'close'
- ]
-});*/
+
   console.log(document.querySelectorAll("a[data-fancybox]"));
   const galleryItem = document.querySelectorAll("a[data-fancybox]");
   for (var i = 0; i < galleryItem.length; i++) {
@@ -29,10 +22,7 @@ $(function() {
       document.querySelector(".fancybox-button--close").innerHTML = '<i class="fas fa-times"></i>'
     })
   }
-  //setTimeout(function() {
-    //document.querySelector(".fancybox-button--close").innerHTML = '<i class="fas fa-times"></i>'
-    //console.log(document.querySelector(".fancybox-button--close"));
-  //},1000)
+
 // Инициализация плагина карусели
   $(".price-list__carousel").owlCarousel({
     items: 3,
@@ -60,23 +50,7 @@ DG.then(function() {
 });
 // Трансформация активного элемента в карусели тарифов
 
-/* const test = document.createElement("iframe");
- test.style.width = "100%";
- test.style.height = "100%";
- test.style.position = "absolute";
- test.style.zIndex = "-1";
- test.innerHTML = "";
 
-
- const activeCarouselElement = document.querySelector(".owl-item.center")
- const activeCarouselItem = activeCarouselElement.querySelector(".carousel__item")
- activeCarouselElement.appendChild(test)
- console.log(activeCarouselItem);
- console.log(test);
-*/
-//frame.onresize = function(){
-  //alert('Размеры div #Test изменены.');
-//}
 function repaintPrevElements(activeItem,menuItemsList) {
   var prevElement = activeItem
   for (var m = 1; m < 10; m++) {
@@ -110,7 +84,6 @@ function repaintNextElements(activeItem,menuItemsList) {
 function repaintMenu() {
   var activeItem = document.querySelector(".main-nav__item--active");
   var menuItemsList = document.querySelector(".main-nav").querySelectorAll("li");
-  //console.log(menuItemsList);
   for (var i = 1; i <= 10; i++) {
    for (var k = 0; k <  menuItemsList.length; k++) {
      menuItemsList[k].classList.remove("main-nav__item--sibling" + i)
@@ -119,36 +92,115 @@ function repaintMenu() {
   repaintPrevElements(activeItem,menuItemsList);
   repaintNextElements(activeItem,menuItemsList);
 };
-var lastId,
-  topMenu = $(".main-nav"),
-  topMenuHeight = topMenu.outerHeight()+15,
-  menuItems = topMenu.find("a"),
-  scrollItems = menuItems.map(function(){
-    var item = $($(this).attr("href"));
-    if (item.length) {
-      return item;
-    }
+
+if(window.matchMedia('(min-width: 1068px)').matches)
+{
+  var lastId,
+    topMenu = $(".main-nav"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    menuItems = topMenu.find("a"),
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) {
+        return item;
+      }
+    });
+  $(window).scroll(function(){
+     var fromTop = $(this).scrollTop()+topMenuHeight;
+     var cur = scrollItems.map(function(){
+       if ($(this).offset().top < fromTop)
+         return this;
+     });
+     cur = cur[cur.length-1];
+     var id = cur && cur.length ? cur[0].id : "";
+
+     if (lastId !== id) {
+         lastId = id;
+         menuItems
+           .parent().removeClass("main-nav__item--active")
+           .end().filter('[href="#'+id+'"]').parent().addClass("main-nav__item--active");
+        repaintMenu();
+
+     }
+
   });
-$(window).scroll(function(){
-   var fromTop = $(this).scrollTop()+topMenuHeight;
-   var cur = scrollItems.map(function(){
-     if ($(this).offset().top < fromTop)
-       return this;
-   });
-   cur = cur[cur.length-1];
-   var id = cur && cur.length ? cur[0].id : "";
+}
 
-   if (lastId !== id) {
-       lastId = id;
-       menuItems
-         .parent().removeClass("main-nav__item--active")
-         .end().filter('[href="#'+id+'"]').parent().addClass("main-nav__item--active");
-      repaintMenu();
+if(window.matchMedia('(max-width: 1068px)').matches)
+  {
+    function repaintPrevElements(activeItem,menuItemsList) {
+      var prevElement = activeItem
+      for (var m = 1; m < 10; m++) {
+        prevElement = prevElement.previousElementSibling
+        if (prevElement !== null) {
+          prevElement.classList.add("main-nav__item--sibling" + m);
+        } else {
+          if (menuItemsList[0].classList.contains("main-nav__item--active")) {
+            menuItemsList[9].classList.add("main-nav__item--sibling10")
+          }
+          return
+        }
+      }
+    };
 
-   }
+    function repaintNextElements(activeItem,menuItemsList) {
+      var nextElement = activeItem
+        for (var j = 1; j < 10; j++) {
+          nextElement = nextElement.nextElementSibling
+          if (nextElement !== null) {
+            nextElement.classList.add("main-nav__item--sibling" + j);
+          } else {
+            if (menuItemsList[9].classList.contains("main-nav__item--active")) {
+              menuItemsList[0].classList.add("main-nav__item--sibling10")
+            }
+            return
+          }
+        }
+    };
+    document.querySelectorAll(".main-nav__item")[9].remove()
+    var lastId,
+      topMenu = $(".main-nav"),
+      topMenuHeight = topMenu.outerHeight()+15,
+      menuItems = topMenu.find("a"),
+      scrollItems = menuItems.map(function(){
+        var item = $($(this).attr("href"));
+        if (item.length) {
+          return item;
+        }
+      });
+    $(window).scroll(function(){
+       var fromTop = $(this).scrollTop()+topMenuHeight;
+       var cur = scrollItems.map(function(){
+         if ($(this).offset().top < fromTop)
+           return this;
+       });
+       cur = cur[cur.length-1];
+       var id = cur && cur.length ? cur[0].id : "";
+
+       if (lastId !== id) {
+           lastId = id;
+           menuItems
+             .parent().removeClass("main-nav__item--active")
+             .end().filter('[href="#'+id+'"]').parent().addClass("main-nav__item--active");
+          repaintMenu();
+
+       }
+
+    });
+    /*$(document).ready(function(){
+        console.log(document.querySelectorAll(".main-nav li"));
+  	    $(".main-nav").on("click","a", function (event) {
+  	        event.preventDefault();
+            console.log($(id).offset());
+  	        var id  = $(this).attr('href'),
+  	            top = $(id).offset().top;
+  	        $('body,html').animate({scrollTop: top}, 1500);
+
+  	    });
+
+  });*/
+  };
 });
-});
-
 // Реализация мобильного меню
   const hamburger = document.querySelector(".hamburger");
   const mainNav = document.querySelector(".sidebar");
@@ -226,3 +278,62 @@ $(window).scroll(function(){
   });
 
 });
+/*$([data-fancybox="group-performed-work"]).fancybox({
+   loop: true,
+   keyboard : true,
+   arrows : false,
+   infobar: false,
+   captionbar: false,
+   buttons : [
+     'close'
+ ]
+});*/
+//setTimeout(function() {
+    //document.querySelector(".fancybox-button--close").innerHTML = '<i class="fas fa-times"></i>'
+    //console.log(document.querySelector(".fancybox-button--close"));
+  //},1000)
+/* const test = document.createElement("iframe");
+ test.style.width = "100%";
+ test.style.height = "100%";
+ test.style.position = "absolute";
+ test.style.zIndex = "-1";
+ test.innerHTML = "";
+
+
+ const activeCarouselElement = document.querySelector(".owl-item.center")
+ const activeCarouselItem = activeCarouselElement.querySelector(".carousel__item")
+ activeCarouselElement.appendChild(test)
+ console.log(activeCarouselItem);
+ console.log(test);
+*/
+//frame.onresize = function(){
+  //alert('Размеры div #Test изменены.');
+//}
+  /*var lastId,
+    topMenu = $(".main-nav"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    menuItems = topMenu.find("a"),
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) {
+        return item;
+      }
+    });
+  $(window).scroll(function() {
+    var fromTop = $(this).scrollTop()+topMenuHeight;
+    var cur = scrollItems;
+    console.log(cur);
+    cur = cur[cur.length-1];
+    console.log(cur);
+    var id = cur //&& cur.length ? cur[0].id : "";
+    console.log();
+
+    if (lastId !== id) {
+        lastId = id;
+        menuItems
+          .parent().removeClass("main-nav__item--active")
+          .end().filter('[href="#'+id+'"]').parent().addClass("main-nav__item--active");
+       repaintMenu();
+
+    }
+  })*/
