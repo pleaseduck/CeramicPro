@@ -238,7 +238,7 @@ p
 	font-size: 12px
 	line-height: 2.5em
 
-.main-nav__item--active
+.main-nav__item--active, .active
 	.main-nav__link
 		color: #e1e1ee !important
 		font-family: GothamProBold !important
@@ -553,7 +553,7 @@ p
 .overlay
 	height: 100%
 	margin-right: -100px
-	width: 400px
+	width: 40%
 	background-image: linear-gradient(to right, transparent 40%, #000 70%)
 	z-index: 2
 	position: absolute
@@ -1326,8 +1326,9 @@ p
 	background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%,rgba(168,168,168,1) 50%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(168,168,168,1) 50%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
-	//width: 10% !important
+	z-index: 10
 .nicescroll-rails
 	border: 1px solid #212121
 	height: 9px
+	z-index: 10
 @import "media" // Always at the end
