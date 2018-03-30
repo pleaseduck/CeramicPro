@@ -158,11 +158,15 @@
     &.menu-opened
       left: 0
       height: 100%
+  .top-line
+    top: 0
   //общие стили для галереи
   .performed-work__overlay
     display: none
   .performed-work
     height: auto
+    .top-line
+      margin-bottom: 20px
     .gallery--performed-work
       overflow: visible
 
@@ -206,9 +210,6 @@
           font-size: 50px
           line-height: 1.2em
     &--additional-services
-    &__item--additional-services
-      margin-top: 15px
-      margin-bottom: 15px
     &__description--additional-services
       padding-bottom: 10px
     &--questions
@@ -236,6 +237,8 @@
 
   .certificates
     height: auto
+    .top-line
+      margin-bottom: 25px
     .gallery__overlay
       display: none
     .gallery__items-wrapper
@@ -251,8 +254,13 @@
     display: inline-block
   //Прайс-лист
   .price-list
+    height: auto
+    .top-line
+      margin-bottom: 0
     .carousel__item--transformed
       margin-left: -10px
+    .justify-content-center
+      justify-content: flex-start !important
 
   .price-list__carousel
     width: 101%
@@ -262,15 +270,13 @@
 
   .price-list
   	position: relative
-  	height: 100vh
+  	height: auto
   	background-color: #000
   	background-image: url(../img/redcar-bg.jpg)
   	background-size: contain
   	padding-top: 40px
   	.container, .row
   		position: relative
-    .top-line
-      margin-bottom: 20px
   .price-list__carousel
     margin-top: 80px
     .owl-item
@@ -297,6 +303,8 @@
   // Дополнительные услуги
   .additional-services
     height: auto
+    .top-line
+      margin-bottom: 20px
     .gallery__overlay
       display: none
   //Акции
@@ -317,6 +325,8 @@
 
   .questions
     height: auto
+    .top-line
+      margin-bottom: 20px
     .gallery__overlay
       display: none
 
@@ -336,6 +346,7 @@
     .top-line
       text-align: left
       padding-left: 15px
+      margin-bottom: 27.5px
 
   .review
     margin: auto
@@ -378,7 +389,7 @@
 
   //Подвал
   .main-footer
-    padding-bottom: 515px
+    height: auto
     .top-line
   		.top-line__heading, .top-line__page-counter, .top-line__current-page
   			color: #fff !important
@@ -401,6 +412,7 @@
 
   .main-footer__content
     padding-top: 0
+    width: 100%
   .contact-form
     display: none
   //Ссылка на следующую страницу
@@ -465,6 +477,8 @@
         a
           height: auto
 +media-breakpoint-down(xs)
+  .overlay
+    display: none
   .main-header
     padding-top: 35px
     height: auto
@@ -542,6 +556,11 @@
         font-size: 18px
       .about-company__text
         font-size: 13px
+
+  .photos-set
+    img
+      width: 100%
+      height: auto
 
   .reviews
     .gallery__item
@@ -625,6 +644,9 @@
   .price-list
     .owl-item.center
       //margin-left: -60px
+@media screen and (min-width: 1292px) and (max-width: 1920px)
+  .sidebar
+    left: 3.5%
 /*==========  Mobile First  ==========*/
 //Extra small: <576px
 +media-breakpoint-up(xs)

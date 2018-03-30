@@ -2,17 +2,30 @@ $(function() {
 
  $(document).ready(function() {
   repaintMenu();
-  $(".scroll-wrapper").niceScroll({
+  if(window.matchMedia('(min-width: 1068px)').matches)
+  {
+      $('#fullpage').fullpage({
+        css3: true,
+		    scrollingSpeed: 1500
+      });
+  };
+  $(".scroll-wrapper").niceScroll(".gallery",{
     cursorborder: "none",
     cursorwidth: "10px",
-    enablemousewheel: true,
-    smoothscroll: true
+    autohidemode: false,
+    enablemousewheel: true
   });
-  $("body").niceScroll({
+  $(".scrollable-content").niceScroll({
+    cursorborder: "none",
+    cursorwidth: "10px",
+    autohidemode: false,
+    enablemousewheel: true
+  });
+  /*$("body").niceScroll({
     cursorborder: "none",
     cursorwidth: "10px",
     horizrailenabled: false
-  });
+  });*/
    //Инициализация плагина галереи
    $("a[data-fancybox]").fancybox({
 	    loop: true,
@@ -35,15 +48,20 @@ $(function() {
     document.querySelector(`${src}`).parentElement.appendChild(closeIcon);
     console.log(document.querySelector(`${src}`));
   }
-
-  modalFormOpeners = document.querySelectorAll("[data-src='#modal--form']")
-  for (var i = 0; i < modalFormOpeners.length; i++) {
-    modalFormOpeners[i].addEventListener("click", function(evt) {
-      evt.preventDefault()
-        replaceCloseButton(evt)
-    });
-  }
-
+  function addOpenModalListeners(buttons) {
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function(evt) {
+        evt.preventDefault()
+          replaceCloseButton(evt)
+      });
+    }
+  };
+  modalFormOpeners = document.querySelectorAll("[data-src='#modal--form']");
+  addOpenModalListeners(modalFormOpeners);
+  modalQuestionsOpeners = document.querySelectorAll("[data-src='#modal--question']");
+  addOpenModalListeners(modalQuestionsOpeners);
+  modalReviewOpeners = document.querySelectorAll("[data-src='#modal--review']");
+  addOpenModalListeners(modalReviewOpeners);
 
 
   const galleryItem = document.querySelectorAll("[data-fancybox]");
@@ -231,6 +249,32 @@ if(window.matchMedia('(max-width: 1068px)').matches)
 
   });*/
   };
+
+  $(".main-nav").on("click","a", function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+      $('body,html').animate({scrollTop: top}, 1500);
+
+  });
+  var bottomLineLinks = document.querySelectorAll(".bottom-line");
+  for (var i = 0; i < bottomLineLinks.length; i++) {
+    bottomLineLinks[i].addEventListener("click", function(event) {
+      event.preventDefault();
+      var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+      $('body,html').animate({scrollTop: top}, 1500);
+    })
+  };
+  var topLineLinks = document.querySelectorAll(".link--to-prev-block");
+  for (var i = 0; i < topLineLinks.length; i++) {
+    topLineLinks[i].addEventListener("click", function(event) {
+      event.preventDefault();
+      var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+      $('body,html').animate({scrollTop: top}, 1500);
+    })
+  };
 });
 // Реализация мобильного меню
   const hamburger = document.querySelector(".hamburger");
@@ -280,16 +324,6 @@ if(window.matchMedia('(max-width: 1068px)').matches)
     loadMoreInformation(evt, reviewItems);
   });
 
-  $(document).ready(function(){
-	    $(".main-nav").on("click","a", function (event) {
-	        event.preventDefault();
-	        var id  = $(this).attr('href'),
-	            top = $(id).offset().top;
-	        $('body,html').animate({scrollTop: top}, 1500);
-
-	    });
-
-	});
   const mainMenu = document.querySelector(".main-nav");
   const mainMenuItems = document.querySelectorAll(".main-nav__item");
 

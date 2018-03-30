@@ -165,6 +165,7 @@ p
 		top: 20px
 		color: #e1e1ee
 		text-align: center
+		z-index: 6
 		&:hover
 			color: #e1e1ee
 			text-decoration: none
@@ -211,9 +212,11 @@ p
 	flex-direction: column
 	justify-content: space-between
 	position: fixed
-	height: 90vh
+	height: 100vh
 	left: 5%
 	z-index: 10
+	padding-top: 40px
+	padding-bottom: 40px
 	&--inactive
 		justify-content: flex-end !important
 	&--mobile
@@ -350,8 +353,9 @@ p
 	display: block
 	width: 100%
 	position: absolute
-	bottom: 40px
+	bottom: 20px
 	color: #e1e1ee
+	z-index: 6
 	&:hover
 		color: #e1e1ee
 		text-decoration: none
@@ -396,7 +400,7 @@ p
 //Общие стилли для галереи
 .gallery
 	//overflow-x: scroll
-	overflow-y: hidden
+	//overflow-y: hidden
 	position: absolute
 	&__group
 		display: flex
@@ -545,6 +549,17 @@ p
 			width: auto
 		.gallery__item--certificates
 			border: none
+
+.overlay
+	height: 100%
+	margin-right: -100px
+	width: 400px
+	background-image: linear-gradient(to right, transparent 40%, #000 70%)
+	z-index: 2
+	position: absolute
+	top: 0
+	right: 0
+
 // Выполненные работы
 
 .performed-work
@@ -583,10 +598,12 @@ p
 	background-color: #000
 	background-image: url(../img/redcar-bg.jpg)
 	background-size: contain
-	padding-top: 40px
+	//padding-top: 40px
 	.container, .row
 		position: relative
-		height: 76vh
+		height: 100%
+	.container
+		height: 93%
 .price-list__carousel
 	width: 70%
 	.owl-item.active
@@ -685,8 +702,11 @@ p
 	background-size: cover
 	padding-top: 40px
 	height: 100vh
-	.container, .row
+	.container
 		position: relative
+		height: 93%
+	.row
+		height: 100%
 .additional-services__content
 	height: 76vh
 	position: relative
@@ -724,8 +744,10 @@ p
 	background-image: url(../img/whitecar-bg.jpg)
 	background-size: cover
 	background-repeat: no-repeat
-	.container, .row
-	 height: 85vh
+	.container
+		height: 93%
+	.row
+		height: 100%
 		.prev-page
 			margin-right: -28px
 	.owl-dots
@@ -811,15 +833,20 @@ p
 	background-image: url(../img/bubble-bg3.jpg)
 	background-size: cover
 	padding-top: 40px
+	.nicescroll-rails-hr
+		top: 100% !important
 	.container, .row
-		height: 100vh
+		//height: 100vh
 		position: relative
 .reviews__content
-	overflow-y: scroll !important
+	//overflow-y: scroll !important
 	height: 76vh
 	display: flex
 	justify-content: center
 	flex-direction: column
+.scrollable-content
+	padding-bottom: -50px
+
 
 
 .review
@@ -924,11 +951,11 @@ p
 	background-image: url(../img/bubble-bg3.jpg)
 	background-size: cover
 	padding-top: 40px
-	.container, .row
-		position: relative
-		height: 83vh
 	.container
-		height: 83vh
+		position: relative
+		height: 90%
+		.row
+			height: 100%
 	.photos-set
 		position: relative
 		margin-bottom: 30px
@@ -941,7 +968,7 @@ p
 	flex-direction: column
 	justify-content: center
 	.row
-		height: 100%
+		justify-content: space-around
 
 
 .photos-set
@@ -954,18 +981,18 @@ p
 	flex-direction: column
 	justify-content: space-between
 	margin-right: 30px
-	max-height: 350px
+	//max-height: 350px
 	&:last-of-type
 		margin-right: 0
 	&--first
 		flex-basis: 362px
-		flex-shrink: 1
+		flex-shrink: 2
 		a
 			width: 100%
 			height: 100%
 	&--second, &--third
 		flex-basis: 263px
-		flex-shrink: 1
+		flex-shrink: 2
 		a
 			width: 100%
 			height: 46%
@@ -993,12 +1020,14 @@ p
 	background-image: url(../img/bubble-bg3.jpg)
 	background-size: cover
 	padding-top: 40px
-	.container, .row
+	.container
 		position: relative
-
+		height: 90%
+	.row
+		height: 100%
 .social-networks__content-wrapper
 	position: static !important
-	height: 75vh
+	height: 100%
 	justify-content: flex-start !important
 .social-networks__content
 	position: relative
@@ -1008,6 +1037,7 @@ p
 	display: flex
 	flex-direction: column
 	justify-content: center
+	align-items: center
 
 .widget
 	width: 100%
@@ -1033,8 +1063,10 @@ p
 		top: 0
 		.top-line__heading, .top-line__page-counter, .top-line__current-page
 			color: #000
-	.container, .row
-		position: relative
+	.container
+		height: 90%
+		.row
+			height: 100%
 	.map--main-footer
 		position: absolute
 		z-index: 2
@@ -1045,19 +1077,17 @@ p
 		.dg-widget-link
 			height: 100%
 .main-footer__content
-	height: 91vh
 	padding-top: 50px
 	display: -webkit-flex
 	display: -ms-flex
 	display: flex
 	flex-direction: column
-	justify-content: space-between
+	justify-content: center
 
 .contacts--footer
 	display: flex
 	flex-wrap: wrap
 	justify-content: space-between
-	margin-bottom: 60px
 	.contacts__item
 		margin-bottom: 50px
 	.contacts__heading
