@@ -554,8 +554,8 @@ p
 .overlay
 	height: 100%
 	margin-right: -100px
-	width: 40%
-	background-image: linear-gradient(to right, transparent 40%, #000 70%)
+	width: 21%
+	background-image: linear-gradient(to right, transparent 0%, #000 70%)
 	z-index: 2
 	position: absolute
 	top: 0
@@ -1238,6 +1238,7 @@ p
 	.modal__content
 		display: flex
 	.modal__content-wrapper
+		display: block !important
 		flex-basis: 60%
 		height: auto
 		flex-shrink: 1
@@ -1305,6 +1306,35 @@ p
 	.modal--contact-form
 		position: absolute
 		width: 60%
+
+.modal--video-review
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	width: 40%
+	.modal__navigation
+		width: 100%
+	video
+		width: 100%
+		height: auto
+.modal--image-review
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	width: 40%
+	text-align: center
+	.modal__navigation
+		width: 100%
+	.image-wrapper
+		width: 100%
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		justify-content: center
+
+
 .fancybox-button--close
 	&:hover
 		color: $accent

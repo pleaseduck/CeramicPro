@@ -2,6 +2,7 @@ $(function() {
 
  $(document).ready(function() {
   repaintMenu();
+  //document.querySelector(".sidebar .contacts__button").click()
   if(window.matchMedia('(min-width: 1068px)').matches)
   {
       $('#fullpage').fullpage({
@@ -132,14 +133,17 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
 });
   function replaceCloseButton(evt) {
     target = evt.target;
-    console.log(evt.target);
+    //console.log(evt.target.parentNode);
     src = target.getAttribute("data-src")
-    console.log(src);
+    if (target.classList.contains("screenshot-review__content")) {
+      src = target.parentNode.getAttribute("data-src")
+    }
+    //console.log(src);
     let closeIcon = document.querySelector(".fancybox-close-small").cloneNode(true);
     document.querySelector(".fancybox-close-small").remove()
     closeIcon.innerHTML = '<i class="fas fa-times"></i>'
     document.querySelector(`${src}`).parentElement.appendChild(closeIcon);
-    console.log(document.querySelector(`${src}`));
+    //console.log(document.querySelector(`${src}`));
   }
   function addOpenModalListeners(buttons) {
     for (var i = 0; i < buttons.length; i++) {
@@ -155,6 +159,10 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   addOpenModalListeners(modalQuestionsOpeners);
   modalReviewOpeners = document.querySelectorAll("[data-src='#modal--review']");
   addOpenModalListeners(modalReviewOpeners);
+  modalVideoReviewOpeners = document.querySelectorAll("[data-src='#modal--video-review']")
+  addOpenModalListeners(modalVideoReviewOpeners)
+  modalImageReviewOpeners = document.querySelectorAll(".screenshot-review img")
+  addOpenModalListeners(modalImageReviewOpeners)
 
 
   const galleryItem = document.querySelectorAll("[data-fancybox]");
@@ -164,6 +172,84 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     })
   }
 
+  var questionLinks = document.querySelector(".questions").querySelectorAll("a")
+  for (var i = 0; i < questionLinks.length; i++) {
+    questionLinks[i].addEventListener("click", function(evt) {
+      var target = evt.target
+      var nextGalleryItem = target
+      //console.log();
+        while (!nextGalleryItem.classList.contains("gallery__item")) {
+          nextGalleryItem = nextGalleryItem.parentNode
+        }
+        if (nextGalleryItem.nextElementSibling) {
+          var nextItemOpener = nextGalleryItem.nextElementSibling.querySelector("a[data-fancybox = '']")
+          var nextButton = document.querySelector(".modal--question .button--modal-next")
+          function clickHandler() {
+            $.fancybox.close( true )
+            nextButton.removeEventListener('click', clickHandler);
+              setTimeout(function() {
+                nextItemOpener.click()
+              }, 200)
+          }
+            nextButton.addEventListener("click",clickHandler)
+        } else if (nextGalleryItem.parentNode.nextElementSibling) {
+            console.log("Последний элемент");
+            $.fancybox.close( true )
+            var nextGalleryGroup = nextGalleryItem.parentNode.nextElementSibling;
+            nextGalleryItem = nextGalleryGroup.childNodes[1]
+            nextItemOpener = nextGalleryItem.querySelector("a[data-fancybox = '']");
+            nextItemOpener.click();
+            if (nextGalleryItem.nextElementSibling) {
+              nextItemOpener = nextGalleryItem.nextElementSibling.querySelector("a[data-fancybox = '']")
+              var nextButton = document.querySelector(".modal--question .button--modal-next")
+              nextButton.addEventListener("click",clickHandler)
+            } else {
+              console.log("Последний элемент второй группы");
+            }
+
+        }
+
+    })
+  }
+  var performedWorkLinks = document.querySelector(".performed-work").querySelectorAll("a.button")
+  for (var i = 0; i < performedWorkLinks.length; i++) {
+    performedWorkLinks[i].addEventListener("click", function(evt) {
+      var target = evt.target
+      var nextGalleryItem = target
+      //console.log();
+        while (!nextGalleryItem.classList.contains("gallery__item")) {
+          nextGalleryItem = nextGalleryItem.parentNode
+        }
+        if (nextGalleryItem.nextElementSibling) {
+          var nextItemOpener = nextGalleryItem.nextElementSibling.querySelector("a[data-fancybox = '']")
+          var nextButton = document.querySelector(".modal--performed-work .button--modal-next")
+          function clickHandler() {
+            $.fancybox.close( true )
+            nextButton.removeEventListener('click', clickHandler);
+              setTimeout(function() {
+                nextItemOpener.click()
+              }, 200)
+          }
+            nextButton.addEventListener("click",clickHandler)
+        } else if (nextGalleryItem.parentNode.nextElementSibling) {
+            console.log("Последний элемент");
+            $.fancybox.close( true )
+            var nextGalleryGroup = nextGalleryItem.parentNode.nextElementSibling;
+            nextGalleryItem = nextGalleryGroup.childNodes[1]
+            nextItemOpener = nextGalleryItem.querySelector("a[data-fancybox = '']");
+            nextItemOpener.click();
+            if (nextGalleryItem.nextElementSibling) {
+              nextItemOpener = nextGalleryItem.nextElementSibling.querySelector("a[data-fancybox = '']")
+              var nextButton = document.querySelector(".modal--performed-work .button--modal-next")
+              nextButton.addEventListener("click",clickHandler)
+            } else {
+              console.log("Последний элемент второй группы");
+            }
+
+        }
+
+    })
+  }
 // Инициализация плагина карусели
   $(".price-list__carousel").owlCarousel({
     items: 3,
