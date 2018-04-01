@@ -106,6 +106,22 @@ $(function() {
 
       }
 })
+var footerFormButton = document.querySelector(".main-footer .button--contact-form")
+footerFormButton.addEventListener("click", function(evt) {
+  evt.preventDefault()
+  document.querySelector(".false-link").click()
+  setTimeout(function() {
+    $.fancybox.close()
+  },2000)
+});
+var modalFormButton = document.querySelector("#modal--form .button--contact-form");
+modalFormButton.addEventListener("click", function(evt) {
+  evt.preventDefault()
+  document.querySelector(".false-link").click()
+  setTimeout(function() {
+    $.fancybox.close()
+  },2000)
+});
 var linksToNextSlide = document.querySelectorAll(".bottom-line")
 for (var i = 0; i < linksToNextSlide.length; i++) {
   linksToNextSlide[i].addEventListener("click", function(evt) {
@@ -234,6 +250,8 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   addOpenModalListeners(modalImageReviewOpeners)
   modalPerformedWorkOpeners = document.querySelectorAll("[data-src='#modal--performed-work']")
   addOpenModalListeners(modalPerformedWorkOpeners)
+  falseLinkOpener = document.querySelector("[data-src='#modal--form-send']")
+  addOpenModalListeners(falseLinkOpener)
   const galleryItem = document.querySelectorAll("[data-fancybox]");
   for (var i = 0; i < galleryItem.length; i++) {
     galleryItem[i].addEventListener("click",function() {
