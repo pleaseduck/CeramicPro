@@ -44,7 +44,7 @@ $(function() {
 
           var $isAnimatedSecond = $('.performed-work .is-animated')
 
-          if ( index == 1 && nextIndex == 2 || index == 2 && nextIndex == 1) {
+          if ( index == 1 && nextIndex == 2) {
           $isAnimatedSecond.addClass('animated fadeIn');
           $isAnimatedSecond.css('animation-delay', '1s');
         }
