@@ -46,6 +46,7 @@ gulp.task('js', function() {
 		'app/libs/fancybox/dist/jquery.fancybox.min.js',
 		'app/libs/niceroll/jquery.nicescroll.js',
 		'app/libs/fullPage.js/dist/jquery.fullpage.js',
+		'app/libs/wow/dist/wow.min.js',
 
 		'app/js/common.js' // Always at the end
 		])

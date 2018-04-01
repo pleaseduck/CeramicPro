@@ -10,7 +10,7 @@
 	color: #fff
 
 html, body
-	height: 100%
+	//height: 100%
 
 body
 	font-size: 14px
@@ -26,10 +26,6 @@ body
 			outline: none
 			&:focus:required:invalid
 				border-color:  green
-	ul
-		padding: 0
-		margin: 0
-		list-style-type: none
 p
 	margin: 0
 .button
@@ -233,7 +229,10 @@ p
 	&__mobile--static
 		position: static !important
 		padding-top: 0 !important
-
+.main-nav
+	padding: 0
+	margin: 0
+	list-style-type: none
 .main-nav__item
 	padding-left: 30px
 	position: relative
@@ -770,9 +769,8 @@ p
 		justify-content: center
 		flex-direction: column
 
-.promotion
-	.heading
-		margin-bottom: 10px
+.promotion__heading
+	margin-bottom: 10px
 
 .promotion__content
 	padding-top: 10px

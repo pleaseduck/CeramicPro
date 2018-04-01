@@ -41,7 +41,70 @@ $(function() {
             var prevElement = activeItem.previousElementSibling
             repaintPrevElements(prevElement, menuItemsList)
           }
+
+          var $isAnimatedSecond = $('.performed-work .is-animated')
+
+          if ( index == 1 && nextIndex == 2 || index == 2 && nextIndex == 1) {
+          $isAnimatedSecond.addClass('animated fadeIn');
+          $isAnimatedSecond.css('animation-delay', '1s');
         }
+
+          var $isAnimatedThird = $('.price-list .is-animated')
+          if ( index == 2 && nextIndex == 3) {
+          $isAnimatedThird.addClass('animated fadeIn');
+          $isAnimatedThird.css('animation-delay', '1s');
+        }
+
+          var $isAnimatedFourth = $('.additional-services .is-animated')
+          if ( index == 3 && nextIndex == 4 ) {
+          $isAnimatedFourth.addClass('animated fadeIn');
+          $isAnimatedFourth.css('animation-delay', '1s');
+        }
+
+          var $isAnimatedFifth = $('.promotions .is-animated')
+          if ( index == 4 && nextIndex == 5 ) {
+          $isAnimatedFifth.addClass('animated fadeIn');
+          $isAnimatedFifth.css('animation-delay', '1s');
+        }
+
+          var $isAnimatedSixth = $('.questions .is-animated')
+          if ( index == 5 && nextIndex == 6 ) {
+          $isAnimatedSixth.addClass('animated fadeIn');
+          $isAnimatedSixth.css('animation-delay', '1s');
+        }
+
+          var $isAnimatedSeventh = $('.reviews .is-animated')
+          if ( index == 6 && nextIndex == 7 ) {
+          $isAnimatedSeventh.addClass('animated fadeIn');
+          $isAnimatedSeventh.css('animation-delay', '1s');
+        }
+
+          var $isAnimatedEight = $('.certificates .is-animated')
+          if ( index == 7 && nextIndex == 8 ) {
+          $isAnimatedEight.addClass('animated fadeIn');
+          $isAnimatedEight.css('animation-delay', '1s');
+        }
+
+        var $isAnimatedNinth = $('.about-company .is-animated')
+        if ( index == 8 && nextIndex == 9 ) {
+        $isAnimatedNinth.addClass('animated fadeIn');
+        $isAnimatedNinth.css('animation-delay', '1s');
+      }
+        var $isAnimatedTenth = $('.social-networks .is-animated')
+        if ( index == 9 && nextIndex == 10 ) {
+        $isAnimatedTenth.addClass('animated fadeIn');
+        $isAnimatedTenth.css('animation-delay', '1s');
+      }
+
+      var $isAnimatedEleventh = $('.main-footer .is-animated')
+      if ( index == 10 && nextIndex == 11 ) {
+      $isAnimatedEleventh.addClass('animated fadeIn');
+      $isAnimatedEleventh.eq(0).css('animation-delay', '1s');
+      $isAnimatedEleventh.eq(1).css('animation-delay', '1s');
+    }
+
+
+      }
 })
 var linksToNextSlide = document.querySelectorAll(".bottom-line")
 for (var i = 0; i < linksToNextSlide.length; i++) {
@@ -167,9 +230,10 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   addOpenModalListeners(modalReviewOpeners);
   modalVideoReviewOpeners = document.querySelectorAll("[data-src='#modal--video-review']")
   addOpenModalListeners(modalVideoReviewOpeners)
-  modalImageReviewOpeners = document.querySelectorAll(".screenshot-review img")
-
-
+  modalImageReviewOpeners = document.querySelectorAll("[data-src='#modal--image-review']")
+  addOpenModalListeners(modalImageReviewOpeners)
+  modalPerformedWorkOpeners = document.querySelectorAll("[data-src='#modal--performed-work']")
+  addOpenModalListeners(modalPerformedWorkOpeners)
   const galleryItem = document.querySelectorAll("[data-fancybox]");
   for (var i = 0; i < galleryItem.length; i++) {
     galleryItem[i].addEventListener("click",function() {
@@ -381,7 +445,9 @@ if(window.matchMedia('(max-width: 1068px)').matches)
         }
       }
     };
-
+    //document.querySelectorAll("a[data-fancybox]")
+    //console.log(document.querySelectorAll("a[data-fancybox]"));
+    //console.log(document.querySelector(".fancybox-iosfix"));
     function repaintNextElements(activeItem,menuItemsList) {
       var nextElement = activeItem
         for (var j = 1; j < 10; j++) {
@@ -402,7 +468,7 @@ if(window.matchMedia('(max-width: 1068px)').matches)
       jQuery(window).scroll(function(){
              var $sections = $('.section');
       $sections.each(function(i,el){
-            var top  = $(el).offset().top-100;
+            var top  = $(el).offset().top- 91;
             var bottom = top +$(el).height();
             var scroll = $(window).scrollTop();
             var id = $(el).attr('id').replace(/1/g, '');
@@ -420,12 +486,12 @@ if(window.matchMedia('(max-width: 1068px)').matches)
   mainMenu.addEventListener("click", function(event) {
     var target = event.target;
     var id  = target.getAttribute("href") + "1";
-    var top = $(id).offset().top - 100;
-    $('body,html').animate({scrollTop: top}, 1500);
-    if (target.tagName === "A") {
-      for (var i = 0; i < mainMenuItems.length; i++) {
-        mainMenuItems[i].classList.remove("main-nav__item--active");
-      }
+    var top = $(id).offset().top - 50;
+      $('body,html').animate({scrollTop: top}, 1500);
+      if (target.tagName === "A") {
+        for (var i = 0; i < mainMenuItems.length; i++) {
+          mainMenuItems[i].classList.remove("main-nav__item--active");
+        }
       target.parentNode.classList.add("main-nav__item--active");
       repaintMenu();
     }
@@ -439,7 +505,7 @@ if(window.matchMedia('(max-width: 1068px)').matches)
       $('body,html').animate({scrollTop: top}, 1500);
 
   });*/
-  var bottomLineLinks = document.querySelectorAll(".bottom-line");
+  /*var bottomLineLinks = document.querySelectorAll(".bottom-line");
   for (var i = 0; i < bottomLineLinks.length; i++) {
     bottomLineLinks[i].addEventListener("click", function(event) {
       event.preventDefault();
@@ -456,7 +522,7 @@ if(window.matchMedia('(max-width: 1068px)').matches)
           top = $(id).offset().top;
       $('body,html').animate({scrollTop: top}, 1500);
     })
-  };
+  };*/
 });
 // Реализация мобильного меню
   const hamburger = document.querySelector(".hamburger");
