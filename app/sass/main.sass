@@ -63,6 +63,8 @@ p
 		background-color: transparent
 		border: 1px solid $accent
 		color: $accent
+		&:focus
+			color: $accent
 	&.button--see-more
 		padding: 0
 		display: inline-block
@@ -432,25 +434,23 @@ p
 				text-decoration: none
 	&--performed-work
 		max-height: 570px
-	.gallery__item--performed-work
-		max-width: 265px
-		border-image: linear-gradient(to top, #040505 25%, #fff 100%)
-		border-image-slice: 1
-	.gallery__image--performed-work
-		width: 240px
-		height: auto
-	.gallery__description--performed-work
-		padding-right: 50px
-		max-width: 241px
-		.button--see-more
-			position: absolute
-			z-index: 2
-			right: 0
-			top: 50%
-			margin-top: -22.5px
+		.gallery__item
+			max-width: 265px
+			border-image: linear-gradient(to top, #040505 25%, #fff 100%)
+			border-image-slice: 1
+		.gallery__image
+			width: 240px
+			height: auto
+		.gallery__description
+			padding-right: 50px
+			max-width: 241px
+			.button--see-more
+				position: absolute
+				z-index: 2
+				right: 0
+				top: 50%
+				margin-top: -22.5px
 	&--additional-services
-		//height: 100vh
-		//max-height: 580px
 		display: flex
 		flex-direction: column
 		.gallery__overlay
@@ -462,9 +462,9 @@ p
 			margin-right: -100px
 			width: 400px
 			background-image: linear-gradient(to right, transparent 0%, #000 70%)
-		.gallery__group--additional-services
+		.gallery__group
 			width: auto
-		.gallery__item--additional-services
+		.gallery__item
 			width: 465px
 			flex-basis: 465px
 			flex-shrink: 0
@@ -472,7 +472,7 @@ p
 			padding-bottom: 15px
 			border-image: linear-gradient(to top, #040505 25%, #fff 100%)
 			border-image-slice: 1
-		.gallery__description--additional-services
+		.gallery__description
 			width: 100%
 	&--questions
 		max-height: 545px
@@ -489,9 +489,9 @@ p
 			margin-right: -100px
 			width: 400px
 			background-image: linear-gradient(to right, transparent 0%, #000 70%)
-		.gallery__group--questions
+		.gallery__group
 			width: auto
-		.gallery__item--questions
+		.gallery__item
 			width: 465px
 			flex-basis: 465px
 			flex-shrink: 0
@@ -517,12 +517,12 @@ p
 			margin-right: -100px
 			width: 400px
 			background-image: linear-gradient(to right, transparent 0%, #000 70%)
-		.gallery__group--reviews
+		.gallery__group
 			width: auto
 			padding-bottom: 7.5px
 			padding-top: 7.5px
 			align-items: center
-		.gallery__item--reviews
+		.gallery__item
 			border: none
 			justify-content: space-between
 			flex-shrink: 0
@@ -546,9 +546,9 @@ p
 			margin-right: -100px
 			width: 300px
 			background-image: linear-gradient(to right, transparent 40%, #000 70%)
-		.gallery__group--certificates
+		.gallery__group
 			width: auto
-		.gallery__item--certificates
+		.gallery__item
 			border: none
 
 .overlay
@@ -1361,6 +1361,6 @@ p
 	z-index: 10
 .nicescroll-rails
 	border: 1px solid #212121
-	height: 9px
+	height: 12px !important
 	z-index: 10
 @import "media" // Always at the end
