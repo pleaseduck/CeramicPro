@@ -133,17 +133,14 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
 });
   function replaceCloseButton(evt) {
     target = evt.target;
-    //console.log(evt.target.parentNode);
     src = target.getAttribute("data-src")
     if (target.classList.contains("screenshot-review__content")) {
       src = target.parentNode.getAttribute("data-src")
     }
-    //console.log(src);
     let closeIcon = document.querySelector(".fancybox-close-small").cloneNode(true);
     document.querySelector(".fancybox-close-small").remove()
     closeIcon.innerHTML = '<i class="fas fa-times"></i>'
     document.querySelector(`${src}`).parentElement.appendChild(closeIcon);
-    //console.log(document.querySelector(`${src}`));
   }
   function addOpenModalListeners(buttons) {
     for (var i = 0; i < buttons.length; i++) {
@@ -162,7 +159,6 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   modalVideoReviewOpeners = document.querySelectorAll("[data-src='#modal--video-review']")
   addOpenModalListeners(modalVideoReviewOpeners)
   modalImageReviewOpeners = document.querySelectorAll(".screenshot-review img")
-  addOpenModalListeners(modalImageReviewOpeners)
 
 
   const galleryItem = document.querySelectorAll("[data-fancybox]");
@@ -172,84 +168,121 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     })
   }
 
-  var questionLinks = document.querySelector(".questions").querySelectorAll("a")
-  for (var i = 0; i < questionLinks.length; i++) {
-    questionLinks[i].addEventListener("click", function(evt) {
-      var target = evt.target
-      var nextGalleryItem = target
-      //console.log();
-        while (!nextGalleryItem.classList.contains("gallery__item")) {
-          nextGalleryItem = nextGalleryItem.parentNode
-        }
-        if (nextGalleryItem.nextElementSibling) {
-          var nextItemOpener = nextGalleryItem.nextElementSibling.querySelector("a[data-fancybox = '']")
-          var nextButton = document.querySelector(".modal--question .button--modal-next")
-          function clickHandler() {
-            $.fancybox.close( true )
-            nextButton.removeEventListener('click', clickHandler);
-              setTimeout(function() {
-                nextItemOpener.click()
-              }, 200)
-          }
-            nextButton.addEventListener("click",clickHandler)
-        } else if (nextGalleryItem.parentNode.nextElementSibling) {
-            console.log("Последний элемент");
-            $.fancybox.close( true )
-            var nextGalleryGroup = nextGalleryItem.parentNode.nextElementSibling;
-            nextGalleryItem = nextGalleryGroup.childNodes[1]
-            nextItemOpener = nextGalleryItem.querySelector("a[data-fancybox = '']");
-            nextItemOpener.click();
-            if (nextGalleryItem.nextElementSibling) {
-              nextItemOpener = nextGalleryItem.nextElementSibling.querySelector("a[data-fancybox = '']")
-              var nextButton = document.querySelector(".modal--question .button--modal-next")
-              nextButton.addEventListener("click",clickHandler)
-            } else {
-              console.log("Последний элемент второй группы");
-            }
 
-        }
-
-    })
+  var questionLinks = document.querySelector(".questions").querySelectorAll("a.link--more-information")
+  function addQuestionsEvents(links) {
+      for(var i=0; i<links.length; i++) {
+          links[i].onclick = function(x) {
+              return function() {
+                  var nextButton = document.querySelector(".modal--question .button--modal-next")
+                  var nextLink = questionLinks[x + 1]
+                 function onNextButtonClick() {
+                   var nextLinkk = nextLink
+                   $.fancybox.close( true );
+                   nextButton.removeEventListener("click", onNextButtonClick)
+                   prevButton.removeEventListener("click", onPrevButtonClick)
+                   setTimeout(function() {
+                   nextLinkk.click()
+                   },200)
+                 }
+                 var prevButton = document.querySelector(".modal--question .button--modal-prev")
+                 var prevLink = questionLinks[x - 1]
+                 function onPrevButtonClick() {
+                   prevLinkk = prevLink
+                   $.fancybox.close( true );
+                   prevButton.removeEventListener("click", onPrevButtonClick)
+                   nextButton.removeEventListener("click", onNextButtonClick)
+                   setTimeout(function() {
+                   prevLinkk.click()
+                   },200)
+                 }
+                 prevButton.addEventListener("click", onPrevButtonClick)
+                 nextButton.addEventListener("click",onNextButtonClick)
+               }
+          }(i)
+      }
   }
-  var performedWorkLinks = document.querySelector(".performed-work").querySelectorAll("a.button")
-  for (var i = 0; i < performedWorkLinks.length; i++) {
-    performedWorkLinks[i].addEventListener("click", function(evt) {
-      var target = evt.target
-      var nextGalleryItem = target
-      //console.log();
-        while (!nextGalleryItem.classList.contains("gallery__item")) {
-          nextGalleryItem = nextGalleryItem.parentNode
-        }
-        if (nextGalleryItem.nextElementSibling) {
-          var nextItemOpener = nextGalleryItem.nextElementSibling.querySelector("a[data-fancybox = '']")
-          var nextButton = document.querySelector(".modal--performed-work .button--modal-next")
-          function clickHandler() {
-            $.fancybox.close( true )
-            nextButton.removeEventListener('click', clickHandler);
-              setTimeout(function() {
-                nextItemOpener.click()
-              }, 200)
-          }
-            nextButton.addEventListener("click",clickHandler)
-        } else if (nextGalleryItem.parentNode.nextElementSibling) {
-            console.log("Последний элемент");
-            $.fancybox.close( true )
-            var nextGalleryGroup = nextGalleryItem.parentNode.nextElementSibling;
-            nextGalleryItem = nextGalleryGroup.childNodes[1]
-            nextItemOpener = nextGalleryItem.querySelector("a[data-fancybox = '']");
-            nextItemOpener.click();
-            if (nextGalleryItem.nextElementSibling) {
-              nextItemOpener = nextGalleryItem.nextElementSibling.querySelector("a[data-fancybox = '']")
-              var nextButton = document.querySelector(".modal--performed-work .button--modal-next")
-              nextButton.addEventListener("click",clickHandler)
-            } else {
-              console.log("Последний элемент второй группы");
-            }
+addQuestionsEvents(questionLinks)
+var performedWorkLinks = document.querySelector(".performed-work").querySelectorAll("a.button")
+function addPerformedWorkEvents(links) { // Работают по отдельности
+    for(var i=0; i<links.length; i++) {
+        links[i].onclick = function(x) {
+            return function() {
+                var nextButton = document.querySelector(".modal--performed-work .button--modal-next")
+                var nextLink = links[x + 1]
+               function onNextButtonClick() {
+                 var nextLinkk = nextLink
+                 $.fancybox.close( true );
+                 nextButton.removeEventListener("click", onNextButtonClick)
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 setTimeout(function() {
+                 nextLinkk.click()
+                 },200)
+               }
+               var prevButton = document.querySelector(".modal--performed-work .button--modal-prev")
+               var prevLink = links[x - 1]
+               function onPrevButtonClick() {
+                 prevLinkk = prevLink
+                 $.fancybox.close( true );
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+                 setTimeout(function() {
+                 prevLinkk.click()
+                 },200)
+               }
+               prevButton.addEventListener("click", onPrevButtonClick)
+               nextButton.addEventListener("click",onNextButtonClick)
+             }
+        }(i)
+    }
+}
+addPerformedWorkEvents(performedWorkLinks)
+//addEvents(performedWorkLinks)
+var reviewLinks = document.querySelector(".reviews").querySelectorAll("a.link--modal")
+function addReviewLinksEvents(links) { // Работают по отдельности
+    for(var i=0; i<links.length; i++) {
+        links[i].onclick = function(x) {
+            return function() {
+                if (links[x].getAttribute("data-src") == "#modal--review") {
+                  var nextButton = document.querySelector(".modal--review .button--modal-next")
+                  var prevButton = document.querySelector(".modal--review .button--modal-prev")
+                }
+                if (links[x].getAttribute("data-src") == "#modal--video-review") {
+                  var nextButton = document.querySelector(".modal--video-review .button--modal-next")
+                  var prevButton = document.querySelector(".modal--video-review .button--modal-prev")
+                }
+                if (links[x].getAttribute("data-src") == "#modal--image-review") {
+                  var nextButton = document.querySelector(".modal--image-review .button--modal-next")
+                   var prevButton = document.querySelector(".modal--image-review .button--modal-prev")
+                }
+                var nextLink = links[x + 1]
+               function onNextButtonClick() {
+                 var nextLinkk = nextLink
+                 $.fancybox.close( true );
+                 nextButton.removeEventListener("click", onNextButtonClick)
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 setTimeout(function() {
+                 nextLinkk.click()
+                 },200)
+               }
+               var prevLink = links[x - 1]
+               function onPrevButtonClick() {
+                 prevLinkk = prevLink
+                 $.fancybox.close( true );
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+                 setTimeout(function() {
+                 prevLinkk.click()
+                 },200)
+               }
+               prevButton.addEventListener("click", onPrevButtonClick)
+               nextButton.addEventListener("click",onNextButtonClick)
+             }
+        }(i)
+    }
+}
+addReviewLinksEvents(reviewLinks)
 
-        }
-
-    })
-  }
 // Инициализация плагина карусели
   $(".price-list__carousel").owlCarousel({
     items: 3,
@@ -321,39 +354,6 @@ function repaintMenu() {
   repaintNextElements(activeItem,menuItemsList);
 };
 
-/*if(window.matchMedia('(min-width: 1068px)').matches)
-{
-  var lastId,
-    topMenu = $(".main-nav"),
-    topMenuHeight = topMenu.outerHeight()+15,
-    menuItems = topMenu.find("a"),
-    scrollItems = menuItems.map(function(){
-      var item = $($(this).attr("href"));
-      if (item.length) {
-        return item;
-      }
-    });
-  $(window).scroll(function(){
-     var fromTop = $(this).scrollTop()+topMenuHeight;
-     var cur = scrollItems.map(function(){
-       if ($(this).offset().top < fromTop)
-         return this;
-     });
-     cur = cur[cur.length-1];
-     var id = cur && cur.length ? cur[0].id : "";
-
-     if (lastId !== id) {
-         lastId = id;
-         menuItems
-           .parent().removeClass("main-nav__item--active")
-           .end().filter('[href="#'+id+'"]').parent().addClass("main-nav__item--active");
-        repaintMenu();
-
-     }
-
-  });
-}*/
-
 if(window.matchMedia('(max-width: 1068px)').matches)
   {
     function repaintPrevElements(activeItem,menuItemsList) {
@@ -403,82 +403,6 @@ if(window.matchMedia('(max-width: 1068px)').matches)
         })
       });
 
-      /*var lastId,
-        topMenu = $(".main-nav"),
-        topMenuHeight = topMenu.outerHeight()+15,
-        menuItems = topMenu.find("a"),
-        scrollItems = menuItems.map(function(){
-          var item = $(this).attr("href");
-          //console.log("item  " + item);
-          if (item.length) {
-            return item;
-          }
-        });
-
-        //console.log(scrollItems);
-       var fromTop = $(this).scrollTop()+topMenuHeight;
-       var cur = scrollItems.map(function(index, element){
-         console.log(element);
-         //console.log(document.querySelector(scrollItems[1] + ""));
-         if ($(this).offset().top < fromTop)
-           return this;
-       });
-       //console.log(cur);
-       cur = cur[cur.length-1];
-       var id = cur && cur.length ? cur[0].id  : "";
-
-       if (lastId !== id) {
-           lastId = id;
-           //console.log(lastId);
-           menuItems
-             .parent().removeClass("main-nav__item--active")
-             .end().filter('[href="#'+id+'"]').parent().addClass("main-nav__item--active");
-          repaintMenu();
-
-       }*/
-
-
-    /*var lastId,
-      topMenu = $(".main-nav"),
-      topMenuHeight = topMenu.outerHeight()+15,
-      menuItems = topMenu.find("a"),
-      scrollItems = menuItems.map(function(){
-        var item = $($(this).attr("href"));
-        if (item.length) {
-          return item;
-        }
-      });
-    $(window).scroll(function(){
-       var fromTop = $(this).scrollTop()+topMenuHeight;
-       var cur = scrollItems.map(function(){
-         if ($(this).offset().top < fromTop)
-           return this;
-       });
-       cur = cur[cur.length-1];
-       var id = cur && cur.length ? cur[0].id : "";
-
-       if (lastId !== id) {
-           lastId = id;
-           menuItems
-             .parent().removeClass("main-nav__item--active")
-             .end().filter('[href="#'+id+'"]').parent().addClass("main-nav__item--active");
-          repaintMenu();
-
-       }
-
-    });*/
-    /*$(document).ready(function(){
-        console.log(document.querySelectorAll(".main-nav li"));
-  	    $(".main-nav").on("click","a", function (event) {
-  	        event.preventDefault();
-            console.log($(id).offset());
-  	        var id  = $(this).attr('href'),
-  	            top = $(id).offset().top;
-  	        $('body,html').animate({scrollTop: top}, 1500);
-
-  	    });
-
-  });*/
   const mainMenu = document.querySelector(".main-nav");
   const mainMenuItems = document.querySelectorAll(".main-nav__item");
 
@@ -570,64 +494,3 @@ if(window.matchMedia('(max-width: 1068px)').matches)
   viewMoreReview.addEventListener("click",function(evt) {
     loadMoreInformation(evt, reviewItems);
   });
-
-
-/*$([data-fancybox="group-performed-work"]).fancybox({
-   loop: true,
-   keyboard : true,
-   arrows : false,
-   infobar: false,
-   captionbar: false,
-   buttons : [
-     'close'
- ]
-});*/
-//setTimeout(function() {
-    //document.querySelector(".fancybox-button--close").innerHTML = '<i class="fas fa-times"></i>'
-    //console.log(document.querySelector(".fancybox-button--close"));
-  //},1000)
-/* const test = document.createElement("iframe");
- test.style.width = "100%";
- test.style.height = "100%";
- test.style.position = "absolute";
- test.style.zIndex = "-1";
- test.innerHTML = "";
-
-
- const activeCarouselElement = document.querySelector(".owl-item.center")
- const activeCarouselItem = activeCarouselElement.querySelector(".carousel__item")
- activeCarouselElement.appendChild(test)
- console.log(activeCarouselItem);
- console.log(test);
-*/
-//frame.onresize = function(){
-  //alert('Размеры div #Test изменены.');
-//}
-  /*var lastId,
-    topMenu = $(".main-nav"),
-    topMenuHeight = topMenu.outerHeight()+15,
-    menuItems = topMenu.find("a"),
-    scrollItems = menuItems.map(function(){
-      var item = $($(this).attr("href"));
-      if (item.length) {
-        return item;
-      }
-    });
-  $(window).scroll(function() {
-    var fromTop = $(this).scrollTop()+topMenuHeight;
-    var cur = scrollItems;
-    console.log(cur);
-    cur = cur[cur.length-1];
-    console.log(cur);
-    var id = cur //&& cur.length ? cur[0].id : "";
-    console.log();
-
-    if (lastId !== id) {
-        lastId = id;
-        menuItems
-          .parent().removeClass("main-nav__item--active")
-          .end().filter('[href="#'+id+'"]').parent().addClass("main-nav__item--active");
-       repaintMenu();
-
-    }
-  })*/
