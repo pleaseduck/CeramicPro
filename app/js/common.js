@@ -128,18 +128,18 @@ for (var i = 0; i < linksToNextSlide.length; i++) {
     evt.preventDefault();
     var target = evt.target;
     switch(target.tagName) {
-      case "SPAN":  // if (x === 'value1')
+      case "SPAN":
       var href = target.parentNode.getAttribute("data-href").replace(/1/g, '');
       var currentLink = "a[href='" + [href] + "']"
       var LinkTonextBLock = href.replace(/#/g, '')
         break
 
-      case "A":  // if (x === 'value2')
+      case "A":
       var href = target.getAttribute("data-href").replace(/1/g, '');
       var currentLink = "a[href='" + [href] + "']"
       var LinkTonextBLock = href.replace(/#/g, '')
         break
-      case "I":  // if (x === 'value2')
+      case "I":
       var href = target.parentNode.parentNode.getAttribute("data-href").replace(/1/g, '');
       var currentLink = "a[href='" + [href] + "']"
       var LinkTonextBLock = href.replace(/#/g, '')
@@ -148,19 +148,7 @@ for (var i = 0; i < linksToNextSlide.length; i++) {
       default:
         break
     }
-    /*if (target.tagName === "SPAN") {
-      var href = target.parentNode.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
-      var LinkTonextBLock = href.replace(/#/g, '')
-    } else if (target.tagName === "A") {
-      var href = target.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
-      var LinkTonextBLock = href.replace(/#/g, '')
-    } else if (target.tagName === "I") {
-      var href = target.parentNode.parentNode.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
-      var LinkTonextBLock = href.replace(/#/g, '')
-    }*/
+
         $.fn.fullpage.moveTo(LinkTonextBLock + "", 0)
 
   });
@@ -172,18 +160,18 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     evt.preventDefault();
     var target = evt.target;
     switch(target.tagName) {
-      case "SPAN":  // if (x === 'value1')
+      case "SPAN":
       var href = target.parentNode.getAttribute("data-href").replace(/1/g, '');
       var currentLink = "a[href='" + [href] + "']"
       var LinkToPrevBLock = href.replace(/#/g, '')
         break
 
-      case "A":  // if (x === 'value2')
+      case "A":
       var href = target.getAttribute("data-href").replace(/1/g, '');
       var currentLink = "a[href='" + [href] + "']"
       var LinkToPrevBLock = href.replace(/#/g, '')
         break
-      case "I":  // if (x === 'value2')
+      case "I":
       var href = target.parentNode.parentNode.getAttribute("data-href").replace(/1/g, '');
       var currentLink = "a[href='" + [href] + "']"
       var LinkToPrevBLock = href.replace(/#/g, '')
@@ -192,19 +180,6 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
       default:
         break
     }
-    /*if (target.tagName === "SPAN") {
-      var href = target.parentNode.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
-      var LinkToPrevBLock = href.replace(/#/g, '')
-    } else if (target.tagName === "A") {
-      var href = target.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
-      var LinkToPrevBLock = href.replace(/#/g, '')
-    } else if (target.tagName === "I") {
-      var href = target.parentNode.parentNode.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
-      var LinkToPrevBLock = href.replace(/#/g, '')
-    }*/
         $.fn.fullpage.moveTo(LinkToPrevBLock + "", 0)
 
   });
@@ -280,7 +255,10 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
       });
     }
   };
-  modalFormOpeners = document.querySelectorAll("[data-src='#modal--form']");
+  console.log(document.querySelectorAll(".modal-opener"));
+  var modalOpeners = document.querySelectorAll(".modal-opener")
+  addOpenModalListeners(modalOpeners)
+  /*modalFormOpeners = document.querySelectorAll("[data-src='#modal--form']");
   addOpenModalListeners(modalFormOpeners);
   modalQuestionsOpeners = document.querySelectorAll("[data-src='#modal--question']");
   addOpenModalListeners(modalQuestionsOpeners);
@@ -293,7 +271,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   modalPerformedWorkOpeners = document.querySelectorAll("[data-src='#modal--performed-work']")
   addOpenModalListeners(modalPerformedWorkOpeners)
   falseLinkOpener = document.querySelector("[data-src='#modal--form-send']")
-  addOpenModalListeners(falseLinkOpener)
+  addOpenModalListeners(falseLinkOpener)*/
   const galleryItem = document.querySelectorAll("[data-fancybox]");
   for (var i = 0; i < galleryItem.length; i++) {
     galleryItem[i].addEventListener("click",function() {
