@@ -258,20 +258,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   console.log(document.querySelectorAll(".modal-opener"));
   var modalOpeners = document.querySelectorAll(".modal-opener")
   addOpenModalListeners(modalOpeners)
-  /*modalFormOpeners = document.querySelectorAll("[data-src='#modal--form']");
-  addOpenModalListeners(modalFormOpeners);
-  modalQuestionsOpeners = document.querySelectorAll("[data-src='#modal--question']");
-  addOpenModalListeners(modalQuestionsOpeners);
-  modalReviewOpeners = document.querySelectorAll("[data-src='#modal--review']");
-  addOpenModalListeners(modalReviewOpeners);
-  modalVideoReviewOpeners = document.querySelectorAll("[data-src='#modal--video-review']")
-  addOpenModalListeners(modalVideoReviewOpeners)
-  modalImageReviewOpeners = document.querySelectorAll("[data-src='#modal--image-review']")
-  addOpenModalListeners(modalImageReviewOpeners)
-  modalPerformedWorkOpeners = document.querySelectorAll("[data-src='#modal--performed-work']")
-  addOpenModalListeners(modalPerformedWorkOpeners)
-  falseLinkOpener = document.querySelector("[data-src='#modal--form-send']")
-  addOpenModalListeners(falseLinkOpener)*/
+  
   const galleryItem = document.querySelectorAll("[data-fancybox]");
   for (var i = 0; i < galleryItem.length; i++) {
     galleryItem[i].addEventListener("click",function() {
