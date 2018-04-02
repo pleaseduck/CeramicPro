@@ -258,7 +258,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   console.log(document.querySelectorAll(".modal-opener"));
   var modalOpeners = document.querySelectorAll(".modal-opener")
   addOpenModalListeners(modalOpeners)
-  
+
   const galleryItem = document.querySelectorAll("[data-fancybox]");
   for (var i = 0; i < galleryItem.length; i++) {
     galleryItem[i].addEventListener("click",function() {
@@ -288,7 +288,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
                  var prevButton = document.querySelector(".modal--question .button--modal-prev")
                  var prevLink = questionLinks[x - 1]
                  function onPrevButtonClick() {
-                var prevLinkCopy = prevLink
+                 prevLinkCopy = prevLink
                    $.fancybox.close( true );
                    prevButton.removeEventListener("click", onPrevButtonClick)
                    nextButton.removeEventListener("click", onNextButtonClick)
@@ -322,7 +322,7 @@ function addPerformedWorkEvents(links) { // Работают по отдельн
                var prevButton = document.querySelector(".modal--performed-work .button--modal-prev")
                var prevLink = links[x - 1]
                function onPrevButtonClick() {
-                 var prevLinkCopy = prevLink
+                 prevLinkCopy = prevLink
                  $.fancybox.close( true );
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  nextButton.removeEventListener("click", onNextButtonClick)
