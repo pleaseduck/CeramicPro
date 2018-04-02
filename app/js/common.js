@@ -127,7 +127,28 @@ for (var i = 0; i < linksToNextSlide.length; i++) {
   linksToNextSlide[i].addEventListener("click", function(evt) {
     evt.preventDefault();
     var target = evt.target;
-    if (target.tagName === "SPAN") {
+    switch(target.tagName) {
+      case "SPAN":  // if (x === 'value1')
+      var href = target.parentNode.getAttribute("data-href").replace(/1/g, '');
+      var currentLink = "a[href='" + [href] + "']"
+      var LinkTonextBLock = href.replace(/#/g, '')
+        break
+
+      case "A":  // if (x === 'value2')
+      var href = target.getAttribute("data-href").replace(/1/g, '');
+      var currentLink = "a[href='" + [href] + "']"
+      var LinkTonextBLock = href.replace(/#/g, '')
+        break
+      case "I":  // if (x === 'value2')
+      var href = target.parentNode.parentNode.getAttribute("data-href").replace(/1/g, '');
+      var currentLink = "a[href='" + [href] + "']"
+      var LinkTonextBLock = href.replace(/#/g, '')
+        break
+
+      default:
+        break
+    }
+    /*if (target.tagName === "SPAN") {
       var href = target.parentNode.getAttribute("data-href").replace(/1/g, '');
       var currentLink = "a[href='" + [href] + "']"
       var LinkTonextBLock = href.replace(/#/g, '')
@@ -139,7 +160,7 @@ for (var i = 0; i < linksToNextSlide.length; i++) {
       var href = target.parentNode.parentNode.getAttribute("data-href").replace(/1/g, '');
       var currentLink = "a[href='" + [href] + "']"
       var LinkTonextBLock = href.replace(/#/g, '')
-    }
+    }*/
         $.fn.fullpage.moveTo(LinkTonextBLock + "", 0)
 
   });
@@ -150,7 +171,28 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   linksToPrevSlide[i].addEventListener("click", function(evt) {
     evt.preventDefault();
     var target = evt.target;
-    if (target.tagName === "SPAN") {
+    switch(target.tagName) {
+      case "SPAN":  // if (x === 'value1')
+      var href = target.parentNode.getAttribute("data-href").replace(/1/g, '');
+      var currentLink = "a[href='" + [href] + "']"
+      var LinkToPrevBLock = href.replace(/#/g, '')
+        break
+
+      case "A":  // if (x === 'value2')
+      var href = target.getAttribute("data-href").replace(/1/g, '');
+      var currentLink = "a[href='" + [href] + "']"
+      var LinkToPrevBLock = href.replace(/#/g, '')
+        break
+      case "I":  // if (x === 'value2')
+      var href = target.parentNode.parentNode.getAttribute("data-href").replace(/1/g, '');
+      var currentLink = "a[href='" + [href] + "']"
+      var LinkToPrevBLock = href.replace(/#/g, '')
+        break
+
+      default:
+        break
+    }
+    /*if (target.tagName === "SPAN") {
       var href = target.parentNode.getAttribute("data-href").replace(/1/g, '');
       var currentLink = "a[href='" + [href] + "']"
       var LinkToPrevBLock = href.replace(/#/g, '')
@@ -162,7 +204,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
       var href = target.parentNode.parentNode.getAttribute("data-href").replace(/1/g, '');
       var currentLink = "a[href='" + [href] + "']"
       var LinkToPrevBLock = href.replace(/#/g, '')
-    }
+    }*/
         $.fn.fullpage.moveTo(LinkToPrevBLock + "", 0)
 
   });
@@ -260,7 +302,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   }
 
 
-  var questionLinks = document.querySelector(".questions").querySelectorAll("a.link--more-information")
+  var questionLinks = document.querySelector(".questions").querySelectorAll(".link--more-information")
   function addQuestionsEvents(links) {
       for(var i=0; i<links.length; i++) {
         //links[i].preventDefault()
@@ -270,23 +312,23 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
                   var nextButton = document.querySelector(".modal--question .button--modal-next")
                   var nextLink = questionLinks[x + 1]
                  function onNextButtonClick() {
-                   var nextLinkk = nextLink
+                   var nextLinkCopy = nextLink
                    $.fancybox.close( true );
                    nextButton.removeEventListener("click", onNextButtonClick)
                    prevButton.removeEventListener("click", onPrevButtonClick)
                    setTimeout(function() {
-                   nextLinkk.click()
+                   nextLinkCopy.click()
                    },200)
                  }
                  var prevButton = document.querySelector(".modal--question .button--modal-prev")
                  var prevLink = questionLinks[x - 1]
                  function onPrevButtonClick() {
-                   prevLinkk = prevLink
+                var prevLinkCopy = prevLink
                    $.fancybox.close( true );
                    prevButton.removeEventListener("click", onPrevButtonClick)
                    nextButton.removeEventListener("click", onNextButtonClick)
                    setTimeout(function() {
-                   prevLinkk.click()
+                   prevLinkCopy.click()
                    },200)
                  }
                  prevButton.addEventListener("click", onPrevButtonClick)
@@ -304,23 +346,23 @@ function addPerformedWorkEvents(links) { // Работают по отдельн
                 var nextButton = document.querySelector(".modal--performed-work .button--modal-next")
                 var nextLink = links[x + 1]
                function onNextButtonClick() {
-                 var nextLinkk = nextLink
+                 var nextLinkCopy = nextLink
                  $.fancybox.close( true );
                  nextButton.removeEventListener("click", onNextButtonClick)
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  setTimeout(function() {
-                 nextLinkk.click()
+                 nextLinkCopy.click()
                  },200)
                }
                var prevButton = document.querySelector(".modal--performed-work .button--modal-prev")
                var prevLink = links[x - 1]
                function onPrevButtonClick() {
-                 prevLinkk = prevLink
+                 var prevLinkCopy = prevLink
                  $.fancybox.close( true );
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  nextButton.removeEventListener("click", onNextButtonClick)
                  setTimeout(function() {
-                 prevLinkk.click()
+                 prevLinkCopy.click()
                  },200)
                }
                prevButton.addEventListener("click", onPrevButtonClick)
@@ -350,22 +392,22 @@ function addReviewLinksEvents(links) { // Работают по отдельно
                 }
                 var nextLink = links[x + 1]
                function onNextButtonClick() {
-                 var nextLinkk = nextLink
+                 var nextLinkCopy = nextLink
                  $.fancybox.close( true );
                  nextButton.removeEventListener("click", onNextButtonClick)
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  setTimeout(function() {
-                 nextLinkk.click()
+                 nextLinkCopy.click()
                  },200)
                }
                var prevLink = links[x - 1]
                function onPrevButtonClick() {
-                 prevLinkk = prevLink
+                 var  prevLinkCopy = prevLink
                  $.fancybox.close( true );
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  nextButton.removeEventListener("click", onNextButtonClick)
                  setTimeout(function() {
-                 prevLinkk.click()
+                 prevLinkCopy.click()
                  },200)
                }
                prevButton.addEventListener("click", onPrevButtonClick)
