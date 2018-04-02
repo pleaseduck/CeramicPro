@@ -28,6 +28,8 @@ body
 				border-color:  green
 p
 	margin: 0
+a
+	cursor: pointer
 .button
 	display: inline-block
 	border: none
@@ -252,7 +254,7 @@ p
 .main-nav__link
 	text-decoration: none
 	color: #e1e1ee
-	font-family: GothamProBold
+	font-family: GothamProLight
 	&::before
 		content: ""
 		width: 6px
@@ -605,7 +607,7 @@ p
 	.container
 		height: 93%
 .price-list__carousel
-	width: 70%
+	width: 90%
 	.owl-item.active
 		text-align: center !important
 		z-index: 2 !important
@@ -623,13 +625,33 @@ p
 	margin-bottom: 30px
 	background-color: #f2f2f2
 	display: inline-block
+	width: 340px
+	padding-top: 45px
+	padding-bottom: 20px
+	padding-left: 20px
+	padding-right: 20px
+	text-align: center
+	display: -webkit-flex
+	display: -ms-flex
+	height: 451px
+//.carousel__item--price-list
+	margin-top: 30px
+	margin-bottom: 30px
+	background-color: #f2f2f2
+	display: inline-block
 	width: 280px
 	padding-top: 45px
 	padding-bottom: 20px
 	padding-left: 20px
 	padding-right: 20px
 	text-align: center
-
+.tariff
+	width: 100%
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	flex-direction: column
+	justify-content: center
 .tariff__image
 	width: auto !important
 	display: inline-block !important
@@ -658,6 +680,7 @@ p
 	display: flex
 	flex-wrap: nowrap
 	align-items: center
+	justify-content: space-between
 	font-family: GothamProBold
 	font-size: 20px
 	line-height: 2em
@@ -1155,13 +1178,14 @@ p
 .contact-form__checkbox
 	position: relative
 	.checkbox_label
+		color: #6c6c66
 		display: inline-block
 		cursor: pointer
 		position: relative
 		padding-left: 30px
 		&::before
 			content: ""
-			border: 1px solid #e0dfdf
+			border: 1px solid #c6c6c6
 			color: #ced0da
 			width: 18px
 			height: 18px

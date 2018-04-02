@@ -194,13 +194,13 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     cursorborder: "none",
     cursorwidth: "10px",
     autohidemode: false,
-    enablemousewheel: true
+    enablemousewheel: false
   });
   $(".scrollable-content").niceScroll({
     cursorborder: "none",
     cursorwidth: "10px",
     autohidemode: false,
-    enablemousewheel: true
+    enablemousewheel: false
   });
   /*$("body").niceScroll({
     cursorborder: "none",
