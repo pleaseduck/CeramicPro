@@ -228,12 +228,13 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
       arrows : false,
       infobar: false,
       captionbar: false,
+      clickOutside : false,
       buttons : [
         'close'
     ]
 });
 
-  function replaceCloseButton(evt) {
+  /*function replaceCloseButton(evt) {
     target = evt.target;
     src = target.getAttribute("data-src")
     if (target.classList.contains("screenshot-review__content")) {
@@ -241,6 +242,21 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     }
     let closeIcon = document.querySelector(".fancybox-close-small").cloneNode(true);
     document.querySelector(".fancybox-close-small").remove()
+    closeIcon.innerHTML = '<i class="fas fa-times"></i>'
+    document.querySelector(`${src}`).parentElement.appendChild(closeIcon);
+  }*/
+  function replaceCloseButton(evt) {
+    target = evt.target;
+    src = target.getAttribute("data-src")
+    if (target.classList.contains("screenshot-review__content")) {
+      src = target.parentNode.getAttribute("data-src")
+    }
+    if (target.classList.contains("fas")) {
+      src = target.parentNode.getAttribute("data-src")
+    }
+    document.querySelector(".fancybox-close-small").remove()
+    var closeIcon = document.createElement('div')
+    closeIcon.className = "fancybox-close-small"
     closeIcon.innerHTML = '<i class="fas fa-times"></i>'
     document.querySelector(`${src}`).parentElement.appendChild(closeIcon);
   }
@@ -281,7 +297,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
                    },200)
                  }
                  var prevButton = document.querySelector(".modal--question .button--modal-prev")
-                 var prevLink = questionLinks[x - 1]
+                 prevLink = questionLinks[x - 1]
                  function onPrevButtonClick() {
                    prevLinkCopy = prevLink
                    $.fancybox.close( true );
@@ -291,6 +307,27 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
                    prevLinkCopy.click()
                    },200)
                  }
+                 var closeButton = document.querySelector(".fancybox-close-small")
+                 var fancyInner = document.querySelector(".fancybox-inner")
+                 var fancySlide = document.querySelector(".fancybox-slide")
+                 var fancyOverlay = document.querySelector(".fancybox-bg")
+                 fancyInner.addEventListener("click", function() {
+                   prevButton.removeEventListener("click", onPrevButtonClick)
+                   nextButton.removeEventListener("click", onNextButtonClick)
+                 })
+                 fancySlide.addEventListener("click", function() {
+                   prevButton.removeEventListener("click", onPrevButtonClick)
+                   nextButton.removeEventListener("click", onNextButtonClick)
+                 })
+                 fancyOverlay.addEventListener("click", function() {
+                   prevButton.removeEventListener("click", onPrevButtonClick)
+                   nextButton.removeEventListener("click", onNextButtonClick)
+                 })
+                 closeButton.addEventListener("click", function() {
+                   prevButton.removeEventListener("click", onPrevButtonClick)
+                   nextButton.removeEventListener("click", onNextButtonClick)
+                    $.fancybox.close(true)
+                 })
                  prevButton.addEventListener("click", onPrevButtonClick)
                  nextButton.addEventListener("click",onNextButtonClick)
                }
@@ -325,8 +362,30 @@ function addPerformedWorkEvents(links) {
                  prevLinkCopy.click()
                  },200)
                }
+               var closeButton = document.querySelector(".fancybox-close-small")
+               var fancyInner = document.querySelector(".fancybox-inner")
+               var fancySlide = document.querySelector(".fancybox-slide")
+               var fancyOverlay = document.querySelector(".fancybox-bg")
+               fancyInner.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+               })
+               fancySlide.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+               })
+               fancyOverlay.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+               })
+               closeButton.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+                  $.fancybox.close(true)
+               })
                prevButton.addEventListener("click", onPrevButtonClick)
                nextButton.addEventListener("click",onNextButtonClick)
+               console.log(closeButton);
              }
         }(i)
     }
@@ -352,7 +411,7 @@ function addReviewLinksEvents(links) { // Работают по отдельно
                 }
                 var nextLink = links[x + 1]
                function onNextButtonClick() {
-                 var nextLinkCopy = nextLink
+                 nextLinkCopy = nextLink
                  $.fancybox.close( true );
                  nextButton.removeEventListener("click", onNextButtonClick)
                  prevButton.removeEventListener("click", onPrevButtonClick)
@@ -370,6 +429,27 @@ function addReviewLinksEvents(links) { // Работают по отдельно
                  prevLinkCopy.click()
                  },200)
                }
+               var closeButton = document.querySelector(".fancybox-close-small")
+               var fancyInner = document.querySelector(".fancybox-inner")
+               var fancySlide = document.querySelector(".fancybox-slide")
+               var fancyOverlay = document.querySelector(".fancybox-bg")
+               fancyInner.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+               })
+               fancySlide.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+               })
+               fancyOverlay.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+               })
+               closeButton.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+                  $.fancybox.close(true)
+               })
                prevButton.addEventListener("click", onPrevButtonClick)
                nextButton.addEventListener("click",onNextButtonClick)
              }

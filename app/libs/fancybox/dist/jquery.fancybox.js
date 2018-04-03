@@ -340,7 +340,7 @@
         clickSlide : 'close',
 
         // Clicked on the background (backdrop) element
-        clickOutside : 'close',
+        clickOutside : false,
 
         // Same as previous two, but for double click
         dblclickContent : false,
