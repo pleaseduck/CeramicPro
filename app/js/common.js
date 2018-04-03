@@ -1,3 +1,4 @@
+'use strict'
 $(function() {
 
  $(document).ready(function() {
@@ -130,18 +131,18 @@ for (var i = 0; i < linksToNextSlide.length; i++) {
     switch(target.tagName) {
       case "SPAN":
       var href = target.parentNode.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
+      var currentLink = "[href='" + [href] + "']"
       var LinkTonextBLock = href.replace(/#/g, '')
         break
 
       case "A":
       var href = target.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
+      var currentLink = "[href='" + [href] + "']"
       var LinkTonextBLock = href.replace(/#/g, '')
         break
       case "I":
       var href = target.parentNode.parentNode.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
+      var currentLink = "[href='" + [href] + "']"
       var LinkTonextBLock = href.replace(/#/g, '')
         break
 
@@ -162,18 +163,18 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     switch(target.tagName) {
       case "SPAN":
       var href = target.parentNode.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
+      var currentLink = "[href='" + [href] + "']"
       var LinkToPrevBLock = href.replace(/#/g, '')
         break
 
       case "A":
       var href = target.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
+      var currentLink = "[href='" + [href] + "']"
       var LinkToPrevBLock = href.replace(/#/g, '')
         break
       case "I":
       var href = target.parentNode.parentNode.getAttribute("data-href").replace(/1/g, '');
-      var currentLink = "a[href='" + [href] + "']"
+      var currentLink = "[href='" + [href] + "']"
       var LinkToPrevBLock = href.replace(/#/g, '')
         break
 
@@ -219,11 +220,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     autohidemode: false,
     enablemousewheel: false
   });
-  /*$("body").niceScroll({
-    cursorborder: "none",
-    cursorwidth: "10px",
-    horizrailenabled: false
-  });*/
+
    //Инициализация плагина галереи
    $("a[data-fancybox]").fancybox({
 	    loop: true,
@@ -303,8 +300,8 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
       }
   }
 addQuestionsEvents(questionLinks)
-var performedWorkLinks = document.querySelector(".performed-work").querySelectorAll("a.button")
-function addPerformedWorkEvents(links) { // Работают по отдельности
+var performedWorkLinks = document.querySelector(".performed-work").querySelectorAll(".button")
+function addPerformedWorkEvents(links) {
     for(var i=0; i<links.length; i++) {
         links[i].onclick = function(x) {
             return function() {
@@ -338,7 +335,7 @@ function addPerformedWorkEvents(links) { // Работают по отдельн
 }
 addPerformedWorkEvents(performedWorkLinks)
 //addEvents(performedWorkLinks)
-var reviewLinks = document.querySelector(".reviews").querySelectorAll("a.link--modal")
+var reviewLinks = document.querySelector(".reviews").querySelectorAll(".link--modal")
 function addReviewLinksEvents(links) { // Работают по отдельности
     for(var i=0; i<links.length; i++) {
         links[i].onclick = function(x) {
@@ -367,7 +364,7 @@ function addReviewLinksEvents(links) { // Работают по отдельно
                }
                var prevLink = links[x - 1]
                function onPrevButtonClick() {
-                 var  prevLinkCopy = prevLink
+                 prevLinkCopy = prevLink
                  $.fancybox.close( true );
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  nextButton.removeEventListener("click", onNextButtonClick)
