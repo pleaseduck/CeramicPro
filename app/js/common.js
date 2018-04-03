@@ -267,9 +267,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   var questionLinks = document.querySelector(".questions").querySelectorAll(".link--more-information")
   function addQuestionsEvents(links) {
       for(var i=0; i<links.length; i++) {
-        //links[i].preventDefault()
           links[i].onclick = function(x) {
-            //evt.preventDefault()
               return function() {
                   var nextButton = document.querySelector(".modal--question .button--modal-next")
                   var nextLink = questionLinks[x + 1]
@@ -285,7 +283,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
                  var prevButton = document.querySelector(".modal--question .button--modal-prev")
                  var prevLink = questionLinks[x - 1]
                  function onPrevButtonClick() {
-                 prevLinkCopy = prevLink
+                   prevLinkCopy = prevLink
                    $.fancybox.close( true );
                    prevButton.removeEventListener("click", onPrevButtonClick)
                    nextButton.removeEventListener("click", onNextButtonClick)
@@ -403,6 +401,7 @@ addReviewLinksEvents(reviewLinks)
 DG.then(function() {
   DG.map('map', {
   center: [52.29,104.28],
+  scrollWheelZoom: false,
   zoom: 13
   });
 });

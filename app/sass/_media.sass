@@ -23,6 +23,19 @@
       margin-right: 10px
       &--second
         margin-right: 0
+
+  .modal--performed-work
+    .modal__navigation
+      width: 100% !important
+    .photos-set
+      margin-bottom: 0
+      justify-content: center
+      .photos-set__column--second
+        width: 378px !important
+  .modal--performed-work
+    .photos-set
+      .photos-set__column--second
+        width: 378px !important
 //Medium: ≥768px
 +media-breakpoint-down(md)
   //Шапка
@@ -53,10 +66,8 @@
     .owl-dots
       position: absolute
       margin-top: 0
-      bottom: 0
+      top: 62%
 
-  .promotions .container, .promotions .row
-    height: auto !important
   //Отзывы
   .reviews
     .container, .row
@@ -67,22 +78,23 @@
   body.fancybox-iosfix
     position: static !important
   .main-header
-    padding-top: 35px
-    height: auto
+    padding-top: 90px
+    height: 100vh !important
     background-size: 700px
     background-position: 0px 90%
     .heading-wrapper
-      margin-top: 100px
       .heading
         font-size: 26px
         line-height: 1.1em
     .legend__content
-      font-size: 12px
+      font-size: 14px
+      text-shadow: 1px 1px 2px black
     .legend, .heading-wrapper
       margin-left: 20px
     .top-line
       display: none
   .main-header__content
+    padding-top: 32px
     height: auto
     justify-content: flex-start
     .legend
@@ -155,11 +167,15 @@
       left: 0
       padding-left: 10%
       padding-right: 10%
-      padding-top: 30px
+      padding-top: 5px
       padding-bottom: 10px
     &.menu-opened
       left: 0
       height: 100%
+
+  .sidebar__mobile--static
+    margin-top: -77px
+
   .top-line
     top: 0
   //общие стили для галереи
@@ -186,6 +202,8 @@
       width: auto !important
       max-width: 100%
       flex-basis: auto !important
+    &__description
+      font-size: 14px
     &__item--mobile-hidden
         display: none
     &--performed-work
@@ -199,11 +217,11 @@
       .gallery__description
         width: auto
         max-width: 100%
-        font-size: 21px
+        font-size: 16px
         margin-top: 10px
         line-height: 1em
         .title
-          font-size: 28px
+          font-size: 24px
           margin-bottom: 10px
         .button--see-more
           width: 60px
@@ -363,7 +381,7 @@
     max-width: 602px
   .review__content
     height: auto
-    font-size: 10px
+    font-size: 14px
     overflow: visible
   .review__author
     font-size: 14px
@@ -416,7 +434,7 @@
     flex-wrap: nowrap
     .contacts__item
       margin-bottom: 30px
-      font-size: 22px
+      font-size: 24px
     .contacts__heading
       font-size: 18px
 
@@ -461,6 +479,7 @@
     .photos-set
       margin-bottom: 0
       justify-content: center
+      max-width: 378px !important
     .photos-set__column--second
       a
         margin-left: 2.5px
@@ -498,6 +517,20 @@
   .nicescroll-rails
   	display: none !important
 +media-breakpoint-down(xs)
+  .hamburger
+  	border: 2px solid #fff
+  	height: 51px
+  	width: 51px
+  	border-radius: 10em
+  	text-align: center
+  	padding: 12px
+  	&.is-active
+  		z-index: 15
+  		position: fixed
+  		left: 50%
+  		margin-left: -51px
+  		margin-top: 0
+
   .overlay
     display: none
   .main-header
@@ -523,16 +556,13 @@
 
   .sidebar
     width: 75%
-
   .hamburger
   	&.is-active
   		left: 75%
     	margin-left: -51px
-  		margin-top: -15px
-
-  .sidebar--mobile
-    padding-top: 10px
-
+  		margin-top: 0
+  .sidebar__mobile--static
+    margin-top: -20px !important
 
   .price-list__carousel
     width: 100%
@@ -576,7 +606,7 @@
       .about-company__slogan
         font-size: 18px
       .about-company__text
-        font-size: 13px
+        font-size: 14px
 
   .photos-set
     img
@@ -616,6 +646,9 @@
       flex-direction: column
     .modal__content-wrapper
       padding-left: 0 !important
+
+  .modal--performed-work .photos-set .photos-set__column--second
+    width: auto !important
 
   .review
     overflow-y: hidden
@@ -670,6 +703,26 @@
     left: 3.5%
   .overlay
     width: 25%
+
+  .main-header
+    background-position: 50% 70%
+  .main-header__content
+    .heading-wrapper, .legend
+      position: relative
+      top: 50px
+  .photos-set
+    flex-direction: row
+    justify-content: space-between
+
+  .about-company__content-wrapper
+    .row
+      align-items: flex-end !important
+    .about-company__content
+      margin-top: -200px
+
+@media screen and (min-width: 1068px) and (max-width: 1292px)
+  .main-footer__content
+    height: 78% !important
 /*==========  Mobile First  ==========*/
 //Extra small: <576px
 +media-breakpoint-up(xs)

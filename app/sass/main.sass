@@ -28,7 +28,7 @@ body
 				border-color:  green
 p
 	margin: 0
-a, button
+a, button, .button
 	cursor: pointer
 
 .button
@@ -234,6 +234,7 @@ a, button
 	&__mobile--static
 		position: static !important
 		padding-top: 0 !important
+		margin-top: -19px
 .main-nav
 	padding: 0
 	margin: 0
@@ -248,7 +249,6 @@ a, button
 	.main-nav__link
 		color: #e1e1ee !important
 		font-family: GothamProBold !important
-		opacity: .9
 		&::before
 			transform: scale(1.3)
 			box-shadow: 0 0 15px 3px $accent
@@ -276,24 +276,72 @@ a, button
 
 .main-nav__item--sibling1 .main-nav__link
 	color: darken(#fff, 10%)
+	&::before
+		width: 5.5px
+		height: 5.5px
+		background-color: darken($accent, 10%)
 .main-nav__item--sibling2 .main-nav__link
 	color: darken(#fff, 20%)
+	&::before
+		width: 5px
+		height: 5px
+		background-color: darken($accent, 20%)
 .main-nav__item--sibling3 .main-nav__link
 	color: darken(#fff, 40%)
+	&::before
+		width: 4.5px
+		height: 4.5px
+		background-color: darken($accent, 30%)
 .main-nav__item--sibling4 .main-nav__link
 	color: darken(#fff, 50%)
+	&::before
+		width: 4px
+		height: 4px
+		background-color: darken($accent, 30%)
+		opacity: .9
 .main-nav__item--sibling5 .main-nav__link
 	color: darken(#fff, 60%)
+	&::before
+		width: 4px
+		height: 4px
+		background-color: darken($accent, 30%)
+		opacity: .8
 .main-nav__item--sibling6 .main-nav__link
 	color: darken(#fff, 70%)
+	&::before
+		width: 4px
+		height: 4px
+		background-color: darken($accent, 30%)
+		opacity: .7
 .main-nav__item--sibling7 .main-nav__link
 	color: darken(#fff, 80%)
+	&::before
+		width: 4px
+		height: 4px
+		background-color: darken($accent, 30%)
+		opacity: .6
+
 .main-nav__item--sibling8 .main-nav__link
 	color: darken(#fff, 85%)
+	&::before
+		width: 4px
+		height: 4px
+		background-color: darken($accent, 30%)
+		opacity: .6
 .main-nav__item--sibling9 .main-nav__link
 	color: darken(#fff, 85%)
+	&::before
+		width: 4px
+		height: 4px
+		background-color: darken($accent, 30%)
+		opacity: .6
 .main-nav__item--sibling10 .main-nav__link
 	color: darken(#fff, 85%)
+	&::before
+		width: 4px
+		height: 4px
+		background-color: darken($accent, 30%)
+		opacity: .6
 
 .contacts__item
 	margin-bottom: 20px
@@ -350,6 +398,7 @@ a, button
 	position: relative
 	color: #e1e1e1
 	z-index: 2
+	font-size: 14px
 	&::after
 		content: ""
 		width: 100px
@@ -400,7 +449,7 @@ a, button
 		position: fixed
 		left: 50%
 		margin-left: -51px
-		margin-top: -30px
+		margin-top: 0
 
 .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
 	background-color: #fff
@@ -441,6 +490,10 @@ a, button
 				text-decoration: none
 	&--performed-work
 		max-height: 570px
+		.link--modal
+			display: flex
+			width: auto
+			height: auto
 		.gallery__item
 			max-width: 265px
 			border-image: linear-gradient(to top, #040505 25%, #fff 100%)
@@ -451,6 +504,7 @@ a, button
 		.gallery__description
 			padding-right: 50px
 			max-width: 241px
+			font-size: 13px
 			.button--see-more
 				position: absolute
 				z-index: 2
@@ -663,7 +717,7 @@ a, button
 	display: inline-block !important
 .tariff__heading
 	font-family: GothamProBold
-	font-size: 18px
+	font-size: 24px
 	line-height: 2em
 	color: #000
 	display: block
@@ -835,7 +889,7 @@ a, button
 
 .question__item
 	font-family: GothamProLight
-	font-size: 12px
+	font-size: 14px
 	color: #a6a6a6
 	position: relative
 	text-align: left
@@ -847,7 +901,7 @@ a, button
 		color: $accent
 		text-decoration: underline
 .question__title
-	font-size: 16px
+	font-size: 18px
 	line-height: 1em
 	display: block
 	color: #fff
@@ -905,7 +959,7 @@ a, button
 	margin-left: 30%
 	background-color: #fff
 	font-family: GothamProLight
-	font-size: 12px
+	font-size: 13px
 	line-height: 1.5em
 	color: #1f1e1e
 	margin-bottom: 0
@@ -1105,7 +1159,9 @@ a, button
 		.dg-widget-link
 			height: 100%
 .main-footer__content
+	height: auto
 	padding-top: 50px
+	margin-bottom: 80px
 	display: -webkit-flex
 	display: -ms-flex
 	display: flex
@@ -1242,7 +1298,7 @@ a, button
 	padding: 28px
 	background: #fff
 	font-family: GothamProLight
-	font-size: 12px
+	font-size: 14px
 	line-height: 1.5em
 	color: #000
 .modal__heading
@@ -1254,14 +1310,14 @@ a, button
 	width: 100%
 .modal__navigation
 	margin-top: 15px
-	width: 45%
+	width: 30%
 	display: flex
 	justify-content: space-between
 
 .modal--performed-work
 	padding: 15px
 	.modal__navigation--performed-work
-		width: 70%
+		width: 50%
 	.modal__content
 		display: flex
 	.modal__content-wrapper
@@ -1276,6 +1332,7 @@ a, button
 		justify-content: space-around
 		height: auto
 		flex-shrink: 3
+		max-width: 378px
 		.photos-set__column--second, .photos-set__column--first
 			flex-basis: auto
 		.photos-set__column
@@ -1302,10 +1359,13 @@ a, button
 .modal--review
 	.modal__content
 		overflow-y: hidden
+	.modal__navigation
+		width: 45%
 	.review
 		max-width: 100%
 		overflow-y: visible
 		.review__content
+			font-size: 14px
 			z-index: 2
 		.review__avatar
 			z-index: 1
@@ -1325,7 +1385,7 @@ a, button
 		justify-content: space-between
 		width: 100%
 		img
-			max-width: 120px
+			max-width: 110px
 			width: 100%
 			height: auto
 		a
