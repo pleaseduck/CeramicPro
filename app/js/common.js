@@ -228,7 +228,9 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
       arrows : false,
       infobar: false,
       captionbar: false,
-      clickOutside : false,
+      clickOutside : 'close',
+      clickSlide: false,
+      smallBtn: false,
       buttons : [
         'close'
     ]
@@ -254,7 +256,11 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     if (target.classList.contains("fas")) {
       src = target.parentNode.getAttribute("data-src")
     }
-    document.querySelector(".fancybox-close-small").remove()
+
+    if (document.querySelector(".fancybox-close-small.fancybox-button")) {
+      document.querySelector(".fancybox-close-small.fancybox-button").remove()
+    }
+    document.querySelector(".fancybox-button--close").remove()
     var closeIcon = document.createElement('div')
     closeIcon.className = "fancybox-close-small"
     closeIcon.innerHTML = '<i class="fas fa-times"></i>'
@@ -275,7 +281,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   var modalOpeners = document.querySelectorAll(".modal-opener")
   addOpenModalListeners(modalOpeners)
 
-  const galleryItem = document.querySelectorAll("[data-fancybox]");
+  const galleryItem = document.querySelectorAll(".gallery-opener");
   for (var i = 0; i < galleryItem.length; i++) {
     galleryItem[i].addEventListener("click",function() {
       document.querySelector(".fancybox-button--close").innerHTML = '<i class="fas fa-times"></i>'
@@ -311,31 +317,6 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
                    },200)
                  }
                  var closeButton = document.querySelector(".fancybox-close-small")
-                 var fancyInner = document.querySelector(".fancybox-inner")
-                 var fancySlide = document.querySelector(".fancybox-slide")
-                 var fancyOverlay = document.querySelector(".fancybox-bg")
-                 var fancyStage = document.querySelector(".fancybox-stage")
-                 var fancyContainer = document.querySelector(".fancybox-container")
-                 fancyContainer.addEventListener("click", function() {
-                   prevButton.removeEventListener("click", onPrevButtonClick)
-                   nextButton.removeEventListener("click", onNextButtonClick)
-                 })
-                 fancyInner.addEventListener("click", function() {
-                   prevButton.removeEventListener("click", onPrevButtonClick)
-                   nextButton.removeEventListener("click", onNextButtonClick)
-                 })
-                 fancySlide.addEventListener("click", function() {
-                   prevButton.removeEventListener("click", onPrevButtonClick)
-                   nextButton.removeEventListener("click", onNextButtonClick)
-                 })
-                 fancyOverlay.addEventListener("click", function() {
-                   prevButton.removeEventListener("click", onPrevButtonClick)
-                   nextButton.removeEventListener("click", onNextButtonClick)
-                 })
-                 fancyStage.addEventListener("click", function() {
-                   prevButton.removeEventListener("click", onPrevButtonClick)
-                   nextButton.removeEventListener("click", onNextButtonClick)
-                 })
                  closeButton.addEventListener("click", function() {
                    prevButton.removeEventListener("click", onPrevButtonClick)
                    nextButton.removeEventListener("click", onNextButtonClick)
@@ -376,31 +357,6 @@ function addPerformedWorkEvents(links) {
                  },200)
                }
                var closeButton = document.querySelector(".fancybox-close-small")
-               var fancyInner = document.querySelector(".fancybox-inner")
-               var fancySlide = document.querySelector(".fancybox-slide")
-               var fancyOverlay = document.querySelector(".fancybox-bg")
-               var fancyStage = document.querySelector(".fancybox-stage")
-               var fancyContainer = document.querySelector(".fancybox-container")
-               fancyContainer.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-               })
-               fancyInner.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-               })
-               fancySlide.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-               })
-               fancyOverlay.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-               })
-               fancyStage.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-               })
                closeButton.addEventListener("click", function() {
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  nextButton.removeEventListener("click", onNextButtonClick)
@@ -451,37 +407,15 @@ function addReviewLinksEvents(links) { // Работают по отдельно
                  prevLinkCopy.click()
                  },200)
                }
-               var closeButton = document.querySelector(".fancybox-close-small")
-               var fancyInner = document.querySelector(".fancybox-inner")
-               var fancySlide = document.querySelector(".fancybox-slide")
-               var fancyOverlay = document.querySelector(".fancybox-bg")
-               var fancyStage = document.querySelector(".fancybox-stage")
-               var fancyContainer = document.querySelector(".fancybox-container")
-               fancyContainer.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-               })
-               fancyInner.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-               })
-               fancySlide.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-               })
-               fancyOverlay.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-               })
-               fancyStage.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-               })
-               closeButton.addEventListener("click", function() {
-                 prevButton.removeEventListener("click", onPrevButtonClick)
-                 nextButton.removeEventListener("click", onNextButtonClick)
-                  $.fancybox.close(true)
-               })
+              var closeButton = document.querySelectorAll(".fancybox-close-small")
+               for (var i = 0; i < closeButton.length; i++) {
+                 closeButton[i].addEventListener("click",function() {
+                   prevButton.removeEventListener("click", onPrevButtonClick)
+                   nextButton.removeEventListener("click", onNextButtonClick)
+                    $.fancybox.close(true)
+                 })
+               }
+
                prevButton.addEventListener("click", onPrevButtonClick)
                nextButton.addEventListener("click",onNextButtonClick)
              }
