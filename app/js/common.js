@@ -265,10 +265,13 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
       buttons[i].addEventListener("click", function(evt) {
         evt.preventDefault()
           replaceCloseButton(evt)
+          var closeButton = document.querySelector(".fancybox-close-small");
+          closeButton.addEventListener("click", function() {
+             $.fancybox.close( true );
+          })
       });
     }
   };
-  console.log(document.querySelectorAll(".modal-opener"));
   var modalOpeners = document.querySelectorAll(".modal-opener")
   addOpenModalListeners(modalOpeners)
 
@@ -385,7 +388,6 @@ function addPerformedWorkEvents(links) {
                })
                prevButton.addEventListener("click", onPrevButtonClick)
                nextButton.addEventListener("click",onNextButtonClick)
-               console.log(closeButton);
              }
         }(i)
     }
@@ -598,32 +600,6 @@ if(window.matchMedia('(max-width: 1068px)').matches)
     }
   });
   };
-
-  /*$(".main-nav").on("click","a", function (event) {
-      event.preventDefault();
-      var id  = $(this).attr('href'),
-          top = $(id).offset().top;
-      $('body,html').animate({scrollTop: top}, 1500);
-
-  });*/
-  /*var bottomLineLinks = document.querySelectorAll(".bottom-line");
-  for (var i = 0; i < bottomLineLinks.length; i++) {
-    bottomLineLinks[i].addEventListener("click", function(event) {
-      event.preventDefault();
-      var id  = $(this).attr('href'),
-          top = $(id).offset().top;
-      $('body,html').animate({scrollTop: top}, 1500);
-    })
-  };
-  var topLineLinks = document.querySelectorAll(".link--to-prev-block");
-  for (var i = 0; i < topLineLinks.length; i++) {
-    topLineLinks[i].addEventListener("click", function(event) {
-      event.preventDefault();
-      var id  = $(this).attr('href'),
-          top = $(id).offset().top;
-      $('body,html').animate({scrollTop: top}, 1500);
-    })
-  };*/
 });
 // Реализация мобильного меню
   const hamburger = document.querySelector(".hamburger");
@@ -641,7 +617,10 @@ if(window.matchMedia('(max-width: 1068px)').matches)
   function loadMoreInformation(evt, elementsList) {
     evt.preventDefault();
     for (var i = 2; i <= elementsList.length; i++) {
-      elementsList[i].classList.toggle("gallery__item--mobile-hidden");
+        elementsList[i].classList.toggle("gallery__item--mobile-hidden");
+        elementsList[i].classList.toggle("animated");
+        elementsList[i].classList.toggle("fadeIn");
+        elementsList[i].style.animationDelay = ".5s"
     }
   }
   const viewMorePW = document.querySelector(".button--performed-work");
