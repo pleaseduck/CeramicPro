@@ -314,6 +314,12 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
                  var fancyInner = document.querySelector(".fancybox-inner")
                  var fancySlide = document.querySelector(".fancybox-slide")
                  var fancyOverlay = document.querySelector(".fancybox-bg")
+                 var fancyStage = document.querySelector(".fancybox-stage")
+                 var fancyContainer = document.querySelector(".fancybox-container")
+                 fancyContainer.addEventListener("click", function() {
+                   prevButton.removeEventListener("click", onPrevButtonClick)
+                   nextButton.removeEventListener("click", onNextButtonClick)
+                 })
                  fancyInner.addEventListener("click", function() {
                    prevButton.removeEventListener("click", onPrevButtonClick)
                    nextButton.removeEventListener("click", onNextButtonClick)
@@ -323,6 +329,10 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
                    nextButton.removeEventListener("click", onNextButtonClick)
                  })
                  fancyOverlay.addEventListener("click", function() {
+                   prevButton.removeEventListener("click", onPrevButtonClick)
+                   nextButton.removeEventListener("click", onNextButtonClick)
+                 })
+                 fancyStage.addEventListener("click", function() {
                    prevButton.removeEventListener("click", onPrevButtonClick)
                    nextButton.removeEventListener("click", onNextButtonClick)
                  })
@@ -369,6 +379,12 @@ function addPerformedWorkEvents(links) {
                var fancyInner = document.querySelector(".fancybox-inner")
                var fancySlide = document.querySelector(".fancybox-slide")
                var fancyOverlay = document.querySelector(".fancybox-bg")
+               var fancyStage = document.querySelector(".fancybox-stage")
+               var fancyContainer = document.querySelector(".fancybox-container")
+               fancyContainer.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+               })
                fancyInner.addEventListener("click", function() {
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  nextButton.removeEventListener("click", onNextButtonClick)
@@ -378,6 +394,10 @@ function addPerformedWorkEvents(links) {
                  nextButton.removeEventListener("click", onNextButtonClick)
                })
                fancyOverlay.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+               })
+               fancyStage.addEventListener("click", function() {
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  nextButton.removeEventListener("click", onNextButtonClick)
                })
@@ -435,6 +455,12 @@ function addReviewLinksEvents(links) { // Работают по отдельно
                var fancyInner = document.querySelector(".fancybox-inner")
                var fancySlide = document.querySelector(".fancybox-slide")
                var fancyOverlay = document.querySelector(".fancybox-bg")
+               var fancyStage = document.querySelector(".fancybox-stage")
+               var fancyContainer = document.querySelector(".fancybox-container")
+               fancyContainer.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+               })
                fancyInner.addEventListener("click", function() {
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  nextButton.removeEventListener("click", onNextButtonClick)
@@ -444,6 +470,10 @@ function addReviewLinksEvents(links) { // Работают по отдельно
                  nextButton.removeEventListener("click", onNextButtonClick)
                })
                fancyOverlay.addEventListener("click", function() {
+                 prevButton.removeEventListener("click", onPrevButtonClick)
+                 nextButton.removeEventListener("click", onNextButtonClick)
+               })
+               fancyStage.addEventListener("click", function() {
                  prevButton.removeEventListener("click", onPrevButtonClick)
                  nextButton.removeEventListener("click", onNextButtonClick)
                })
