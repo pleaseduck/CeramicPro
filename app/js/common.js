@@ -222,19 +222,31 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   });
 
    //Инициализация плагина галереи
-   $("[data-fancybox]").fancybox({
+   $(".gallery-opener").fancybox({
 	    loop: true,
       keyboard : true,
       arrows : false,
       infobar: false,
       captionbar: false,
-      clickOutside : 'close',
-      clickSlide: false,
       smallBtn: false,
-      touch: false,
       buttons : [
         'close'
     ]
+});
+
+$(".modal-opener").fancybox({
+  loop: true,
+   keyboard : true,
+   arrows : false,
+   infobar: false,
+   captionbar: false,
+   clickOutside : 'close',
+   clickSlide: false,
+   smallBtn: false,
+   touch: false,
+   buttons : [
+     'close'
+ ]
 });
 
   function replaceCloseButton(evt) {
