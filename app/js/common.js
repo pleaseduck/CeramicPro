@@ -478,7 +478,7 @@ function repaintPrevElements(activeItem,menuItemsList) {
       link.style.color = `hsl(0,0%,${brightness}%)`
     } else {
       if (menuItemsList[0].classList.contains("main-nav__item--active") || menuItemsList[0].classList.contains("active")) {
-        menuItemsList[10].childNodes[0].style.color = `hsl(0,0%,10%)`
+        menuItemsList[10].childNodes[0].style.color = `hsl(0,0%,15%)`
       }
       return
     }
@@ -494,7 +494,7 @@ function repaintNextElements(activeItem,menuItemsList) {
       link.style.color = `hsl(0,0%,${brightness}%)`
     } else {
       if (menuItemsList[10].classList.contains("main-nav__item--active") || menuItemsList[10].classList.contains("active")) {
-        menuItemsList[0].childNodes[0].style.color = `hsl(0,0%,10%)`
+        menuItemsList[0].childNodes[0].style.color = `hsl(0,0%,15%)`
       }
       return
     }
@@ -519,7 +519,7 @@ if(window.matchMedia('(max-width: 1068px)').matches)
           link.style.color = `hsl(0,0%,${brightness}%)`
         } else {
           if (menuItemsList[0].classList.contains("main-nav__item--active") || menuItemsList[0].classList.contains("active")) {
-            menuItemsList[9].childNodes[0].style.color = `hsl(0,0%,10%)`
+            menuItemsList[9].childNodes[0].style.color = `hsl(0,0%,15%)`
           }
           return
         }
@@ -535,7 +535,7 @@ if(window.matchMedia('(max-width: 1068px)').matches)
           link.style.color = `hsl(0,0%,${brightness}%)`
         } else {
           if (menuItemsList[9].classList.contains("main-nav__item--active") || menuItemsList[10].classList.contains("active")) {
-            menuItemsList[0].childNodes[0].style.color = `hsl(0,0%,10%)`
+            menuItemsList[0].childNodes[0].style.color = `hsl(0,0%,15%)`
           }
           return
         }
