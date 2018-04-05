@@ -111,9 +111,10 @@ a, button, .button
 	font-size: 32px
 	line-height: 1.25em
 	color: #fff
-	.heading__accent-text
-		font-family: GothamProBold
-		color: $accent
+
+.heading__accent-text
+	font-family: GothamProBold
+	color: $accent
 
 .button--watch-more
 	display: none
@@ -141,14 +142,18 @@ a, button, .button
 	top: -23px
 	position: relative
 	z-index: 5
+
 .top-line__heading, .top-line__page-counter
 	position: relative
 	right: 70px
+
 .top-line__heading
 	color: #5d5d5d
+
 .top-line__page-counter
 	display: block
 	color: #c1c1c1
+
 .top-line__current-page
 	font-family: GothamProBold
 	color: #fff
@@ -158,6 +163,21 @@ a, button, .button
 		top: 20px
 
 .link
+	&--to-prev-block
+		cursor: pointer
+		&:hover
+			.fas
+				position: absolute
+				font-size: 20px
+				left: 50%
+				margin-left: -5px
+				top: -16px
+				transform: rotate(180deg)
+	&--private-data
+		color: #e91c8f
+		text-decoration: underline
+		&:hover
+			text-decoration: none
 	&--desktop-hidden
 		display: none !important
 	&--to-prev-block
@@ -192,6 +212,7 @@ a, button, .button
 	background-position: center
 	background-position: 50% 90%
 	position: relative
+
 .main-header__content
 	position: relative
 	height: 100vh
@@ -199,11 +220,13 @@ a, button, .button
 .logo
 	font-size: 14px
 	line-height: 1.5em
+
 .logo__wrapper
 	color: #e1e1ee
 	&:hover
 		text-decoration: none
 		color: #e1e1ee
+
 .logo__signature
 	display: block
 	margin-top: 5px
@@ -233,10 +256,12 @@ a, button, .button
 		position: static !important
 		padding-top: 0 !important
 		margin-top: -19px
+
 .main-nav
 	padding: 0
 	margin: 0
 	list-style-type: none
+
 .main-nav__item
 	padding-left: 30px
 	position: relative
@@ -356,6 +381,7 @@ a, button, .button
 		transform: rotate(100deg)
 		&.fa-map-marker-alt
 			transform: none
+
 .contacts__phone
 	.fas
 		margin-right: 0 !important
@@ -658,12 +684,12 @@ a, button, .button
 	background-color: #000
 	background-image: url(../img/redcar-bg.jpg)
 	background-size: contain
-	//padding-top: 40px
 	.container, .row
 		position: relative
 		height: 100%
 	.container
 		height: 93%
+
 .price-list__carousel
 	width: 90%
 	.owl-item.active
@@ -692,17 +718,7 @@ a, button, .button
 	display: -webkit-flex
 	display: -ms-flex
 	height: 451px
-//.carousel__item--price-list
-	margin-top: 30px
-	margin-bottom: 30px
-	background-color: #f2f2f2
-	display: inline-block
-	width: 280px
-	padding-top: 45px
-	padding-bottom: 20px
-	padding-left: 20px
-	padding-right: 20px
-	text-align: center
+
 .tariff
 	width: 100%
 	display: -webkit-flex
@@ -710,9 +726,11 @@ a, button, .button
 	display: flex
 	flex-direction: column
 	justify-content: center
+
 .tariff__image
 	width: auto !important
 	display: inline-block !important
+
 .tariff__heading
 	font-family: GothamProBold
 	font-size: 24px
@@ -720,6 +738,7 @@ a, button, .button
 	color: #000
 	display: block
 	border-bottom: 1px solid #e9e9e9
+
 .tariff__service
 	text-align: left
 	font-family: GothamProLight
@@ -733,6 +752,7 @@ a, button, .button
 		background-color: #f4f4f4
 	&:last-of-type
 		margin-bottom: 20px
+
 .tariff__price
 	padding-left: 10px
 	display: flex
@@ -788,6 +808,7 @@ a, button, .button
 		height: 93%
 	.row
 		height: 100%
+
 .additional-services__content
 	height: 76vh
 	position: relative
@@ -796,17 +817,8 @@ a, button, .button
 	display: flex
 	flex-direction: column
 	justify-content: center
-.link
-	&--to-prev-block
-		cursor: pointer
-		&:hover
-			.fas
-				position: absolute
-				font-size: 20px
-				left: 50%
-				margin-left: -5px
-				top: -16px
-				transform: rotate(180deg)
+
+
 
 .additional-service__image
 	width: 50px
@@ -916,10 +928,8 @@ a, button, .button
 	.nicescroll-rails-hr
 		top: 100% !important
 	.container, .row
-		//height: 100vh
 		position: relative
 .reviews__content
-	//overflow-y: scroll !important
 	height: 76vh
 	display: flex
 	justify-content: center
@@ -940,6 +950,7 @@ a, button, .button
 		color: #ff1792
 		text-decoration: underline
 		margin-top: 5px
+
 .review__avatar
 	display: inline-block
 	position: absolute
@@ -948,6 +959,7 @@ a, button, .button
 	width: 60%
 	height: auto
 	min-height: 100%
+
 .review__content
 	width: 70%
 	height: 100%
@@ -963,11 +975,12 @@ a, button, .button
 	margin-bottom: 0
 	padding: 15px
 	padding-top: 0
-	.review__author
-		display: block
-		font-size: 16px
-		line-height: 2.5em
-		color: #000
+
+.review__author
+	display: block
+	font-size: 16px
+	line-height: 2.5em
+	color: #000
 
 .video-review
 	display: inline-block
@@ -994,6 +1007,7 @@ a, button, .button
 			background-color: rgba(#efefef, 0.06)
 			top: 0
 			left: 0
+
 .video-review__preview
 	width: auto
 	max-width: 602px
@@ -1012,6 +1026,7 @@ a, button, .button
 	padding-top: 40px
 	.container, .row
 		position: relative
+
 .certificates__content
 	height: 76vh
 	position: relative
@@ -1040,6 +1055,7 @@ a, button, .button
 		position: relative
 		margin-bottom: 30px
 		max-height: 50%
+
 .about-company__content-wrapper
 	height: 100%
 	display: -webkit-flex
@@ -1061,7 +1077,6 @@ a, button, .button
 	flex-direction: column
 	justify-content: space-between
 	margin-right: 30px
-	//max-height: 350px
 	&:last-of-type
 		margin-right: 0
 	&--first
@@ -1105,15 +1120,16 @@ a, button, .button
 		height: 90%
 	.row
 		height: 100%
+
 .social-networks__content-wrapper
 	position: static !important
 	height: 100%
 	justify-content: flex-start !important
+
 .social-networks__content
 	position: relative
 	z-index: 2
 	height: 100%
-	//margin-top: 35px
 	display: flex
 	flex-direction: column
 	justify-content: center
@@ -1147,15 +1163,17 @@ a, button, .button
 		height: 90%
 		.row
 			height: 100%
-	.map--main-footer
-		position: absolute
-		z-index: 2
-		top: 0
-		right: 0
-		height: 103%
-		width: 362px
-		.dg-widget-link
-			height: 100%
+
+.map--main-footer
+	position: absolute
+	z-index: 2
+	top: 0
+	right: 0
+	height: 103%
+	width: 362px
+	.dg-widget-link
+		height: 100%
+
 .main-footer__content
 	height: auto
 	padding-top: 50px
@@ -1266,11 +1284,7 @@ a, button, .button
 			left: 0
 			margin-top: -8.5px
 			display: none
-		.private-data
-			color: #e91c8f
-			text-decoration: underline
-			&:hover
-				text-decoration: none
+
 	.checkbox
 		position: absolute
 		z-index: -1
@@ -1299,13 +1313,16 @@ a, button, .button
 	font-size: 14px
 	line-height: 1.5em
 	color: #000
+
 .modal__heading
 	font-size: 24px
 	line-height: 1.6em
+
 .paragraph-separator
 	display: inline-block
 	height: 10px
 	width: 100%
+
 .modal__navigation
 	margin-top: 15px
 	width: 45%
@@ -1443,6 +1460,7 @@ a, button, .button
 	&:hover
 		color: $accent
 		transition: color .25s ease
+
 .fancybox-close-small
 	top: 5%
 	right: 4%
@@ -1456,6 +1474,7 @@ a, button, .button
 		transition: color .25s ease
 	&::after
 		display: none
+
 .nicescroll-cursors
 	background: rgb(0,0,0); /* Old browsers */
 	background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(168,168,168,1) 50%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
@@ -1463,6 +1482,7 @@ a, button, .button
 	background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(168,168,168,1) 50%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
 	z-index: 10
+
 .nicescroll-rails
 	border: 1px solid #212121
 	height: 12px !important
