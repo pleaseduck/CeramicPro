@@ -222,7 +222,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   });
 
    //Инициализация плагина галереи
-   $("a[data-fancybox]").fancybox({
+   $("[data-fancybox]").fancybox({
 	    loop: true,
       keyboard : true,
       arrows : false,
@@ -250,7 +250,18 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     if (document.querySelector(".fancybox-close-small.fancybox-button")) {
       document.querySelector(".fancybox-close-small.fancybox-button").remove()
     }
+    if (target.classList.contains("title")) {
+      src = target.parentNode.parentNode.getAttribute("data-src")
+    }
+    if (target.classList.contains("gallery__description")) {
+      src = target.parentNode.getAttribute("data-src")
+    }
+    if (target.classList.contains("gallery__image")) {
+      src = target.parentNode.getAttribute("data-src")
+    }
+    console.log(src);
     document.querySelector(".fancybox-button--close").remove()
+    //document.querySelector(".fancybox-close-small").remove()
     var closeIcon = document.createElement('div')
     closeIcon.className = "fancybox-close-small"
     closeIcon.innerHTML = '<i class="fas fa-times"></i>'
@@ -259,7 +270,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
   function addOpenModalListeners(buttons) {
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", function(evt) {
-        evt.preventDefault()
+        //evt.preventDefault()
           replaceCloseButton(evt)
           var closeButton = document.querySelector(".fancybox-close-small");
           closeButton.addEventListener("click", function() {
@@ -269,7 +280,10 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     }
   };
   var modalOpeners = document.querySelectorAll(".modal-opener")
+  var modalOpenersPW = document.querySelector(".performed-work").querySelectorAll(".gallery__item")
+
   addOpenModalListeners(modalOpeners)
+  addOpenModalListeners(modalOpenersPW)
 
   const galleryItem = document.querySelectorAll(".gallery-opener");
   for (var i = 0; i < galleryItem.length; i++) {
@@ -319,7 +333,7 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
       }
   }
 addQuestionsEvents(questionLinks)
-var performedWorkLinks = document.querySelector(".performed-work").querySelectorAll(".button")
+var performedWorkLinks = document.querySelector(".performed-work").querySelectorAll(".modal-opener")
 function addPerformedWorkEvents(links) {
     for(var i=0; i<links.length; i++) {
         links[i].onclick = function(x) {
@@ -448,7 +462,7 @@ function repaintPrevElements(activeItem,menuItemsList) {
     prevElement = prevElement.previousElementSibling
     if (prevElement !== null) {
       var link = prevElement.childNodes[0]
-      var brightness =100 - 10*m
+      var brightness =100 - 9*m
       link.style.color = `hsl(0,0%,${brightness}%)`
     } else {
       if (menuItemsList[0].classList.contains("main-nav__item--active") || menuItemsList[0].classList.contains("active")) {
@@ -464,7 +478,7 @@ function repaintNextElements(activeItem,menuItemsList) {
     nextElement = nextElement.nextElementSibling
     if (nextElement !== null) {
       var link = nextElement.childNodes[0]
-      var brightness =100 - 10*j
+      var brightness =100 - 9*j
       link.style.color = `hsl(0,0%,${brightness}%)`
     } else {
       if (menuItemsList[10].classList.contains("main-nav__item--active") || menuItemsList[10].classList.contains("active")) {
@@ -489,7 +503,7 @@ if(window.matchMedia('(max-width: 1068px)').matches)
         prevElement = prevElement.previousElementSibling
         if (prevElement !== null) {
           var link = prevElement.childNodes[0]
-          var brightness =100 - 10*m
+          var brightness =100 - 9*m
           link.style.color = `hsl(0,0%,${brightness}%)`
         } else {
           if (menuItemsList[0].classList.contains("main-nav__item--active") || menuItemsList[0].classList.contains("active")) {
@@ -499,16 +513,13 @@ if(window.matchMedia('(max-width: 1068px)').matches)
         }
       }
     };
-    //document.querySelectorAll("a[data-fancybox]")
-    //console.log(document.querySelectorAll("a[data-fancybox]"));
-    //console.log(document.querySelector(".fancybox-iosfix"));
     function repaintNextElements(activeItem,menuItemsList) {
       var nextElement = activeItem
       for (var j = 1; j < 10; j++) {
         nextElement = nextElement.nextElementSibling
         if (nextElement !== null) {
           var link = nextElement.childNodes[0]
-          var brightness =100 - 10*j
+          var brightness =100 - 9*j
           link.style.color = `hsl(0,0%,${brightness}%)`
         } else {
           if (menuItemsList[9].classList.contains("main-nav__item--active") || menuItemsList[10].classList.contains("active")) {
