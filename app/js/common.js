@@ -583,6 +583,10 @@ if(window.matchMedia('(max-width: 1068px)').matches)
   const overlay = document.querySelector(".overlay");
 
   hamburger.addEventListener("click", function() {
+    var hamburgerCopy = document.querySelector(".hamburger").cloneNode(true)
+    //hamburgerCopy.classList.add("is-active")
+    ////hamburgerCopy.classList.add("hamburger--active")
+    //document.querySelector(".sidebar").appendChild(hamburgerCopy)
     document.querySelector(".sidebar--mobile").classList.toggle("sidebar--inactive");
     mainNav.classList.toggle("menu-opened");
     document.querySelector(".sidebar--mobile").classList.toggle("sidebar__mobile--static");
