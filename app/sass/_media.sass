@@ -81,11 +81,12 @@
     position: static !important
 
   .main-header
-    padding-top: 90px
+    //padding-top: 90px
     height: 100vh !important
     background-size: 700px
     background-position: 0px 90%
     .heading-wrapper
+      top: 0
       .heading
         font-size: 26px
         line-height: 1.1em
@@ -156,7 +157,6 @@
       height: 100%
 
   .sidebar__mobile--static
-    margin-top: -77px
     .contacts__button
       display: none
 
@@ -169,7 +169,7 @@
   .performed-work
     height: auto
     .top-line
-      margin-bottom: 20px
+      margin-bottom: 47px
     .gallery--performed-work
       overflow: visible
 
@@ -272,6 +272,7 @@
     height: auto
     .top-line
       margin-bottom: 0
+      top: 0
     .carousel__item--transformed
       margin-left: -10px
     .justify-content-center
@@ -324,7 +325,7 @@
     &__content
       height: auto
     .top-line
-      margin-bottom: 20px
+      margin-bottom: 47px
     .gallery__overlay
       display: none
 
@@ -425,17 +426,19 @@
     .map--main-footer
       position: static
       right: 0
-      height: 515px
+      height: 50vh
       width: 100%
+    .top-line
+      top: 0
 
   .contacts--footer
     flex-direction: column
     flex-wrap: nowrap
     .contacts__item
       margin-bottom: 30px
-      font-size: 24px
+      font-size: 22px
     .contacts__heading
-      font-size: 18px
+      font-size: 22px
 
   .main-footer__content
     padding-top: 0
@@ -520,7 +523,6 @@
   	border: 2px solid #fff
   	border-radius: 10em
   	text-align: center
-  	padding: 12px
 
   .overlay
     display: none
@@ -537,7 +539,7 @@
     margin-bottom: 35px
     .top-line__heading
       font-family: GothamProBold
-      font-size: 28px
+      font-size: 38px
       line-height: 1em
       padding-left: 70px
       color: #fff
@@ -580,6 +582,8 @@
     .owl-item.center
       .carousel__item
       	 margin-left: -70%
+    .top-line
+      top: 0
 
   .price-list
     height: auto
@@ -699,9 +703,13 @@
   .main-header
     background-position: 50% 70%
   .main-header__content
-    .heading-wrapper, .legend
+     .legend
       position: relative
       top: 50px
+.heading-wrapper
+  position: relative
+  top: 50px
+
   .photos-set
     flex-direction: row
     justify-content: space-between

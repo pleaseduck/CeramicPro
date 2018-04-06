@@ -395,23 +395,34 @@ a, button, .button
 
 .hamburger
 	border: 2px solid #fff
-	height: 51px
-	width: 51px
+	height: 32.5px
+	width: 32.5px
 	border-radius: 10em
 	text-align: center
-	padding: 12px
+	padding: 4px 7.5px
+	padding-top: 5px
+	left: 145px
+	transition: left .7s ease
 	&.is-active
 		z-index: 15
 		position: fixed
 		left: 50%
 		margin-left: -51px
 		margin-top: 0
-		margin-top: 35px
+		margin-top: 17px
+		transition: left .7s ease
+	.hamburger-box
+		width: 100%
+		height: 100%
 
 .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
 	background-color: #fff
 	height: 2px
-	width: 24px
+	width: 15px
+.hamburger-inner::before
+	top: -7px
+.hamburger--emphatic .hamburger-inner::after
+	top: 7px
 
 //Общие стилли для галереи
 .gallery
@@ -1041,7 +1052,7 @@ a, button, .button
 
 .about-company__text
 	font-family: GothamProLight
-	font-size: 17px
+	font-size: 18px
 	line-height: 1.5em
 
 // Социальные сети
