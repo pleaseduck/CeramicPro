@@ -178,6 +178,7 @@ a, button, .button
 	&--private-data
 		&:hover
 			text-decoration: none
+			color: $accent
 	&--desktop-hidden
 		display: none !important
 	&--to-next-block
@@ -402,14 +403,14 @@ a, button, .button
 	width: 32.5px
 	border-radius: 10em
 	text-align: center
-	padding: 4px 7.5px
+	padding: 4px 7.3px
 	padding-top: 5px
 	left: 145px
 	transition: left .7s ease
 	&.is-active
 		z-index: 15
 		position: fixed
-		left: 50%
+		left: 35%
 		margin-left: -51px
 		margin-top: 0
 		margin-top: 17px
@@ -582,6 +583,10 @@ a, button, .button
 			width: auto
 		.gallery__item
 			border: none
+			margin-left: 0
+			margin-right: 0
+			padding-left: 15px
+			padding-right: 15px
 
 .overlay
 	height: 100%
@@ -1322,6 +1327,7 @@ a, button, .button
 				width: auto
 
 .modal--review
+	padding: 15px !important
 	.modal__content
 		overflow-y: hidden
 	.modal__navigation

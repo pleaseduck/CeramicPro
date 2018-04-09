@@ -51,9 +51,6 @@
 
   //Прайс-лист
   .price-list
-    .owl-item.center
-      .carousel__item
-    	  margin-left: -10%
     .price-list__carousel
       width: 100%
       .owl-nav
@@ -94,7 +91,8 @@
       font-size: 14px
       text-shadow: 1px 1px 2px black
     .legend, .heading-wrapper
-      margin-left: 20px
+      padding-left: 15px
+      padding-right: 15px
     .top-line
       display: none
 
@@ -111,12 +109,12 @@
     padding-left: 15px
     margin-bottom: 35px
     display: block
-    .top-line__heading
-      font-family: GothamProBold
-      font-size: 38px
-      line-height: 0.7em
-      padding-left: 95px
-      color: #fff
+  .top-line__heading
+    font-family: GothamProBold
+    font-size: 38px
+    line-height: 0.7em
+    padding-left: 95px
+    color: #fff
 
   .performed-work, .certificates, .price-list, .additional-services, .promotions, .questions, .reviews, .about-company, .main-footer
     .link--to-prev-block, .top-line__page-counter
@@ -127,12 +125,12 @@
 
   .sidebar
     left: -3500px
-    padding-left: 5%
-    padding-right: 5%
+    padding-left: 15px
+    padding-right: 15px
     top: 0
     padding-top: 30px
     height: 100vh
-    width: 50%
+    width: 35%
     background-color: #000
     z-index: 12
     transition: left .5s ease
@@ -148,10 +146,11 @@
       background-color: #000
       top: 0
       left: 0
-      padding-left: 10%
-      padding-right: 10%
+      padding: 15px
+      //padding-left: 10%
+      //padding-right: 10%
       padding-top: 5px
-      padding-bottom: 10px
+      padding-bottom: 5px
     &.menu-opened
       left: 0
       height: 100%
@@ -333,6 +332,9 @@
   .promotions
     height: auto
     padding-bottom: 100px
+    .col-12.d-flex
+      padding-left: 20px
+      padding-right: 20px
 
 
   .promotions__carousel
@@ -517,6 +519,10 @@
   .nicescroll-rails
   	display: none !important
 +media-breakpoint-down(xs)
+  .fancybox-close-small
+  	top: 1%
+  	right: 0
+
   .hamburger
   	border: 2px solid #fff
   	border-radius: 10em
@@ -535,15 +541,15 @@
     padding-left: 15px
     display: block
     margin-bottom: 35px
-    .top-line__heading
-      font-family: GothamProBold
-      font-size: 38px
-      line-height: 1em
-      padding-left: 70px
-      color: #fff
-      padding-left: 0
-      display: inline-block
-      right: 0 !important
+  .top-line__heading
+    font-family: GothamProBold
+    font-size: 38px
+    line-height: 1em
+    padding-left: 70px
+    color: #fff
+    padding-left: 0
+    display: inline-block
+    right: 0 !important
 
   .sidebar
     width: 75%
@@ -579,7 +585,8 @@
       position: relative
     .owl-item.center
       .carousel__item
-      	 margin-left: -70%
+        transform: translateX(-50%) scale(1.1)
+        left: 50%
     .top-line
       top: 0
 
@@ -608,6 +615,8 @@
 
   .reviews
     .gallery__item
+      padding-right: 0
+      padding-left: 0
       .review + .review
         margin-top: 20px
 
@@ -650,6 +659,9 @@
   .modal--review
     overflow-y: hidden
     margin-bottom: 15px
+    width: 80%
+    .modal__heading
+      font-size: 18px
     .review__avatar
       width: 100% !important
       min-height: 0
@@ -665,6 +677,8 @@
     .review__content
       width: 100%
       margin-left: 0
+      padding-left: 0
+      padding-right: 0
   .contact-form__message, .contact-form__name, .contact-form__phone-number
     font-size: 14px
     line-height: 1.8em
@@ -688,11 +702,10 @@
       font-family: MontserratLight
       font-size: 14px
       line-height: 1.8em
+  .modal--question
+    width: 80%
+    padding: 15px
 @media screen and (max-width: 370px)
-  .price-list
-    .owl-item.center
-      .carousel__item
-    	  margin-left: -80.5%
 
     .owl-carousel
       .owl-nav

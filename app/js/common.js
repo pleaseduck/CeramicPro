@@ -1,6 +1,6 @@
-'use strict'
-$(function() {
 
+$(function() {
+  'use strict'
  $(document).ready(function() {
   repaintMenu();
   //document.querySelector(".sidebar .contacts__button").click()
@@ -250,19 +250,22 @@ $(".modal-opener").fancybox({
 });
 
   function replaceCloseButton(evt) {
-    target = evt.target;
-    src = target.getAttribute("data-src")
+    var target = evt.target;
+    var src = target.getAttribute("data-src")
     if (target.classList.contains("screenshot-review__content")) {
       src = target.parentNode.getAttribute("data-src")
     }
     if (target.classList.contains("fas")) {
-      src = target.parentNode.getAttribute("data-src")
+      src = target.parentNode.parentNode.parentNode.getAttribute("data-src")
     }
 
     if (document.querySelector(".fancybox-close-small.fancybox-button")) {
       document.querySelector(".fancybox-close-small.fancybox-button").remove()
     }
     if (target.classList.contains("title")) {
+      src = target.parentNode.parentNode.getAttribute("data-src")
+    }
+    if (target.classList.contains("button--see-more")) {
       src = target.parentNode.parentNode.getAttribute("data-src")
     }
     if (target.classList.contains("gallery__description")) {
