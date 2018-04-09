@@ -128,33 +128,34 @@
     padding-left: 15px
     padding-right: 15px
     top: 0
-    padding-top: 30px
+    padding-top: 10px
+    padding-bottom: 10px !important
     height: 100vh
     width: 35%
     background-color: #000
     z-index: 12
     transition: left .5s ease
+    .contacts__item
+      margin-bottom: 0
     .contacts__address
       display: none
     .contacts__button
       display: none
-    &--mobile
-      position: fixed
-      width: 100%
-      display: flex
-      z-index: 9
-      background-color: #000
-      top: 0
-      left: 0
-      padding: 15px
-      //padding-left: 10%
-      //padding-right: 10%
-      padding-top: 5px
-      padding-bottom: 5px
     &.menu-opened
       left: 0
       height: 100%
 
+  .navigation-panel
+    position: fixed
+    width: 100%
+    display: flex
+    z-index: 9
+    background-color: #000
+    top: 0
+    left: 0
+    padding: 15px
+    padding-top: 5px
+    padding-bottom: 5px
   .sidebar__mobile--static
     .contacts__button
       display: none
@@ -244,9 +245,9 @@
         padding: 0
       .gallery__items-wrapper
         .gallery__item:nth-of-type(1)
-          padding-right: 7.5px
+          padding-right: 5px
       .gallery__item:nth-of-type(2)
-        padding-left: 7.5px
+        padding-left: 5px
 
   .certificates
     height: auto
@@ -256,7 +257,7 @@
       display: none
     .gallery__items-wrapper
       width: 100%
-      margin-top: 15px
+      margin-top: 10px
   .certificate
     width: 100%
     height: auto
