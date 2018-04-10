@@ -246,6 +246,7 @@ a, button, .button
 	padding-top: 40px
 	padding-bottom: 40px
 	width: 15%
+	max-width: 380px
 	&--inactive
 		justify-content: flex-end !important
 	&__mobile--static
@@ -1264,7 +1265,7 @@ a, button, .button
 
 // Модальные окна
 .modal
-	width: 65%
+	width: calc(100% - 30px) !important
 	z-index: 15
 	padding: 28px
 	background: #fff

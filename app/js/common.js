@@ -214,20 +214,8 @@ for (var i = 0; i < linksToPrevSlide.length; i++) {
     autohidemode : false,
     enablemousewheel: false
   }
-
-  $(".scroll-wrapper").niceScroll(".gallery",{
-    cursorborder: galleryProps.cursorborder,
-    cursorwidth: galleryProps.cursorwidth,
-    autohidemode: galleryProps.autohidemode,
-    enablemousewheel: galleryProps.enablemousewheel
-  });
-  $(".scrollable-content").niceScroll({
-    cursorborder: galleryProps.cursorborder,
-    cursorwidth: galleryProps.cursorwidth,
-    autohidemode: galleryProps.autohidemode,
-    enablemousewheel: galleryProps.enablemousewheel
-  });
-
+  $(".scroll-wrapper").niceScroll(".gallery", galleryProps)
+  $(".scrollable-content").niceScroll(galleryProps)
    //Инициализация плагина галереи
    $(".gallery-opener").fancybox({
 	    loop: true,
@@ -485,9 +473,8 @@ function repaintPrevElements(activeItem,menuItemsList) {
     if (prevElement !== null) {
       var link = prevElement.childNodes[0]
       var brightness = 100
-      if (brightness > 15) {
-        brightness = 100 - 9*m
-      } else {
+      brightness = 100 - 9*m
+      if (brightness < 15) {
         brightness = 15
       }
       link.style.color = `hsl(0,0%,${brightness}%)`
@@ -503,9 +490,8 @@ function repaintNextElements(activeItem,menuItemsList) {
     if (nextElement !== null) {
       var link = nextElement.childNodes[0]
       var brightness = 100
-      if (brightness > 15) {
-        brightness = 100 - 9*j
-      } else {
+      brightness = 100 - 9*j
+      if (brightness < 15) {
         brightness = 15
       }
       link.style.color = `hsl(0,0%,${brightness}%)`
